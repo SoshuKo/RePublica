@@ -1,0 +1,80 @@
+{
+  "id": "demo_akau_vs_koto",
+  "title": "デモ：アカウ vs コト",
+  "nodes": [
+    {
+      "type": "line",
+      "bg": "礼拝所.jpg",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "……静かな礼拝所。だけど、あなたの視線だけはうるさい。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "嫉妬？いいえ、確認よ。あなたが彼の隣に立つ“理由”があるのかどうか。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "理由ならある。わたしが守ると決めた人だから。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "なら、奪ってみなさい。——ここで。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "System",
+        "text": "（ぷよぷよ風バトル開始）"
+      }
+    },
+    {
+      "type": "battle",
+      "enemyName": "コト"
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "はぁ……決着はついた。これ以上、彼に近づくな。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "……かわいいのね。あなたの愛。"
+      }
+    },
+    {
+      "type": "end"
+    }
+  ]
+}

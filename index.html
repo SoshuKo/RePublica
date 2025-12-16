@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Re: Publica</title>
+
+  <!-- Main styles -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!--
+    Fixed resolution game stage (e.g., 1280x720) with mobile-friendly scaling is handled by CSS.
+    JS will only toggle layers / fill text / swap assets later.
+  -->
+  <div id="app" class="app" data-width="1280" data-height="720">
+    <main id="gameRoot" class="game-root" role="application" aria-label="Re: Publica">
+      <div id="gameViewport" class="game-viewport" aria-live="polite" aria-atomic="true">
+
+        <!-- =========================
+             OVERLAY (fade, shake, vignette, etc.)
+             ========================= -->
+        <div id="overlayLayer" class="layer overlay-layer is-hidden" aria-hidden="true">
+          <div id="screenFade" class="screen-fade" aria-hidden="true"></div>
+        </div>
+
+        <!-- =========================
+             TITLE
+             ========================= -->
+        <section id="titleLayer" class="layer title-layer" aria-label="タイトル画面">
+          <div class="title-bg" aria-hidden="true"></div>
+
+          <div class="title-content">
+            <!-- Inline logo (you can replace later if desired) -->
+            <div class="logo-wrap" aria-label="Re: Publica ロゴ">
+              <svg class="logo" viewBox="0 0 1200 360" role="img" aria-label="Re: Publica">
+                <defs>
+                  <linearGradient id="rpGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#ffffff" stop-opacity="0.95" />
+                    <stop offset="0.55" stop-color="#d7e6ff" stop-opacity="0.95" />
+                    <stop offset="1" stop-color="#ffffff" stop-opacity="0.95" />
+                  </linearGradient>
+                  <filter id="rpGlow" x="-30%" y="-50%" width="160%" height="220%">
+                    <feGaussianBlur stdDeviation="6" result="blur"/>
+                    <feColorMatrix in="blur" type="matrix"
+                      values="1 0 0 0 0
+                              0 1 0 0 0
+                              0 0 1 0 0
+                              0 0 0 0.7 0" result="glow"/>
+                    <feMerge>
+                      <feMergeNode in="glow"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                <g filter="url(#rpGlow)">
+                  <text x="70" y="220"
+                        font-family="system-ui, -apple-system, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif"
+                        font-size="170"
+                        font-weight="800"
+                        letter-spacing="2"
+                        fill="url(#rpGrad)">Re: Publica</text>
+                  <path d="M72 265 H1015" stroke="#ffffff" stroke-opacity="0.45" stroke-width="6" />
+                  <text x="72" y="315"
+                        font-family="system-ui, -apple-system, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', sans-serif"
+                        font-size="34"
+                        font-weight="600"
+                        letter-spacing="8"
+                        fill="#ffffff"
+                        opacity="0.75">VISUAL NOVEL × PUZZLE BATTLE</text>
+                </g>
+              </svg>
+            </div>
+
+            <nav class="title-menu" aria-label="タイトルメニュー">
+              <button id="btnNewGame" class="btn btn-primary" type="button">はじめから</button>
+
+              <!-- JSON import entrypoint -->
+              <button id="btnContinue" class="btn" type="button">つづきから（JSON）</button>
+              <input id="importFileInput"
+                     class="sr-only"
+                     type="file"
+                     accept="application/json"
+                     aria-label="セーブJSONを選択" />
+
+              <button id="btnSettingsFromTitle" class="btn" type="button">設定</button>
+              <button id="btnCredits" class="btn" type="button">クレジット</button>
+            </nav>
+
+            <p class="title-hint" aria-hidden="true">
+              Enter / クリック：決定　Esc：メニュー
+            </p>
+          </div>
+        </section>
+
+        <!-- =========================
+             ADV (STORY)
+             ========================= -->
+        <section id="advLayer" class="layer adv-layer is-hidden" aria-label="ADV画面" aria-hidden="true">
+          <!-- Backgrounds -->
+          <div class="bg-stack" aria-hidden="true">
+            <img id="bgMain" class="bg bg-main" alt="" />
+            <img id="bgFront" class="bg bg-front is-hidden" alt="" />
+          </div>
+
+          <!-- VN Text Window (fixed bottom) -->
+          <div id="vnUI" class="vn-ui" aria-hidden="true">
+            <div id="vnWindow" class="vn-window">
+              <div id="vnNameplate" class="vn-nameplate is-hidden">
+                <span id="vnName" class="vn-name"></span>
+              </div>
+              <div id="vnText" class="vn-text"></div>
+            </div>
+          </div>
+
+          <!-- Characters (all source images are left-facing.
+               Enemy side uses CSS mirror via .is-mirrored) -->
+          <div class="char-stage" aria-hidden="false">
+            <!-- Player / Self side -->
+            <div id="charSelf" class="char-slot char-self" data-side="self" aria-label="自分サイド">
+              <img id="charSelfImg" class="char-img" alt="" />
+              <!-- Speech bubble anchored to character -->
+              <div id="bubbleSelf" class="speech-bubble is-hidden" aria-hidden="true">
+                <div class="nameplate">
+                  <span id="nameSelf" class="name-text">名前</span>
+                </div>
+                <div id="textSelf" class="speech-text">セリフ（自分サイド）</div>
+              </div>
+            </div>
+
+            <!-- Opponent side (mirrored) -->
+            <div id="charEnemy" class="char-slot char-enemy is-mirrored" data-side="enemy" aria-label="相手サイド">
+              <img id="charEnemyImg" class="char-img" alt="" />
+              <div id="bubbleEnemy" class="speech-bubble is-hidden" aria-hidden="true">
+                <div class="nameplate">
+                  <span id="nameEnemy" class="name-text">名前</span>
+                </div>
+                <div id="textEnemy" class="speech-text">セリフ（相手サイド）</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center choice overlay (big, centered) -->
+          <div id="choiceLayer" class="choice-layer is-hidden" aria-hidden="true">
+            <div class="choice-panel" role="dialog" aria-label="選択肢">
+              <h2 class="choice-title">選択</h2>
+              <div id="choiceList" class="choice-list" role="list">
+                <!-- Buttons injected later -->
+                <button class="choice-btn" type="button" role="listitem">選択肢A</button>
+                <button class="choice-btn" type="button" role="listitem">選択肢B</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- A transparent click-to-advance zone (exact behavior decided in JS later) -->
+          <button id="advanceHotspot" class="advance-hotspot" type="button" aria-label="次へ"></button>
+        </section>
+
+        <!-- =========================
+             BATTLE (single board)
+             ========================= -->
+        <section id="battleLayer" class="layer battle-layer is-hidden" aria-label="戦闘画面" aria-hidden="true">
+          <div class="battle-wrap">
+                        <header class="battle-hud" aria-label="戦闘HUD">
+              <div class="hud-left">
+                <div class="hud-label">DAMAGE</div>
+                <div id="battleScore" class="hud-value">0</div>
+              </div>
+              <div class="hud-center hud-center--vs">
+                <div class="hud-label">BATTLE</div>
+                <div class="hud-value">VS</div>
+              </div>
+              <div class="hud-right">
+                <div class="hud-label">CHAIN</div>
+                <div id="battleChain" class="hud-value">0</div>
+              </div>
+            </header>
+
+                        <div class="battle-stage" aria-label="戦闘盤面">
+              <div class="battle-arena" aria-label="戦闘アリーナ">
+                <aside id="battleEnemySide" class="battle-side battle-enemy" aria-label="敵">
+                  <div class="battle-portrait-wrap">
+                    <img id="battleCharEnemyImg" class="battle-portrait is-mirrored" alt="敵キャラクター" />
+                  </div>
+                  <div class="hpbar" aria-label="敵HP">
+                    <div class="hpbar-track"><div id="battleHpEnemyFill" class="hpbar-fill"></div></div>
+                    <div id="battleHpEnemyText" class="hpbar-text">-- / --</div>
+                  </div>
+                </aside>
+
+                <div class="battle-board" aria-label="盤面">
+                  <canvas id="battleCanvas" width="720" height="720" aria-label="ぷよぷよ風 盤面"></canvas>
+                  <div id="battleFloatLayer" class="battle-float-layer" aria-hidden="true"></div>
+                </div>
+
+                <aside id="battleSelfSide" class="battle-side battle-self" aria-label="自分">
+                  <div class="battle-portrait-wrap">
+                    <img id="battleCharSelfImg" class="battle-portrait" alt="自分キャラクター" />
+                  </div>
+                  <div class="hpbar" aria-label="自分HP">
+                    <div class="hpbar-track"><div id="battleHpSelfFill" class="hpbar-fill"></div></div>
+                    <div id="battleHpSelfText" class="hpbar-text">-- / --</div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+
+            <!-- Battle result overlay (can be used or ignored later) -->
+            <div id="battleResult" class="battle-result is-hidden" aria-hidden="true">
+              <div class="battle-result-panel" role="dialog" aria-label="戦闘結果">
+                <h2 id="battleResultTitle">RESULT</h2>
+                <p id="battleResultDetail">勝利 / 敗北 / ランクなど</p>
+                <button id="btnBattleContinue" class="btn btn-primary" type="button">続ける</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             MENU (pause/settings/save/load/export/import)
+             ========================= -->
+        <section id="menuLayer" class="layer menu-layer is-hidden" aria-label="メニュー" aria-hidden="true">
+          <div class="menu-panel" role="dialog" aria-label="ゲームメニュー">
+            <header class="menu-header">
+              <h2 class="menu-title">MENU</h2>
+              <button id="btnCloseMenu" class="btn btn-ghost" type="button" aria-label="閉じる">×</button>
+            </header>
+
+            <div class="menu-grid">
+              <section class="menu-section" aria-label="セーブ">
+                <h3>セーブ</h3>
+                <div class="menu-row">
+                  <button id="btnSaveSlot1" class="btn" type="button">スロット1に保存</button>
+                  <button id="btnSaveSlot2" class="btn" type="button">スロット2に保存</button>
+                  <button id="btnSaveSlot3" class="btn" type="button">スロット3に保存</button>
+                </div>
+              </section>
+
+              <section class="menu-section" aria-label="ロード">
+                <h3>ロード</h3>
+                <div class="menu-row">
+                  <button id="btnLoadSlot1" class="btn" type="button">スロット1を読む</button>
+                  <button id="btnLoadSlot2" class="btn" type="button">スロット2を読む</button>
+                  <button id="btnLoadSlot3" class="btn" type="button">スロット3を読む</button>
+                </div>
+              </section>
+
+              <section class="menu-section" aria-label="JSON出力入力">
+                <h3>JSON</h3>
+                <div class="menu-row">
+                  <button id="btnExportJson" class="btn btn-primary" type="button">セーブJSONを書き出す</button>
+                  <button id="btnImportJson" class="btn" type="button">セーブJSONを読み込む</button>
+                  <input id="importFileInputMenu"
+                         class="sr-only"
+                         type="file"
+                         accept="application/json"
+                         aria-label="セーブJSONを選択（メニュー）" />
+                </div>
+              </section>
+
+              <section class="menu-section" aria-label="設定">
+                <h3>設定</h3>
+                <div class="menu-row">
+                  <label class="menu-field">
+                    <span>BGM</span>
+                    <input id="optBgmVolume" type="range" min="0" max="100" value="70" />
+                  </label>
+                  <label class="menu-field">
+                    <span>SE</span>
+                    <input id="optSeVolume" type="range" min="0" max="100" value="80" />
+                  </label>
+                  <label class="menu-field">
+                    <span>テキスト速度</span>
+                    <input id="optTextSpeed" type="range" min="0" max="100" value="50" />
+                  </label>
+                </div>
+              </section>
+            </div>
+
+            <footer class="menu-footer">
+              <button id="btnBackToTitle" class="btn" type="button">タイトルへ戻る</button>
+            </footer>
+          </div>
+        </section>
+
+        <!-- =========================
+             MODAL (confirm dialogs)
+             ========================= -->
+        <section id="modalLayer" class="layer modal-layer is-hidden" aria-hidden="true">
+          <div class="modal-backdrop" aria-hidden="true"></div>
+          <div class="modal" role="dialog" aria-label="確認">
+            <h2 id="modalTitle">確認</h2>
+            <p id="modalMessage">メッセージ</p>
+            <div class="modal-actions">
+              <button id="modalOk" class="btn btn-primary" type="button">OK</button>
+              <button id="modalCancel" class="btn" type="button">キャンセル</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             DEBUG (optional)
+             ========================= -->
+        <aside id="debugPanel" class="debug-panel is-hidden" aria-hidden="true">
+          <div class="debug-line">DEBUG</div>
+          <div class="debug-line">Scene: <span id="dbgScene">-</span></div>
+          <div class="debug-line">Step: <span id="dbgStep">-</span></div>
+        </aside>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JS entrypoints (will be implemented later) -->
+    <script src="./js/constants.js" defer></script>
+    <script src="./js/viewport.js" defer></script>
+    <script src="./js/version.js" defer></script>
+    <script src="./js/state.js" defer></script>
+    <script src="./js/assets.js" defer></script>
+    <script src="./js/audio.js" defer></script>
+    <script src="./js/input.js" defer></script>
+    <script src="./js/transitions.js" defer></script>
+
+    <script src="./js/save.js" defer></script>
+    <script src="./js/ui.js" defer></script>
+
+    <script src="./js/battle.js" defer></script>
+    <script src="./js/engine.js" defer></script>
+
+</body>
+</html>
