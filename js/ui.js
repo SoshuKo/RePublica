@@ -292,9 +292,11 @@
 
 // VN fixed dialogue window (single)
 const vnUI = document.getElementById("vnUI");
+const vnWindow = document.getElementById("vnWindow");
 const vnNameplate = document.getElementById("vnNameplate");
 const vnName = document.getElementById("vnName");
 const vnText = document.getElementById("vnText");
+const vnNext = document.getElementById("vnNext");
 
 // 旧吹き出しは使わない（残ってても常に隠す）
 const bubbleSelf = $(DOM_IDS.adv.bubbleSelf);
@@ -302,11 +304,17 @@ const bubbleEnemy = $(DOM_IDS.adv.bubbleEnemy);
 setHidden(bubbleSelf, true);
 setHidden(bubbleEnemy, true);
 
+// speech 判定（← これを先に作る！）
 const speech = state.view?.speech || {};
 const showSpeech = !!speech.visible && !!speech.text;
 
+// 「‣」は “進める状態” のときだけ表示（選択肢中は消す）
+const choiceVisible = !!state.view?.choice?.visible;
+setHidden(vnNext, !(showSpeech && !choiceVisible));
+
 if (!showSpeech) {
   setHidden(vnUI, true);
+  vnWindow?.classList.remove("is-narration");
 } else {
   setHidden(vnUI, false);
 
@@ -316,27 +324,17 @@ if (!showSpeech) {
   const name =
     (speech.name && String(speech.name).trim()) ? String(speech.name).trim() : fallbackName;
 
-  // 名前が不要な行（地の文にしたい等）があるなら、speech.name を "" にしておけば非表示になる
-  setHidden(vnNameplate, !name);
-  setText(vnName, name || "");
+  const isNarration = (name === "ナレーション");
+
+  // ナレーションは視覚的に区別（CSS側で is-narration を使う）
+  vnWindow?.classList.toggle("is-narration", isNarration);
+
+  // ナレーションは名前プレートを出さない
+  setHidden(vnNameplate, isNarration || !name);
+  setText(vnName, isNarration ? "" : name);
+
   setText(vnText, speech.text || "");
 }
-
-
-      // Always use ONE dialogue window at the bottom (bubbleSelf).
-      // bubbleEnemy is kept for compatibility but hidden.
-      if (!showSpeech) {
-        setHidden(bubbleSelf, true);
-        setHidden(bubbleEnemy, true);
-      } else {
-        setHidden(bubbleEnemy, true);
-        setHidden(bubbleSelf, false);
-
-        // Speaker name: prefer explicit speech.name, otherwise fallback by side
-        const fallbackName = (speech.side === "enemy") ? (enemy.name || "？？？") : (self.name || "？？？");
-        setText($(DOM_IDS.adv.nameSelf), (speech.name && String(speech.name).trim()) ? speech.name : fallbackName);
-        setText($(DOM_IDS.adv.textSelf), speech.text || "");
-      }
 
       // speaking highlight (dim the non-speaking side)
       if (!showSpeech) {

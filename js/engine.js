@@ -19,7 +19,9 @@
   // Chapter list (章選択)
   // ---------------------------------------------------------
   const CHAPTERS = Object.freeze([
-    { choiceId: "ep5", chapterId: "chapter5", title: "EP5（第五章 PART1）" },
+    { choiceId: "ep5", chapterId: "chapter5", title: "EP5（PART1）" },
+    { choiceId: "ep5p2", chapterId: "chapter5_part2", title: "EP5（PART2）" },
+    { choiceId: "ep5p3", chapterId: "chapter5_part3", title: "EP5（PART3）" },
   ]);
 
   // ---------------------------------------------------------
@@ -29,6 +31,8 @@
   const SCENARIO_PATHS = Object.freeze({
     demo_akau_vs_koto: "./data/scenario/demo_akau_vs_koto.json",
     chapter5: "./data/scenario/chapter5_part1.json",
+    chapter5_part2: "./data/scenario/chapter5_part2.json",
+    chapter5_part3: "./data/scenario/chapter5_part3.json",
   });
 
   // ---------------------------------------------------------
@@ -121,60 +125,126 @@
     return m.has(nodeId) ? m.get(nodeId) : null;
   }
 
-  function renderNodeAtIndex(s, script, index, depth = 0) {
-    // 防御：無限gotoを防ぐ
-    if (depth > 8) {
+  async function renderNodeAtIndex(s, script, index, depth = 0) {
+  // 防御：無限gotoを防ぐ
+  if (depth > 8) {
+    s.view.speech.visible = true;
+    s.view.speech.side = "self";
+    s.view.speech.name = "System";
+    s.view.speech.text = "シナリオ遷移がループしました（goto）。";
+    setState(s);
+    return;
+  }
+
+  const node = script[index];
+  if (!node || !node.type) {
+    setState(s);
+    return;
+  }
+
+  // index は「現在位置」として保存（次クリックで index+1 が読まれる）
+  s.pointer.step = index;
+
+  if (node.type === "line") {
+    const prevBg = s.view.background.main;
+    const nextBg = Object.prototype.hasOwnProperty.call(node, "bg") ? node.bg : prevBg;
+    const needsFade = nextBg !== prevBg;
+
+    if (needsFade) {
+      await withFade(260, () => {
+        applyNodeToState(s, node);
+        setState(s);
+      });
+    } else {
+      applyNodeToState(s, node);
+      setState(s);
+    }
+    return;
+  }
+
+  if (node.type === "battle") {
+    await withFade(220, () => startBattle(node));
+    return;
+  }
+
+  if (node.type === "end") {
+    await withFade(220, () => gotoTitle(false));
+    return;
+  }
+
+  if (node.type === "goto") {
+    const targetId = node.target || node.to || node.idRef || null;
+    const ti = getNodeIndexById(s.chapterId, targetId);
+
+    if (ti === null) {
       s.view.speech.visible = true;
       s.view.speech.side = "self";
       s.view.speech.name = "System";
-      s.view.speech.text = "シナリオ遷移がループしました（goto）。";
+      s.view.speech.text = `goto先が見つかりません: ${String(targetId)}`;
       setState(s);
       return;
     }
 
-    const node = script[index];
-    if (!node || !node.type) {
-      setState(s);
-      return;
-    }
-
-    // index は「現在位置」として保存（次クリックで index+1 が読まれる）
-    s.pointer.step = index;
-
-    if (node.type === "line") {
-      applyNodeToState(s, node);
-      setState(s);
-      return;
-    }
-
-    if (node.type === "battle") {
-      setState(s);
-      startBattle(node);
-      return;
-    }
-
-    if (node.type === "end") {
-      gotoTitle(false);
-      return;
-    }
-
-    if (node.type === "goto") {
-      const targetId = node.target || node.to || node.idRef || null;
-      const ti = getNodeIndexById(s.chapterId, targetId);
-      if (ti === null) {
-        s.view.speech.visible = true;
-        s.view.speech.side = "self";
-        s.view.speech.name = "System";
-        s.view.speech.text = `goto先が見つかりません: ${String(targetId)}`;
-        setState(s);
-        return;
-      }
-      return renderNodeAtIndex(s, script, ti, depth + 1);
-    }
-
-    // unknown type -> ignore
-    setState(s);
+    await renderNodeAtIndex(s, script, ti, depth + 1);
+    return;
   }
+
+
+
+  if (node.type === "chapter") {
+    const targetChapterId = node.chapterId || node.chapter || node.toChapter || node.to || null;
+    const startId = node.start || node.startId || node.targetId || "start";
+
+    if (!targetChapterId) {
+      s.view.speech.visible = true;
+      s.view.speech.side = "self";
+      s.view.speech.name = "System";
+      s.view.speech.text = "chapter遷移の chapterId が指定されていません。";
+      setState(s);
+      return;
+    }
+
+    runtime.mode = "loadingScenario";
+
+    const nextScript = await loadScenarioNodes(targetChapterId);
+    if (!nextScript || nextScript.length === 0) {
+      s.view.speech.visible = true;
+      s.view.speech.side = "self";
+      s.view.speech.name = "System";
+      s.view.speech.text = `${getChapterTitle(targetChapterId)} のデータが見つかりません`;
+      runtime.mode = "adv";
+      setState(s);
+      return;
+    }
+
+    // stateを次章へ切替
+    s.chapterId = targetChapterId;
+    s.pointer.sceneId = targetChapterId;
+    clearChoice(s);
+    s.screen = SCREENS.ADV;
+
+    let startIndex = 0;
+    const ti = getNodeIndexById(targetChapterId, startId);
+    if (ti !== null) startIndex = ti;
+
+    // 章切替は常にフェード（先頭のlineで二重フェードしないよう bg を先に合わせる）
+    const first = nextScript[startIndex];
+    if (first && first.type === "line" && Object.prototype.hasOwnProperty.call(first, "bg")) {
+      s.view.background.main = first.bg;
+      s.view.background.front = null;
+      s.view.background.frontVisible = false;
+    }
+
+    runtime.mode = "adv";
+    await withFade(260, async () => {
+      await renderNodeAtIndex(s, nextScript, startIndex);
+    });
+    return;
+  }
+
+  // unknown type
+  setState(s);
+}
 
   let warnedFetchForFileScheme = false;
 
@@ -236,6 +306,7 @@
   const runtime = {
     mode: "idle", // idle | chapterSelect | loadingScenario | adv | battle
     lastBattleBranch: null, // { onWin?: string, onLose?: string }
+    transitioning: false, // 追加
   };
 
   // ---------------------------------------------------------
@@ -301,6 +372,35 @@
     setState(s);
   }
 
+    function resolveCharFileFromNode(charNode, prevCharState) {
+    // 優先：明示file（手動指定したい人用）
+    if (charNode && typeof charNode.file === "string" && charNode.file.trim()) {
+      return charNode.file.trim(); // "アカウ_怒.png" みたいなのもOK
+    }
+
+    // 表情だけ指定したい時があるので、nameは「ノード」→なければ「前状態」
+    const baseName =
+      (charNode && typeof charNode.name === "string" && charNode.name.trim())
+        ? charNode.name.trim()
+        : (prevCharState?.name || "").trim();
+
+    if (!baseName) {
+      // 何も特定できないなら現状維持
+      return prevCharState?.file ?? null;
+    }
+
+    const expr =
+      (charNode && typeof charNode.expr === "string") ? charNode.expr.trim() : "";
+
+    // 命名規則どおりに組み立て（拡張子はpng固定運用）
+    // constants.js に charVariant を足した場合：
+    return `${baseName}${expr ? "_" + expr : ""}.png`;
+
+    // もし constants.js を触りたくないなら、代わりにこれでもOK：
+    // return `${baseName}${expr ? "_" + expr : ""}.png`;
+  }
+
+
   function applyNodeToState(state, node) {
     clearChoice(state);
 
@@ -309,17 +409,36 @@
       state.view.background.main = node.bg; // null OK
     }
 
-    // characters
     if (node.self) {
-      state.view.characters.self.visible = !!node.self.visible;
-      state.view.characters.self.name = node.self.name ?? state.view.characters.self.name ?? "";
-      state.view.characters.self.file = node.self.file ?? state.view.characters.self.file ?? null;
+      const prev = state.view.characters.self;
+
+      // visibleは「指定があれば」反映。省略時は維持（表情だけ変えるノードで便利）
+      if (Object.prototype.hasOwnProperty.call(node.self, "visible")) {
+        prev.visible = !!node.self.visible;
+      }
+
+      if (typeof node.self.name === "string") {
+        prev.name = node.self.name;
+      }
+
+      // fileは expr / name から生成（明示fileがあればそれ優先）
+      prev.file = resolveCharFileFromNode(node.self, prev);
     }
+
     if (node.enemy) {
-      state.view.characters.enemy.visible = !!node.enemy.visible;
-      state.view.characters.enemy.name = node.enemy.name ?? state.view.characters.enemy.name ?? "";
-      state.view.characters.enemy.file = node.enemy.file ?? state.view.characters.enemy.file ?? null;
+      const prev = state.view.characters.enemy;
+
+      if (Object.prototype.hasOwnProperty.call(node.enemy, "visible")) {
+        prev.visible = !!node.enemy.visible;
+      }
+
+      if (typeof node.enemy.name === "string") {
+        prev.name = node.enemy.name;
+      }
+
+      prev.file = resolveCharFileFromNode(node.enemy, prev);
     }
+
 
     // speech
     if (node.speech) {
@@ -384,19 +503,12 @@
           return;
         }
 
-        // 初期ノード表示
-        s2.pointer.step = 0;
-        runtime.mode = "adv";
+        // 初期ノード表示（ここも renderNodeAtIndex に統一）
+      s2.pointer.step = 0;
+      runtime.mode = "adv";
+      Promise.resolve(renderNodeAtIndex(s2, script, 0)).catch(console.error);
+      return;
 
-        const node = script[0];
-        if (node?.type === "line") {
-          applyNodeToState(s2, node);
-          setState(s2);
-          return;
-        }
-
-        setState(s2);
-        advance();
       })
       .catch((e) => {
         console.error(e);
@@ -418,6 +530,7 @@
     if (runtime.mode === "loadingScenario") return;
     if (s0.screen !== SCREENS.ADV) return;
     if (isChoiceOpen(s0)) return;
+    if (runtime.transitioning) return;
 
     const s = deepClone(s0);
 
@@ -445,7 +558,8 @@
       return;
     }
 
-    renderNodeAtIndex(s, script, nextIndex);
+    Promise.resolve(renderNodeAtIndex(s, script, nextIndex)).catch(console.error);
+
     return;
   }
 
@@ -570,6 +684,17 @@
       runtime.mode = "idle";
     });
   }
+
+    async function withFade(ms, action) {
+    if (!RP.Transitions) { action(); return; }
+    runtime.transitioning = true;
+    await RP.Transitions.fadeOut(ms);
+    const r = action();
+    if (r && typeof r.then === "function") await r;
+    await RP.Transitions.fadeIn(ms);
+    runtime.transitioning = false;
+  }
+
 
   // ---------------------------------------------------------
   // Input (minimal until input.js arrives)

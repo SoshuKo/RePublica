@@ -185,6 +185,13 @@
       return encodeURI(`${ASSET_DIR.char}/${name}.png`);
     },
 
+    // 例：ASSET.charVariant("アカウ", "怒") -> ./assets/char/アカウ_怒.png
+    //     ASSET.charVariant("アカウ", "")   -> ./assets/char/アカウ.png
+    charVariant(name, expr) {
+      const e = (expr && String(expr).trim()) ? `_${String(expr).trim()}` : "";
+      return encodeURI(`${ASSET_DIR.char}/${name}${e}.png`);
+    },
+
     // 背景：拡張子は運用で統一推奨（png/jpg/webp）
     bgFile(filename) {
       return encodeURI(`${ASSET_DIR.bg}/${filename}`);
