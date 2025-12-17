@@ -2,6 +2,141 @@
   "nodes": [
     {
       "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "『カラバァタン共和国物語・EP5』"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ウォール傀儡政権、産油利権の独占のためにウォール軍を派遣するも、儲けにならないカウ派の殲滅はカラベイ軍に任せていた。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "それどころか、ウォールはカウ派にも武器を供与し、カラベイ軍とカウ派の抗争で儲けていたことが明かされ、カラベイの反ウォール感情は頂点に達した。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1966年、ジャハダーンでクーデターが発生し、ウォールは軍事通行権を失う。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "この影響で補給網が寸断され、カラベイでのウォールの支配は急速に揺らぎ始めた。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1968年8月、従来は祭祀儀礼にのみ従事していた第二・第三教導職が第一教導職ティラウン・パテイの辞任を要求し、彼はウォールへの亡命中に事故死した。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "教学会の多数の支持を受け、シャウン家派のアネン・キラネイが第一教導職に就任する。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "キラネイはラデン家からラデン・タネイを広報官に据え、ウォールによる内政干渉を激しく非難させた。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼の巧みな弁舌はウォールに対する怒りを募らせた民衆の支持を集め、「次代の第一教導職」と目されるようになる。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "シャウン・アカウ"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1961年、アーケイに生まれる。女子である。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "父は第二代第一教導職ビライン・アカネイの「なりすまし」ことシャウン・アヤである。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "九氏族(特にパテイ政権下に発言力を増したティラウン家)は九氏族の面子を守るため、アヤを法的に処罰することはなかったが、代わりにアカウの養育の最終決定権をアヤではなくその第一夫妻のセイネに一任した。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "男子に恵まれなかったセイネは第二・第三夫人との政争に勝つため、アカウを男子として育てることを決意した。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "この事実は、旦那であるアヤすら知らない教導国の最重要秘密となった。"
+      }
+    },
+    {
+      "type": "line",
       "id": "start",
       "bg": "屋敷.jpg",
       "self": {
@@ -32,8 +167,8 @@
       "type": "line",
       "self": {
         "name": "アカウ",
-        "file": "アカウ.png",
-        "visible": true
+        "visible": true,
+        "expr": "怒"
       },
       "enemy": {
         "name": "ニア・キナイニ",
@@ -216,8 +351,8 @@
       "type": "line",
       "self": {
         "name": "アカウ",
-        "file": "アカウ.png",
-        "visible": true
+        "visible": true,
+        "expr": ""
       },
       "enemy": {
         "name": "ニア・キナベイ",
@@ -239,8 +374,8 @@
       },
       "enemy": {
         "name": "アカウ",
-        "file": "アカウ.png",
-        "visible": true
+        "visible": true,
+        "expr": ""
       },
       "speech": {
         "side": "self",
@@ -254,6 +389,12 @@
         "side": "self",
         "name": "ナレーション",
         "text": "そう言うと、アパラは屋敷から姿を消した。"
+      },
+      "enemy": {
+        "visible": false
+      },
+      "self": {
+        "visible": false
       }
     },
     {
@@ -262,6 +403,14 @@
         "side": "self",
         "name": "アカウ",
         "text": "「……待って！」"
+      },
+      "self": {
+        "name": "アカウ",
+        "visible": true,
+        "expr": "悲"
+      },
+      "enemy": {
+        "visible": false
       }
     },
     {
@@ -278,6 +427,11 @@
         "side": "self",
         "name": "アカウ",
         "text": "（選択……？　いまのわたしが、選んだのは……父さまを守る、って——それだけなのに）"
+      },
+      "self": {
+        "name": "アカウ",
+        "visible": true,
+        "expr": "悲"
       }
     },
     {
@@ -293,11 +447,13 @@
       "speech": {
         "side": "self",
         "name": "ナレーション",
-        "text": "遠くで風が鳴る。\n屋敷はまた「禁域」の顔に戻る。\nだが、戻らないものが一つある。\n\n——アカウの中に落ちた、“選択”の種だけは。\n\n（PART2はまだ未実装のため、ここでタイトルへ戻ります）"
+        "text": "遠くで風が鳴る。\n屋敷はまた「禁域」の顔に戻る。\nだが、戻らないものが一つある。\n\n——アカウの中に落ちた、“選択”の種だけは。"
       }
     },
     {
-      "type": "end"
+      "type": "chapter",
+      "chapterId": "chapter5_part2",
+      "start": "p2_start"
     },
     {
       "type": "line",
@@ -333,8 +489,8 @@
       "type": "line",
       "self": {
         "name": "アカウ",
-        "file": "アカウ.png",
-        "visible": true
+        "visible": true,
+        "expr": "悲"
       },
       "enemy": {
         "name": "ニア・キナベイ",

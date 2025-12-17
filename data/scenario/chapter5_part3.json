@@ -1,0 +1,1372 @@
+{
+  "nodes": [
+    {
+      "type": "line",
+      "id": "p3_start",
+      "bg": null,
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1976年。キラネイはタネイを広報官から解任する。\nそれは人事の一言で済むはずの出来事だった。けれど、言葉で国を動かしてきた者にとって、言葉で椅子を奪われるのは——刃より冷たい。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイはシャウン・パラジェイの信奉者であった。\nこの時代には、パラジェイの功罪は知れ渡っており、ただ『建国の父』として伝説を語られるのみであった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "しかし、タネイは違った。彼はパラジェイに心酔しており、彼の作った「真の教導国」の復権を夢みていた。\nキラネイは、民衆を扇動する言葉の中に身を潜める「それ」に気がついたのであった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "“それ”は、露骨な過激さではない。\n正しさの衣を着て、善意の顔で、熱だけを増幅させる——民衆の胸に残る火種。\nキラネイが見抜いたのは、タネイそのものではなく、タネイの言葉が呼び起こす「復権」という亡霊だった。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "礼拝所.jpg",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "失意のタネイは、フリナー小教区の礼拝所で神に祈る。\n静かな石床。香の煙。祈りの言葉だけが、天井の高みへ昇っていく。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "「'Ï'E'A Géjéné Kuējebeyï、唯一神イラトよ、迷えるわたしを教え導きください」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼の声は揺れていない。\n揺れていないからこそ、危うい。\n崩れそうなものほど、最後は硬く固まる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "礼拝所にアカウとマジェン・カレイ（のちの第二教導職）が入ってくる。\n外の光が扉の隙間から差し込み、煙の筋が一瞬だけ白く浮かぶ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "「タネイ兄さん！　彼がアカウ、『建国の父』の孫だ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "紹介の声が礼拝所の空気を震わせる。\nタネイの祈りの余韻に、世俗の匂いが混じる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "「神の御前だぞ、静粛に」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "言葉はきつい。だが、怒気ではない。\n“祈りの場”を守るための規律だ。\n三人は礼拝所を出る。扉が閉まり、香の匂いが背中で切れた。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "市街地.jpg",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "外気が冷たい。礼拝所の石壁が、彼らの声を少しだけ柔らかく反響させる。\nそして、ここからが——“人の話”になる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「はじめまして、広報官閣下。わたしはシャウン・アカウです」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "礼儀正しい声。けれど、目は真っ直ぐだ。\n幼さと芯の強さが、同じ瞳の中で同居している。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "「『元』広報官だ。ニュースを見ただろう」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイは顔を曇らせる。\n自分は教導国に忠実なだけなのに、何を見誤ったのだろうか。\n忠実さは美徳のはずだ。なのに、いつからそれは“危険”と呼ばれるようになった？"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「笑ってください。生きていれば、それでいいんです。なんの励ましにもならないかもしれませんが」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウが励ます。\n彼女は満面の笑みを浮かべてみせた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "その笑顔は、政治の理屈では測れない。祈りの言葉でもない。\nただ、人を生かすための、まっすぐな光だ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイは笑った。\n口角が上がるだけなのに、胸の奥の固まりが少しだけほどける。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "「かわいいな」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイは彼女を褒めた。\n「かわいい」。生まれてこのかた、彼女の言われたことのない言葉で。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……え？」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "驚きが声になる前に、熱が頬へ走る。\nアカウは、どう反応していいか分からない。\n褒め言葉に慣れていない者ほど、褒め言葉で世界が傾く。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "「『かわいい』？　アカウは『かっこいい』だろ！」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイが場を和ませる。\n強い言い切り。軽い調子。救いのタイミング。\n空気は笑いへと逃げ道を得る。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "しかし、アカウの顔は火照っていた。\nまたしても15歳、アカウの運命が音を立てて狂いだした。\n——ほんの一言が、歯車を噛ませることがある。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "それが恋か、憧れか、あるいはもっと厄介な何かか。\nこの時点では、誰にも名付けられない。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "ガティナ大講堂01.jpg",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "広報官の公認にはアカウが選ばれた。\n彼女は自分にタネイの後任が務まるはずがないと思った。\nだが、タネイはアカウの背中を押した。彼はアカウなら広報官が務まると思ったのだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「わたしが……？　そんな……無理です。だって、わたしは——」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "「無理だと思うのは、お前が“言葉”を大切にしているからだ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイの声には、失職した者の苦さが残っている。\nそれでも彼は、苦さを誰かに飲ませるために話していない。\n“次”を生かすために話している。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "「言葉は武器だ。だが、武器は持ち方で守りにもなる。……お前は、守る側に立てる」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼はアカウに話術を伝えた。\n息継ぎの場所。語尾の落とし方。視線の運び。沈黙の置き方。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "人は言葉で熱くなる。ならば、言葉で冷ます術も要る。\nタネイはそれを、誰より知っている。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウはタネイとの交流を深めるなかで、彼に想いを馳せていく。\n尊敬。救われた気持ち。大人の背中。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そして、あの日「かわいい」と言われたときに、確かに胸の奥で鳴った音。\nそれが静かに、確実に、彼女の中で形になっていく。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "——こうして。\n1976年の“解任”は、一人の男を終わらせた出来事ではなく、\n一人の少女の運命を、別の角度へ押し出す出来事になった。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "スキー場01.jpg",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "同年12月、ハヴァレイキへ巡行に来ていた教導職一行に\nアカウ、タネイ、カレイ、それとデルタイのホロガンド市出身少女、\nコト・テイル・アイテールの四人が同行する。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトを連れてきたのはデルタイの大企業アイテール社の令嬢であるコトを\nタネイと結ばせたいラデン家の意向だろう。\nキラネイの計らいで、「若者」たちは隣のギラタン市のスキー場で遊んでいた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "雪は軽い。空は高い。\nけれど四人の間には、重いものが降り積もっている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「なに作ってるの？」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "「ガティナ大講堂」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウが雪遊びをはじめるカレイに声をかける。\nカレイはまだ10歳とはいえ、落ち着いたことが好きらしい。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "少し離れた斜面。ボードのエッジが雪を削る音。\n並走する二つの影は、やけに“絵”になってしまう。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "「怖がって重心を後ろにすると、却ってバランスを崩すんだ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトにスノーボードを教えるタネイ。\n彼はコトの体を優しく支えて、ゆっくり並走する。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「ありがとう。優しいのね」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトはわざとらしくタネイに体を寄せる。\nおそらく、彼女も自分が政略結婚の「駒」であることを理解していたのだろう。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイもまた然りである。\n“理解している者同士の芝居”は、笑顔ほど冷たい。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "しかし、アカウは違った。\n彼女は本気でタネイの心がコトによって動かされることを警戒していた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "なにより、自分には『秘密』がある。\nどんなに努力しても、自分がタネイと結ばれることはない。\nそれが嫌だった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ふてくされたアカウがひとりでスノーボードに乗っていると、\n勢いあまってコースから外れてしまう。"
+      }
+    },
+    {
+      "type": "line",
+      "id": "p3_circle",
+      "bg": "スキー場02.jpg",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "風が強くなる。視界が白くなる。\n“うまくいかない”は、雪の上だと一瞬で事故になる。"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "幸いにして崖の前で転んだ彼女に、タネイが駆けより、彼女を抱き寄せる。\nアカウの細い身体に触れ、思わず手を離すタネイ。"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "タネイ",
+        "text": "「すまん、大丈夫か」"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは嬉しさと恥ずかしさにタネイから顔を背ける。\nタネイもまた、ふとよからぬ想像をしてしまった自分を恥じる。"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "体勢を立て直した二人が、崖側から立ち去ろうとした、そのとき。\nコトがタネイを崖から落とそうと手を伸ばす。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「なにをするんだ！」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウがコトの手を掴み、制止する。\n指先が冷たい。——冷たすぎる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「タネイさまのお背中が愛おしくて、つい」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトがごまかす。\n彼女は嘘をついている。そこには殺意があった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "幼少期からデューレイの訓練を受けていたアカウはすぐに理解した。\n“立ち方”と“目”が、もう答えだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "「なにをしているんだ、早く行こう」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイはそのことに気づかず、その場から立ち去る。\n残るのは雪と、二人分の呼吸だけ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "同じくその場を離れようとするコトを、アカウが止める。\n握り返す手が、さっきより強い。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「待てよ。お前、わざとだろ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「なんのことかしら」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの手をコトが振り払う。\n雪が散る。音は小さいのに、挑発は大きい。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「とぼけるな。タネイによからぬことを考えているなら、わたしが止める」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「『よからぬこと』を考えているのはあなたじゃなくって？」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトが挑発する。\n先に手を出したのはアカウだった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "雪上の決闘、ただし、今回は殴り合いだ。\n師匠リアから教わったのは、なにも剣術だけじゃない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの拳が力のままにコトを捉える。\nしかし、コトはそれを軽く避ける。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "雪上にも関わらず、「完全に訓練された者」の身のこなしだった。\n避け方が、護身じゃない。殺しの距離だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「『立ち振る舞い』でわかるんだよ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウが看破するも、構わずコトは反撃に出る。\n笑みが崩れないまま、拳だけが来る。"
+      }
+    },
+    {
+      "type": "battle",
+      "enemyName": "コト（初戦）",
+      "onWin": "p3_win_01",
+      "onLose": "p3_lose_01"
+    },
+    {
+      "type": "line",
+      "id": "p3_win_01",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "拳は止まる。息が白い。\n勝ったのに、寒気が増す。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトの足運びが変わる。\n“負けた人”の引き方じゃない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「……強いのね、アカウ」\n「でも、だからこそ──」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "次の瞬間、コトの手が伸びる。\n狙いは拳じゃない。背中だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……っ！」\n「やっぱり、わざとだ！」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「ふふ……違いますわ」\n「ただ、選び直しただけですの」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの踵が雪を削る。\n崖の縁が、すぐ後ろにある。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「しかたないわ」\n「彼の代わりになってもらいましょう」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "身体が押される。\n風が、足元から吹き上がる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「やめろ……！」\n「ここで……！」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "「おーい！帰るぞ！」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "声が割って入る。\n同時に、小さな手が二人の間へ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "「なにしてんだよ！」\n「危ないだろ！」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "押し込みは止まる。\nコトの表情が“淑女”に戻る。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「まあ……わたくしったら」\n「転びそうになっただけですわ」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "嘘だ。アカウにはわかる。\nだが、今は証明できない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「彼と仲睦まじくしていたから」\n「つい嫉妬してしまいましたわ。ごめんなさい」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトが手を取ろうとする。\nその指先は、優雅で冷たい。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……触るな」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは手を払いのけ、立ち去る。\n胸の奥に、疑念が刺さったまま。"
+      }
+    },
+    {
+      "type": "goto",
+      "target": "p3_star"
+    },
+    {
+      "type": "line",
+      "id": "p3_lose_01",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "拳が鈍る。息が乱れる。\n雪が、やけに深い。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトは崩れない。\n“訓練された型”のまま詰めてくる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「くっ……！」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「しかたないわ」\n「彼の代わりになってもらいましょう」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトの手が背中に届く。\n崖が、もう逃げ場にならない。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「やめ──」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "押される。足が空を踏む。\n世界が、白から青へ反転する。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……っ！！」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "落下。風音。\n雪面が遠ざかっていく。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "上から、コトの声だけが届く。\nやさしい調子で、冷たい。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「ごめんなさいね」\n「わたくし、間違えてしまいましたわ」"
+      },
+      "enemy": {
+        "name": "コト",
+        "file": "コト.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "次の瞬間、視界が途切れる。\n雪の光が、闇に飲まれる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "【LOSE END】「ギラタンの白い底」\n\n（敗北パート終、○へ戻る）"
+      }
+    },
+    {
+      "type": "goto",
+      "target": "p3_circle"
+    },
+    {
+      "type": "line",
+      "id": "p3_star",
+      "bg": "電車内.jpg",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ハヴァレイキからアーケイへの帰路、ハヴァレイキ回廊。\n幾多の英雄たちが通ったこの道には、今や高速鉄道が敷かれ、\nかつての貧しさは姿を消していた。"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "窓の外は速く流れる。\n景色だけが変わっていくのに、胸の中だけが置き去りだ。"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "タネイ",
+        "text": "「わたしを、庇ってくれたんだろう？」"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "車内で、タネイがアカウに声をかける。\n声は低い。責める響きではない。"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "タネイ",
+        "text": "「いわゆる『政略結婚』だ」\n「わたしの意思を無視して話が進んでいる」"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "タネイ",
+        "text": "「それに反対してくれたんだろう？」\n「……ありがとう」"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……ううん」\n「わたしが、そうしたかっただけ」"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "少し違った。\nけれど、アカウは嬉しかった。"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そして同時に、彼女は彼に優しさを見出した。\n彼なら優しいカラベイを作ってくれる。"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "（この人を、わたしが……）"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "このとき、彼女は命をかけてタネイを第一教導職にすることを誓った。"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "【PART3、完、PART4へ（PART4未実装の間はタイトル画面に戻る）】"
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "end"
+    }
+  ]
+}
