@@ -1,0 +1,1527 @@
+{
+  "nodes": [
+    {
+      "type": "line",
+      "id": "p4_start",
+      "bg": null,
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは国営放送の抜本的改革に着手し、\n娯楽・情報番組を通じた新たなメディア戦略を展開することで頭角を現した。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "笑いの裏に、安心の裏に、生活の裏に。\n彼女は“国民が毎日触れる場所”へ、丁寧に仕掛けを埋め込んでいった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "特に、タネイを第一教導職にするためのプロパガンダを随所に仕込み、\n国民は「次はタネイ」と誰しもが確信していた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "番組の締めの一言。\n街頭インタビューの編集。\n英雄譚の語り口——「次」の輪郭だけが、少しずつ濃くなる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1978年8月、カラベイに衝撃の報せが入る。\nキラネイが急死したのだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "国が一瞬、息を止めた。\nあまりに突然で、あまりに“都合がよすぎる”死だった。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "委員会室.jpg",
+      "self": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カウ派の壊滅によって警視庁捜査一課に配属されたサイは現場検証を行なっていた。\n同じ捜査一課の課長になったネキネイは、サイに忠告する。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "ネキネイ",
+        "text": "「サイ、真相を明らかにしたい気持ちは山々だけど、深追いしない方がいいわ。嫌な予感がする」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ネキネイの声は、上司の命令というより、\n戦場を知る者の“本能の警報”だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "サイ",
+        "text": "「だからこそ、わたしたちは捜査するんじゃないですか」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サイの目は、現場の埃よりも“人の匂い”を嗅いでいる。\n彼は、事件の形をした巨大な影を感じ取ってしまった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "巨大な陰謀を感じとり、「事件性なし」として片付けようとする仲間たちをよそに、\nサイは事件を追っていく。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "サイ",
+        "file": "サイ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "気づいたら、彼は警察庁内で孤立していた。\n味方が減るほど、真相が近い——そういう孤立だ。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "ガティナ大講堂01.jpg",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "同刻、ガティナ大講堂で報せを受けたアカウ。\n彼女もまた、嫌な予感を感じ、部下に独自に事件の調査を依頼する。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "情報は武器。\nそして武器は、抜く前に手入れが要る。\nアカウは“抜くための情報”を集め始めた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "翌日、部下の一人、覆面の男が調査結果をアカウに語る。\n声は低く、身元は伏せられ、しかし内容だけが生々しい。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "警察庁は九地本隊(このとき、本隊は警察庁公認の自警団)の圧力を受けて捜査を打ち切っていたが、\n一人だけ、サイと名乗る警視庁捜査一課の刑事が政務官邸に捜査の継続の嘆願を出しているという。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "“打ち切り”は、真相の終わりじゃない。\n真相を終わらせたい者がいる、という開始の合図だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "容疑者の目星はついているのかと、アカウは尋ねる。\n男が読み上げる容疑者リストの中には、タネイの名前があった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "耳が熱くなる。\n胸の奥が、氷の塊に変わる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは焦る、まさか、彼が第一教導職猊下を殺すわけがない。\n“次はタネイ”——その確信が、いま刃物みたいに彼女を刺した。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「その刑事はいまどこにいる」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "アパラ",
+        "text": "「ミセニティウ大講堂、教学院の塔の第一委員会室です」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "すぐに向かわなければならない。\nアカウは謎の焦燥感に駆られ広報官執務室を立ち去ろうとする。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そのとき、男が声をかける。\n背中に刺さる声は、助言ではなく“予告”だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "アパラ",
+        "text": "「『選択』のときは近い。必要があれば、わたしにお声かけください」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは構わず部屋をあとにした。\n——今は、声に振り向く余裕がない。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "転向の橋.jpg",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ミセニティウ大講堂。\n転向の橋を法議院から教学院へ向かって駆けるアカウ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "息が焼ける。靴底が鳴る。\n愛する人を守らなければ、その意志は彼女の疲労を吹き飛ばした。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "教学院の塔は会期外につき、静寂が包んでいた。\n静かすぎて、足音が罪みたいに響く。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "委員会室.jpg",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "第一委員会室に入るアカウ。\n扉が閉まる音が、やけに重い。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「あなたが例の刑事ですね、わたしはシャウン・アカウ、広報官です。話を聞かせてください」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女は現場検証中の刑事、サイに声をかける。\n机上には書類、手袋、そして“結論になりかけた何か”。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サイ",
+        "text": "「アカウ閣下ですか、よかった。わたしはラカン・サイ、警察庁第一課所属。あなたにお願いがあります」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サイの声は疲れている。\nだが芯がある。孤立した者の声だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サイは語り出す。\n事件のとき、ミセニティウ大講堂にいた人物は多数いたが、みな入口で持ち物検査を受けていた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "しかし、特権により検査を免れたのは、九氏族の人間だけ。\nそして、そのとき第一委員会室にいた九氏族は、ラデン・タネイただ一人。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは絶句する。\n言葉が出ない。出せば崩れる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイに容疑がかかっている。\n彼女は震えた声で尋ねる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「でも、それだけでは彼が犯人という決定的な証拠にはならないですよね」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サイ",
+        "text": "「えぇ。第一教導職猊下の死因は心臓麻痺です。仮に毒物による犯行なら、この国ではその入手経路は限られています」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "“限られている”という言葉が、\n“限られた誰かがやった”に聞こえてしまう。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "それを聞いたとき、彼女は自分が何をすべきかを理解した。\n守るべきは真実じゃない。——タネイだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「それで、わたしにどうしてほしい？」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サイ",
+        "text": "「ですから、この調査報告書を政務官邸に提出し、捜査の再開をお願いしたいのです」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サイの頼みは正しい。\n正しいからこそ、アカウにとっては“許されない”。"
+      }
+    },
+    {
+      "type": "line",
+      "id": "p4_circle",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「お断りします」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウのナイフがサイの急所を突く。\n彼は何が起こったのかを理解できないまま、倒れ伏した。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "静寂が戻る。\nその静寂は、さっきまでの静寂とは違う。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "しかし、サイは瀕死の状態で立ち上がる。\n血より先に、意志が立ち上がる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サイ",
+        "text": "「ここで死んだら、正義も死ぬ。わたしは生きて部屋を出る！」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "立ち上がったサイは警棒を取り出す。\n——ここからは、言葉では止まらない。"
+      }
+    },
+    {
+      "type": "battle",
+      "enemyName": "サイ",
+      "onWin": "p4_win_01",
+      "onLose": "p4_lose_01"
+    },
+    {
+      "type": "line",
+      "id": "p4_win_01",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "残された時間は少ない、攻めのデューレイが求められる。\n彼は瀕死にも関わらず、アカウに猛攻をしかける。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウはナイフを拾い上げ、彼の重い一撃をいなす。\n床に落ちた金属音が、鐘みたいに響く。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「タネイは第一教導職になる男だ！」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "怒りのままにナイフを振るう。\n剣が交わる音が、静寂の中に響く。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サイはアカウのナイフを捌き、カウンターを入れる。\nみぞおちに一撃を受けつつ、その痛みを、強い意志で覆す。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ついにアカウはサイに警棒を手放させた。\nその瞬間、今度こそ倒れるサイ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サイ",
+        "text": "「父さん、ちゃんと『ラカン・ライ』を超えられたかな」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウが力尽きたサイを看取ると、\n彼女の部下の部下の覆面の男、アパラが部屋に入る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「見られていましたか」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "アパラ",
+        "text": "「ご安心ください。わたしはあなたに『選択』を与えにきました」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そういうと、「白梟」のバッチをアカウに手渡す。\n九地がこの場の処理を引き受けるというのだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女は迷わずバッチを手にとる。\n迷いは、さっき床に捨てた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アパラ",
+        "file": "アパラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「もう迷わない。わたしがラデン・タネイを守る」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女の手に握られた純白のナイフの塗装はわずかに剥がれ、\n血が染み込んでいた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "“守る”と決めた手は、もう清潔ではいられない。\nそれでも彼女は、その刃を握り直す。"
+      }
+    },
+    {
+      "type": "chapter",
+      "chapterId": "chapter5_part5",
+      "start": "p5_start"
+    },
+    {
+      "type": "line",
+      "id": "p4_lose_01",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "残された時間は少ない。\nだが、時間が少ないのは——アカウのほうだった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サイは瀕死にも関わらず前へ出る。\n攻めのデューレイが、壊れた身体を動かしている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの刃は速い。\nそれでも、サイの警棒は“止めるため”に作られている。\n刃の線を、線ごと折る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "打ち合いの中で、アカウの呼吸が乱れる。\n“守る”は強い。だが“隠す”は、呼吸を奪う。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サイの一撃が、腕を痺れさせる。\nナイフが指から離れそうになる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……っ、タネイは……！」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "言葉にした瞬間、隙が生まれる。\nサイはその隙を、ためらいなく踏み込んで埋めた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの視界が跳ねる。\n膝が落ちる。床が近い。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サイの警棒が止まる。\n止まったのは、殺すためじゃない。捕らえるためだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サイ",
+        "text": "「……終わりじゃない」\n「ここからが、捜査だ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの手首に冷たい感触。\n拘束具の金属音が、部屋の静寂を“手続き”に変える。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "扉の外が騒がしくなる。\n誰かが走る音、無線の声、増えていく足音。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "ネキネイ",
+        "text": "「サイ！……生きてたのね」\n「……あなた、何をしたの」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ネキネイの視線が、床の血と、アカウの手元を追う。\nそして一瞬だけ、目が痛むほどに細くなる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サイ",
+        "text": "「調査報告書を提出します」\n「捜査を、止めさせません」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サイ",
+        "file": "サイ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "孤立していたはずのサイの背後に、\n“正しさに乗る者たち”が次々と集まっていく。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは連行される。\n広報官の肩書きは、この瞬間から鎖になる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「違う……！」\n「タネイは……第一教導職になる人なのに……！」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "声は届かない。\n届かないのではない。——届かせたくない者が多すぎる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そして、あの覆面の男は現れない。\n「選択」は与えられない。ここでは。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "【LOSE END】「広報官、逮捕」\n\n（敗北パート終、○に戻る）"
+      }
+    },
+    {
+      "type": "goto",
+      "target": "p4_circle"
+    }
+  ]
+}

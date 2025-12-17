@@ -1,0 +1,1802 @@
+{
+  "nodes": [
+    {
+      "type": "line",
+      "id": "p5_start",
+      "bg": null,
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "キラネイの喪が明け、世論は『タネイこそ次期第一教導職』の声で染まる。\n教学会はこれを事実上追認し、タネイは第一教導職に君臨することになる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "“次はタネイ”は、かつて合言葉だった。\nいまは、国の空気そのものになっていた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1984年、タネイは空港・海港・鉄道駅を一体化した「タネイ・トライポート」を建設し、\n新たなフラッグキャリア「フォル航空」を設立して国際交通の拠点とした。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "国内政策としては、国民に限った医療費無償化や最低賃金制度の導入を実施し、\n女性議員の登用によって女性参政権を拡充した。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "また、飲酒禁止法を厳格化して飲酒を明確に違法行為とし、\n国民表現を「カラベイ人」ではなく民族単位である「ドルマルト系民族」として再編することで、\n宗教的・民族的アイデンティティを強調した。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "外交面では1986年にルルペ協定を締結し、\nカラベイ教導国を地域共同体の盟主国家へと押し上げた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "また、国際広報戦略の一環として報道機関「クオ・フラメイ」を設立し、\nさらにキャビアなどの高級食文化を軸としたカラバル料理の海外展開を推進した。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "国家は前へ進む。\nだが“前へ進むための影”が、必ず必要になる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイの活躍の裏にはアカウの暗躍があった。\n九地本隊は79年の西アルトスの動乱（スクニューネ内戦・デルタイの経済不況）に際して\n警察庁公安局へ登用・編入された。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "特に、経済不況下のデルタイで勢力を拡大したデルタイの犯罪結社「五天」は、\nデルタイ国内の犯罪組織を統一し、違法薬物の売買で巨額の富を得た。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "秩序の隙間に、金が流れる。\n金の流れに、刃が集まる。\nそして刃は、国家の“外”ではなく“内”へ根を張る。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "アイテール社.jpg",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1984年12月、九地はカラベイの健全な教導のため、国内の五天の壊滅作戦に乗り出す。\n九地はアイテール社が五天のフロント企業だという情報を掴み、\nアカウは九地を率いて本社を襲撃する。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "夜のガラス張りの高層。\n企業の顔をした城。\nその内部にあるのは、書類と金と、血の匂いだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "エレベーターは止まらない。\n警報は鳴らない。\n“鳴らせない者たち”が、すでに制圧されている。"
+      }
+    },
+    {
+      "type": "line",
+      "id": "p5_circle",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "廊下の先、最上階。\n扉の向こうにいるのは、ただの令嬢ではない。\n“青天”——五天の幹部。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「暑いわ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "12月だというのに、薄手の服を着るコト。\n彼女はラデン・タネイの第二夫人になっていた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "軽装は見栄ではない。\n逃げるためでもない。\n——殺すために、余計なものを削っている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「わたしが殺したかった」\n「自ら出向いた甲斐があった」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウはそう言うと、ナイフを取り出す。\n自分から愛を奪った女を、生かしておくわけがない。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトもナイフを取り出し、応戦する。\n彼女が軽装をしているのは、動きを軽くするためでもあるが、\n自らの感覚の過敏さを研ぐためでもある。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女は肌でアカウの動きを察知し、反射的に迎撃する。\n“見る”より先に、“当てる”身体。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの剣技は鍛えられていた。\n8年前の決着をつけるため、彼女はコトの動きを分析していた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "動きは常に最小限。\n大きく振りかぶった攻撃は危険。\nかといって、コトの戦術は体力を消費しないため、持久戦に持ち運ぶのも難しかった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "室内の空気が薄い。\n写真の紙がわずかに揺れ、蛍光灯が冷たく唸る。\n——始めるなら、今しかない。"
+      }
+    },
+    {
+      "type": "battle",
+      "enemyName": "コト（二戦目）",
+      "onWin": "p5_win_01",
+      "onLose": "p5_lose_01"
+    },
+    {
+      "type": "line",
+      "id": "p5_win_01",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "刃が交わる。\n火花ではなく、冷たい金属音が散る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトは“反射”で迎撃する。\nアカウは“予測”で迎撃の外側を切る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "一太刀で決めない。\n決めようとした瞬間、反射に刺される。\nアカウはそれを知っている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……最小限、最小限」\n「8年前の答え合わせだ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの踏み込みは短い。\n短いのに、距離が詰まる。\nコトの“当てる身体”が、初めて迷う。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「ふふ……いいわ」\n「わたくしを退屈させないで」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトの刃が閃く。\n狙いは手首。武器を落とさせるための角度。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウはわずかに肘を畳む。\n刃先が皮膚をなぞるだけで済む。\n代わりに、体勢を崩さない。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "反射の迎撃は強い。\nだが反射は、環境に弱い。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは窓へ半歩寄る。\n一瞬、刃の軌道が“風”に触れる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "窓を開けた。\n冷たい風が部屋に入り込む。\n紙が舞い、写真が揺れ、空気が荒れる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「……っ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "風はコトの反射迎撃を鈍らせる。\nその“遅れ”は、ほんの半拍。\nだが刃の世界では、半拍が命だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの手首がコトの手首を弾く。\n同時に刃の背で、指を叩く。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトのナイフが床へ落ちる。\n金属音が、勝敗の確定音になる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「8年分の恨みを」\n「いたぶりながら殺してやる」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「あなたの愛は」\n「かわいすぎるわ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウがコトにナイフを突きつけた途端、\n部屋が爆発する。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "光。衝撃。\n窓ガラスが白い粒になって吹き飛ぶ。\n床が跳ね、天井が落ち、写真が燃える。"
+      }
+    },
+    {
+      "type": "goto",
+      "target": "p5_star"
+    },
+    {
+      "type": "line",
+      "id": "p5_lose_01",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "刃が交わる。\nだが音が違う。\nアカウの呼吸が、先に乱れる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトの反射迎撃は鈍らない。\n窓へ誘導する前に、誘導の“意図”を読まれる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「その目……」\n「わたくし、嫌いじゃないわ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトの刃が手首へ走る。\n一撃目で武器を落とさせる。\n二撃目で、終わらせる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの指が痺れる。\nナイフの柄が、汗で滑る。\n落ちる——その瞬間が来る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……ッ！」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "金属音。\n床に落ちたのは、アカウの刃だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウが下がる。\nだが背後は壁。\n窓へも届かない。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「ねえ、アカウ」\n「わたくし、彼を愛していたの」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトの声は甘い。\n甘いから、毒だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「利用じゃないわ」\n「壊したいほど、愛していたの」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "踏み込みは最小限。\n肩の動きも最小限。\nそれなのに、刃先だけが確実に急所へ届く。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは腕で受ける。\n腕が裂ける。\n次は——胸だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「タネイは……！」\n「あなたなんかに……！」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「だからよ」\n「あなたは、邪魔なの」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトの刃が、静かに入る。\n痛みは遅い。\n温かさだけが先に広がる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの膝が落ちる。\n写真だらけの壁が、滲んで見える。\nタネイの顔が、何枚も揺れる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「安心して」\n「爆発なんて、必要ないわ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "爆発は起きない。\n起きるのは、呼吸の終わりだけ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "コト（二戦目）",
+        "file": "コト.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "最後に聞こえたのは、\nコトの靴が床を鳴らす音と、\n紙が静かに落ちる音だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "【LOSE END】「スノードロップ」\n\n（敗北パート終、○へ）"
+      }
+    },
+    {
+      "type": "goto",
+      "target": "p5_circle"
+    },
+    {
+      "type": "line",
+      "id": "p5_star",
+      "bg": "病室.jpg",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "白い天井が、ゆっくりと焦点を結ぶ。\n鼻に残るのは消毒液の匂いと、どこか焦げた記憶の残り香。\nアカウが病室で目を覚ますと、そこにはタネイがいた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "タネイ",
+        "text": "「大丈夫かアカウ」\n「お前はガス爆発に巻き込まれたんだ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "タネイ",
+        "text": "「コトも爆発に巻き込まれ、即死だった」\n「お前だけでも、無事でよかった」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイはなにも知らなかった。\n彼は愛する妻を失った悲しみに暮れながらも、\n心の底からアカウの無事に安堵していた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "その安堵が、鋭すぎるほど“本物”だからこそ、\nアカウの胸の奥の罪は、痛みではなく重みになって沈む。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「ご心配をおかけしました、第一教導職猊下」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "形式の言葉は、盾になる。\nけれど、盾の裏で震えているのは、忠誠ではなく感情だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは嬉しかった。\nコトを始末できたからではなく、\n純粋に愛する人に心配されたからであった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "——“心配される”ということは、\n必要とされることと似ている。\nアカウはその温度を、傷口より先に感じてしまった。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": null,
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "一週間後、アカウは「青天」がドゥルグァタンで生存しているという報せを受ける。\nもっとも、カラベイではコトは死亡したものとして扱われ、\nコトが「青天」であるという事実は教導職のみが知る事実となった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "死は、時に“手続き”として処理される。\n生存は、時に“機密”として保存される。\n名を葬っても、影はどこかで呼吸を続ける。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "もっともアカウにはどうでもよかった。\nタネイの命を狙うものを排除し、\n彼を守り抜いたのだから。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "結果がすべてだ、と。\nそう言い聞かせるほど、心の奥で別の声が疼く。\n——それでも、守れた。守った。守り切った。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "ガティナ大講堂01.jpg",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ガティナ大講堂。\n石造りの廊下は冬の冷えを抱えたまま、足音だけを返す。\nアカウは息を整えながら、第一教導職謁見室へ向かう。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "扉の前で、指が一瞬だけ止まる。\nこの先は、刃では切り開けない。\n言葉でしか進めない場所だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "第一教導職謁見室に現れたアカウ。\nタネイは書類から目を上げ、彼女を見た。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "タネイ",
+        "text": "「どうした」\n「顔色が違う」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「話があります」\n「実はわたしは」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女はタネイに秘密を打ち明ける。\nどんな反応をされるのか、不安で仕方なかった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "拒絶されたら、終わる。\n見損なわれたら、崩れる。\n“守ってきた世界”が、全部意味を失う気がした。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "言葉は喉でつかえ、胸を押し返し、\nそれでもアカウは、最後まで言い切る。\nここまで来たら、もう戻れない。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "タネイ",
+        "text": "「そんなこと」\n「わたしには関係のないことだ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "一拍。\nアカウの中で、時間だけが止まる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "次の瞬間、タネイが歩み寄り、\nアカウを抱きしめる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "温かさが、鎧の隙間に入ってくる。\n言葉より先に、身体が理解してしまう。\n——受け入れられたのだ、と。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女は生まれて初めて他人に涙を見せた。\n涙は弱さではない。\n守るために固めてきたものが、ようやくほどけた証だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……っ」\n「……ごめんなさい」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "謝罪の形をしていても、それは罪の告白ではない。\n“怖かった”の告白だ。\n“失いたくなかった”の告白だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "タネイ",
+        "text": "「笑ってほしい」\n「生きていればそれでいい、そうだろう？」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイはアカウの顔をまっすぐ見つめる。\n視線は逃がさない。責めない。\nただ、彼女の“今”を確かめる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの胸の奥で、昔の記憶がふっと蘇る。\nあの日、礼拝所の外で言われた、救いみたいな言葉。\n——生きていれば、それでいい。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女は涙を拭い、息を吸い込む。\n笑うのは、上手じゃない。\nでも、タネイが望むなら、やってみたいと思った。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女は満面の笑みで、手に持ったシクラメンの花束を渡す。\n白と紅の花弁は、慎ましいのに強い。\nまるで、彼女自身が“こうありたかった姿”みたいに。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "「……これを」\n「受け取ってください」"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイの腕の中で、アカウはようやく理解する。\n守ることは、刃を握ることだけじゃない。\n秘密を抱えたままでも、笑う選択ができる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "花言葉は「夢の実現」。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "EPISODE5 END"
+      }
+    },
+    {
+      "type": "end"
+    }
+  ]
+}
