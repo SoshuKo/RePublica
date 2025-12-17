@@ -237,6 +237,10 @@
       s.view.background.main = first.bg;
       s.view.background.front = null;
       s.view.background.frontVisible = false;
+
+      // 章切替時は前章の立ち絵を持ち越さない
+      if (s.view.characters && s.view.characters.self) s.view.characters.self.visible = false;
+      if (s.view.characters && s.view.characters.enemy) s.view.characters.enemy.visible = false;
     }
 
     runtime.mode = "adv";
@@ -410,7 +414,18 @@
 
     // background
     if (Object.prototype.hasOwnProperty.call(node, "bg")) {
+      const prevBg = state.view.background.main;
       state.view.background.main = node.bg; // null OK
+
+      // 場面切替（背景変更）時、self/enemy が未指定なら前シーンのキャラを残さない
+      if (node.bg !== prevBg) {
+        if (!node.self && state.view.characters && state.view.characters.self) {
+          state.view.characters.self.visible = false;
+        }
+        if (!node.enemy && state.view.characters && state.view.characters.enemy) {
+          state.view.characters.enemy.visible = false;
+        }
+      }
     }
 
     if (node.self) {
@@ -587,8 +602,8 @@
 
     // 任意：敵名などを state に保存したい場合（battle.js が参照できる）
     if (node && typeof node.enemyName === "string") {
-    s.battle.enemyName = node.enemyName;
-  }
+      s.battle.enemyName = node.enemyName;
+    }
 
     setState(s);
 
