@@ -110,11 +110,7 @@ function getPlayerNameFromState() {
   const gName = canonicalizeCharName(game?.playerName);
   if (gName) return gName;
 
-  // battle側に保存してある場合はそれを優先（battle開始時に記録）
-  const bName = canonicalizeCharName(s?.battle?.playerName);
-  if (bName) return bName;
-
-  // ADVの自キャラ名
+  // ADVの自キャラ名（新しいPARTを遊ぶときはまずこれが正）
   const vName = canonicalizeCharName(s?.view?.characters?.self?.name);
   if (vName) return vName;
 
@@ -122,9 +118,16 @@ function getPlayerNameFromState() {
   const fName = canonicalizeCharName(s?.view?.characters?.self?.file);
   if (fName) return fName;
 
+  // battle側に保存してある場合：battle画面中はこれを優先してよい
+  const bName = canonicalizeCharName(s?.battle?.playerName);
+  if (inBattleScreen() && bName) return bName;
+
   // Battle screen DOM image src fallback (stateが薄い場合の最終保険)
   const dName = getPlayerNameFromBattleDom();
   if (dName) return dName;
+
+  // battle playerName fallback（battle外で古い値が残ることがあるので最後に回す）
+  if (bName) return bName;
 
   // 最後の手段：発話者名（System等は弾く）
   const sp = canonicalizeCharName(s?.view?.speech?.name);
@@ -1366,6 +1369,10 @@ if (dmg > 0) {
     const s = RP.State.deepClone(s0);
 
     s.battle.active = false;
+
+    // Clear cached playerName so next PART does not inherit previous skill
+    s.battle.playerName = "";
+    game.playerName = "";
     s.battle.result.visible = true;
     s.battle.result.outcome = isWin ? "WIN" : "LOSE";
     s.battle.result.detail = isWin
@@ -1607,6 +1614,7 @@ if (dmg > 0) {
     game.enemyProfile = getEnemyProfile();
 
 // capture playable character name once (for skill UI / info)
+    game.playerName = "";
     game.playerName = getPlayerNameFromState();
     persistPlayerNameToState(game.playerName);
     game.turn = 0;
