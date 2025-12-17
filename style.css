@@ -326,6 +326,33 @@ canvas{ display: block; }
   word-break: break-word;
 }
 
+.vn-window.is-narration{
+  border-color: rgba(255,255,255,.10);
+  background: linear-gradient(180deg, rgba(10,12,16,.60), rgba(10,12,16,.82));
+}
+
+.vn-window.is-narration .vn-text{
+  color: rgba(255,255,255,.78);
+  font-size: 20px;
+  letter-spacing: .04em;
+}
+
+.vn-next{
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  font-size: 24px;
+  color: rgba(255,255,255,.85);
+  text-shadow: 0 2px 10px rgba(0,0,0,.6);
+  pointer-events: none;
+  animation: vnNextBlink 1s ease-in-out infinite;
+}
+
+@keyframes vnNextBlink{
+  0%,45%{ opacity:0; transform: translateY(2px); }
+  55%,100%{ opacity:1; transform: translateY(0px); }
+}
+
 /* Character slot */
 .char-slot{
   position: absolute;
