@@ -106,23 +106,27 @@ function getPlayerNameFromBattleDom() {
 function getPlayerNameFromState() {
   const s = getState();
 
-  // 最も信用できる順：Battle画面DOM → ADVのself → runtime cache → battle保存値 → 発話者
-  const dName = canonicalizeCharName(getPlayerNameFromBattleDom());
-  const vName = canonicalizeCharName(s?.view?.characters?.self?.name) || canonicalizeCharName(s?.view?.characters?.self?.file) || "";
-  const gName = canonicalizeCharName(game?.playerName) || "";
-  const bName = canonicalizeCharName(s?.battle?.playerName) || "";
+  // runtime cache (battle中にviewが消えるケース対策)
+  const gName = canonicalizeCharName(game?.playerName);
+  if (gName) return gName;
 
-  if (inBattleScreen()) {
-    if (dName) return dName;
-    if (vName) return vName;
-    if (gName) return gName;
-    if (bName) return bName;
-  } else {
-    if (vName) return vName;
-    if (gName) return gName;
-    if (bName) return bName;
-  }
+  // battle側に保存してある場合はそれを優先（battle開始時に記録）
+  const bName = canonicalizeCharName(s?.battle?.playerName);
+  if (bName) return bName;
 
+  // ADVの自キャラ名
+  const vName = canonicalizeCharName(s?.view?.characters?.self?.name);
+  if (vName) return vName;
+
+  // 立ち絵ファイル名から推測（"アカウ_怒.png" など）
+  const fName = canonicalizeCharName(s?.view?.characters?.self?.file);
+  if (fName) return fName;
+
+  // Battle screen DOM image src fallback (stateが薄い場合の最終保険)
+  const dName = getPlayerNameFromBattleDom();
+  if (dName) return dName;
+
+  // 最後の手段：発話者名（System等は弾く）
   const sp = canonicalizeCharName(s?.view?.speech?.name);
   if (sp && sp !== "System") return sp;
 
@@ -1286,22 +1290,10 @@ function closeInfoModal() {
       });
     }
   }
-  function clearBottomRow() {
-    const y = game.rowsTotal - 1;
-    const removed = [];
-    if (!game.board || !game.board[y]) return removed;
-    for (let x = 0; x < game.cols; x++) {
-      const v = game.board[y][x] || 0;
-      if (v !== 0) removed.push(v);
-      game.board[y][x] = 0;
-    }
-    return removed;
-  }
 
-    function activateSkill() {
+  function activateSkill() {
     const def = getPlayerSkillDef();
     if (!def.hasButton) return;
-
     const max = CFG.SKILL_GAUGE_MAX;
     if ((game.skillGauge || 0) < max) return;
     if (game.inResolve) return;
@@ -1315,56 +1307,36 @@ function closeInfoModal() {
     skillFxFlash();
     skillFxText(def.name);
 
-    // --- EFFECT 1: clear bottom row (show the empty row for a moment) ---
-    const removed = clearBottomRow();
+    // remove bottom row
+    const y = game.rowsTotal - 1;
+    const removed = [];
+    for (let x = 0; x < game.cols; x++) {
+      const v = game.board?.[y]?.[x] ?? 0;
+      if (v !== 0) removed.push(v);
+      if (game.board?.[y]) game.board[y][x] = 0;
+    }
 
     const uniq = new Set(removed);
     const kinds = uniq.size;
     let dmg = kinds * CFG.SKILL_RAGE_DAMAGE_PER_COLOR;
-
-    // KOTO（二戦目）: 連鎖以外のダメージは無効
-    const enemy = game.enemyProfile;
-    if (enemy && enemy.chainOnlyDamage) {
-      dmg = 0;
-      if (kinds > 0) {
-        // さりげなく「無効」演出
-        skillFxText("効かない！");
-      }
-    }
-
-    if (dmg > 0) {
+if (dmg > 0) {
       game.totalDamage += dmg;
       game.enemyHp = Math.max(0, game.enemyHp - dmg);
       hitFx("enemy", dmg, 0);
     }
 
-    // show the cleared row before gravity drops blocks down
-    game.inResolve = true;
+    // resolve any new matches created by the row delete, but don't refill gauge from it
+    applyGravityBoard();
     syncHudToState();
     updateSkillUi();
 
-    const delayMs = 220;
-    window.setTimeout(() => {
-      // safety: battle may have ended / switched
-      if (!inBattleScreen()) { game.inResolve = false; return; }
-      if (game.gameOver || game.victory) { game.inResolve = false; return; }
+    if (game.enemyHp <= 0) {
+      game.victory = true;
+      showResult(true);
+      return;
+    }
 
-      // --- EFFECT 2: drop everything after the "line clear" moment ---
-      applyGravityBoard();
-
-      game.inResolve = false;
-      syncHudToState();
-      updateSkillUi();
-
-      if (game.enemyHp <= 0) {
-        game.victory = true;
-        showResult(true);
-        return;
-      }
-
-      // resolve any new matches created by the row delete, but don't refill gauge from it
-      resolveChains({ fromSkill: true });
-    }, delayMs);
+    resolveChains({ fromSkill: true });
   }
 
   function syncHudToState() {
@@ -1463,28 +1435,38 @@ function closeInfoModal() {
       const popped = popGroups(groups);
       applyGravityBoard();
 
-      const damage = computeDamage(chain, groups.length);
-      const scoreAdd = computeScore(popped, chain);
+      const chainEffective = (chain === 1 && groups.length >= 2) ? 2 : chain;
+
+      // 仕様: 1回の消去で2グループ以上消えたら、それも「連鎖」とみなす
+      if (turnCtx) {
+        turnCtx.chainCount = Math.max(turnCtx.chainCount || 0, chainEffective);
+      }
+
+      const damage = computeDamage(chainEffective, groups.length);
+      const scoreAdd = computeScore(popped, chainEffective);
 
       // ダメージ処理
       // - 通常: そのまま通す
-      // - コト（二戦目）: 2連鎖以上が成立したときだけ通す（1段目は保留→2段目で解放）
+      // - コト（二戦目）: “連鎖”でしかダメージが入らない
+      //   仕様: 1回の消去で2グループ以上消えた場合も「連鎖」とみなす
       if (enemy && enemy.chainOnlyDamage) {
-        if (chain < 2) {
-          deferredDamages.push({ dmg: damage, chainForFx: chain });
+        const chainUnlocked = (chain >= 2) || (chain === 1 && groups.length >= 2);
+
+        if (!chainUnlocked) {
+          // まだ連鎖になっていない：ダメージを保留
+          deferredDamages.push({ dmg: damage, chainForFx: chainEffective });
         } else {
-          // 解放: 1段目の分もまとめて通す
+          // 解放: 保留分（あれば）もまとめて通す
           while (deferredDamages.length) {
             const d = deferredDamages.shift();
             if (applyEnemyDamage(d.dmg, d.chainForFx)) return;
           }
-          if (applyEnemyDamage(damage, chain)) return;
+          if (applyEnemyDamage(damage, chainEffective)) return;
         }
       } else {
-        if (applyEnemyDamage(damage, chain)) return;
+        if (applyEnemyDamage(damage, chainEffective)) return;
       }
 
-      // 次の連鎖段へ
       void scoreAdd; // 将来スコア表示を増やすならここ
     }
 
@@ -1625,11 +1607,8 @@ function closeInfoModal() {
     game.enemyProfile = getEnemyProfile();
 
 // capture playable character name once (for skill UI / info)
-    // Reset cached name to avoid leaking skill between PARTs
-    game.playerName = "";
     game.playerName = getPlayerNameFromState();
     persistPlayerNameToState(game.playerName);
-    scheduleSkillUiRefresh();
     game.turn = 0;
     game.turnsSinceClear = 0;
     game.battleStartMs = performance.now();
@@ -1729,17 +1708,12 @@ function closeInfoModal() {
     try {
       ensureRunningIfBattle();
       if (!inBattleScreen()) { hideBattleOverlays(); closeInfoModal(); }
-      // playerName can change when switching PARTs without reload.
-      // Always resync from DOM/view if it differs (prevents skill leaking from previous battle).
-      if (running && inBattleScreen()) {
-        const dn = canonicalizeCharName(getPlayerNameFromBattleDom());
-        const vn = canonicalizeCharName(getState()?.view?.characters?.self?.name) || canonicalizeCharName(getState()?.view?.characters?.self?.file) || "";
-        const cur = canonicalizeCharName(game.playerName);
-
-        const nextName = dn || vn || "";
-        if (nextName && nextName !== cur) {
-          game.playerName = nextName;
-          persistPlayerNameToState(nextName);
+      // If playerName wasn't captured at battle entry, retry from DOM a few times.
+      if (running && inBattleScreen() && !game.playerName) {
+        const dn = getPlayerNameFromBattleDom();
+        if (dn) {
+          game.playerName = dn;
+          persistPlayerNameToState(dn);
           updateSkillUi();
         }
       }
@@ -1777,7 +1751,6 @@ function closeInfoModal() {
     if (battleResultVisible()) return false;
     if (isOverlayBlockingInput()) return false;
     if (game.gameOver || game.victory) return false;
-    if (game.inResolve) return false;
     return true;
   }
 

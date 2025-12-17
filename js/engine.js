@@ -22,6 +22,8 @@
     { choiceId: "ep5", chapterId: "chapter5", title: "EP5（PART1）" },
     { choiceId: "ep5p2", chapterId: "chapter5_part2", title: "EP5（PART2）" },
     { choiceId: "ep5p3", chapterId: "chapter5_part3", title: "EP5（PART3）" },
+    { choiceId: "ep5p4", chapterId: "chapter5_part4", title: "EP5（PART4）" },
+    { choiceId: "ep5p5", chapterId: "chapter5_part5", title: "EP5（PART5）" },
   ]);
 
   // ---------------------------------------------------------
@@ -33,6 +35,8 @@
     chapter5: "./data/scenario/chapter5_part1.json",
     chapter5_part2: "./data/scenario/chapter5_part2.json",
     chapter5_part3: "./data/scenario/chapter5_part3.json",
+    chapter5_part4: "./data/scenario/chapter5_part4.json",
+    chapter5_part5: "./data/scenario/chapter5_part5.json",
   });
 
   // ---------------------------------------------------------
@@ -583,8 +587,8 @@
 
     // 任意：敵名などを state に保存したい場合（battle.js が参照できる）
     if (node && typeof node.enemyName === "string") {
-      s.battle.enemyName = node.enemyName;
-    }
+    s.battle.enemyName = node.enemyName;
+  }
 
     setState(s);
 
