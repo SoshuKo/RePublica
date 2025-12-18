@@ -43,6 +43,61 @@
     el.textContent = text ?? "";
   }
 
+  // ---------------------------------------------------------
+  // Choice (chapter/branch) list scrolling
+  // - Chapters/choices can grow; keep the panel usable by allowing scroll.
+  // - Implemented with a small CSS injection so it works even if the base CSS
+  //   is older or missing these rules.
+  // ---------------------------------------------------------
+  let _choiceScrollStyleInjected = false;
+
+  function injectChoiceScrollStylesOnce() {
+    if (_choiceScrollStyleInjected) return;
+    _choiceScrollStyleInjected = true;
+
+    const css = `
+/* choice list scroll */
+#${LAYERS.choice}{
+  /* keep centered panel usable even with many options */
+  max-height: calc(100vh - 72px);
+}
+#${LAYERS.choice} *{min-height:0;}
+#${DOM_IDS.adv.choiceList}{
+  /* allow scrolling when options overflow */
+  max-height: min(560px, calc(100vh - 240px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 6px;
+  touch-action: pan-y;
+}
+#${DOM_IDS.adv.choiceList}::-webkit-scrollbar{width:10px;}
+#${DOM_IDS.adv.choiceList}::-webkit-scrollbar-track{background:rgba(255,255,255,.04);border-radius:999px;}
+#${DOM_IDS.adv.choiceList}::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:999px;border:2px solid rgba(0,0,0,.20);}
+`;
+
+    const style = document.createElement("style");
+    style.id = "choiceScrollStyle";
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
+  function ensureChoiceScrollable(choiceLayer, choiceList) {
+    // CSS injection first
+    injectChoiceScrollStylesOnce();
+    // Inline fallback (if some CSS resets override ids)
+    if (choiceList) {
+      if (!choiceList.style.overflowY) choiceList.style.overflowY = "auto";
+      if (!choiceList.style.maxHeight) choiceList.style.maxHeight = "min(560px, calc(100vh - 240px))";
+      if (!choiceList.style.overscrollBehavior) choiceList.style.overscrollBehavior = "contain";
+      if (!choiceList.style.webkitOverflowScrolling) choiceList.style.webkitOverflowScrolling = "touch";
+      if (!choiceList.style.touchAction) choiceList.style.touchAction = "pan-y";
+    }
+    if (choiceLayer) {
+      if (!choiceLayer.style.maxHeight) choiceLayer.style.maxHeight = "calc(100vh - 72px)";
+    }
+  }
+
 
   // ADV speaking highlight helper (classes live on #charSelf/#charEnemy containers)
   function setSpeakClass(slotEl, { speaking = false, dimmed = false } = {}) {
@@ -63,6 +118,8 @@
   function endsWithImageExt(name) {
     return typeof name === "string" && /\.(png|webp|jpg|jpeg)$/i.test(name);
   }
+
+  // ▼ ここから貼り付け（復旧） ▼
 
   // キャラ名が「コト（初戦）」のように補足を含む場合でも
   // 実ファイル（例：コト.png）へ正しく解決するための正規化。
@@ -90,8 +147,9 @@
     if (!base) return null;
     return ASSET.charPng(base);
   }
+  // ▲ ここまで貼り付け ▲
 
-// ---------------------------------------------------------
+  // ---------------------------------------------------------
   // Duo character (アカウ＆タネイ) composite
   // ---------------------------------------------------------
   const _duoCompositeCache = new Map();
@@ -799,6 +857,8 @@ if (!showSpeech) {
         setHidden(choiceLayer, !showChoices);
 
         if (showChoices) {
+          // Many chapters/choices -> enable scrolling inside the list.
+          ensureChoiceScrollable(choiceLayer, choiceList);
           // clear list
           choiceList.innerHTML = "";
           for (const opt of choice.options) {

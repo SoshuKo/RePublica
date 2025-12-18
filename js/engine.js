@@ -24,6 +24,10 @@
     { choiceId: "ep5p3", chapterId: "chapter5_part3", title: "EP5（PART3）" },
     { choiceId: "ep5p4", chapterId: "chapter5_part4", title: "EP5（PART4）" },
     { choiceId: "ep5p5", chapterId: "chapter5_part5", title: "EP5（PART5）" },
+    { choiceId: "ep6", chapterId: "chapter6", title: "EP6（PART1）" },
+    { choiceId: "ep6p2", chapterId: "chapter6_part2", title: "EP6（PART2）" },
+    { choiceId: "ep6p3", chapterId: "chapter6_part3", title: "EP6（PART3）" },
+    { choiceId: "ep6p4", chapterId: "chapter6_part4", title: "EP6（PART4）" },
   ]);
 
   // ---------------------------------------------------------
@@ -36,6 +40,10 @@
     chapter5_part3: "./data/scenario/chapter5_part3.json",
     chapter5_part4: "./data/scenario/chapter5_part4.json",
     chapter5_part5: "./data/scenario/chapter5_part5.json",
+    chapter6: "./data/scenario/chapter6_part1.json",
+    chapter6_part2: "./data/scenario/chapter6_part2.json",
+    chapter6_part3: "./data/scenario/chapter6_part3.json",
+    chapter6_part4: "./data/scenario/chapter6_part4.json",
   });
 
   // ---------------------------------------------------------
@@ -129,41 +137,58 @@
   }
 
   async function renderNodeAtIndex(s, script, index, depth = 0) {
-  // 防御：無限gotoを防ぐ
-  if (depth > 8) {
-    s.view.speech.visible = true;
-    s.view.speech.side = "self";
-    s.view.speech.name = "System";
-    s.view.speech.text = "シナリオ遷移がループしました（goto）。";
-    setState(s);
-    return;
-  }
+    // 防御：無限gotoを防ぐ
+    if (depth > 8) {
+      s.view.speech.visible = true;
+      s.view.speech.side = "self";
+      s.view.speech.name = "System";
+      s.view.speech.text = "シナリオ遷移がループしました（goto）。";
+      setState(s);
+      return;
+    }
 
-  const node = script[index];
-  if (!node || !node.type) {
-    setState(s);
-    return;
-  }
+    const node = script[index];
+    if (!node || !node.type) {
+      setState(s);
+      return;
+    }
 
-  // index は「現在位置」として保存（次クリックで index+1 が読まれる）
-  s.pointer.step = index;
+    // index は「現在位置」として保存（次クリックで index+1 が読まれる）
+    s.pointer.step = index;
 
-  if (node.type === "line") {
-    const prevBg = s.view.background.main;
-    const nextBg = Object.prototype.hasOwnProperty.call(node, "bg") ? node.bg : prevBg;
-    const needsFade = nextBg !== prevBg;
+    // ▼▼▼ 【修正】ここに移動させます（lineの前） ▼▼▼
+    if (node.type === "choice") {
+      // 見た目（bg/self/enemy/speech）も指定できるよう、lineと同じ適用をする
+      applyNodeToState(s, node);
 
-    if (needsFade) {
-      await withFade(260, () => {
+      const opts = Array.isArray(node.options) ? node.options : [];
+      s.view.choice.visible = true;
+      s.view.choice.options = opts.map((o) => ({ id: o.id, text: o.text ?? String(o.id) }));
+
+      // choice確定時に参照する
+      runtime.pendingChoice = { chapterId: s.chapterId, nodeIndex: index, options: opts };
+
+      setState(s);
+      return;
+    }
+    // ▲▲▲▲▲▲
+
+    if (node.type === "line") {
+      const prevBg = s.view.background.main;
+      const nextBg = Object.prototype.hasOwnProperty.call(node, "bg") ? node.bg : prevBg;
+      const needsFade = nextBg !== prevBg;
+
+      if (needsFade) {
+        await withFade(260, () => {
+          applyNodeToState(s, node);
+          setState(s);
+        });
+      } else {
         applyNodeToState(s, node);
         setState(s);
-      });
-    } else {
-      applyNodeToState(s, node);
-      setState(s);
+      }
+      return;
     }
-    return;
-  }
 
   if (node.type === "battle") {
     await withFade(220, () => startBattle(node));
@@ -310,6 +335,9 @@
     mode: "idle", // idle | chapterSelect | loadingScenario | adv | battle | arena
     lastBattleBranch: null, // { onWin?: string, onLose?: string }
     transitioning: false, // 追加
+
+    // ★追加：choiceノード処理用
+    pendingChoice: null, // { chapterId, nodeIndex, options: [...] }
   };
 
   // ---------------------------------------------------------
@@ -373,6 +401,40 @@
 
     runtime.mode = "chapterSelect";
     setState(s);
+  }
+
+  function applyChoiceSetToState(state, setObj) {
+    if (!setObj) return;
+
+    const player = setObj.player || setObj.self || null;
+    const enemy = setObj.enemy || null;
+    const battle = setObj.battle || null;
+
+    // player (self)
+    if (player) {
+      const prev = state.view.characters.self;
+      if (Object.prototype.hasOwnProperty.call(player, "visible")) prev.visible = !!player.visible;
+      if (typeof player.name === "string") prev.name = player.name;
+
+      // expr/file を反映（fileがあればそれ優先、なければ name+expr で自動組み立て）
+      prev.file = resolveCharFileFromNode(player, prev);
+    }
+
+    // enemy
+    if (enemy) {
+      const prev = state.view.characters.enemy;
+      if (Object.prototype.hasOwnProperty.call(enemy, "visible")) prev.visible = !!enemy.visible;
+      if (typeof enemy.name === "string") prev.name = enemy.name;
+
+      prev.file = resolveCharFileFromNode(enemy, prev);
+    }
+
+    // battle routing info (battle.js が参照)
+    if (battle) {
+      if (!state.battle) state.battle = {};
+      if (typeof battle.playerName === "string" && battle.playerName.trim()) state.battle.playerName = battle.playerName.trim();
+      if (typeof battle.enemyName === "string" && battle.enemyName.trim()) state.battle.enemyName = battle.enemyName.trim();
+    }
   }
 
     function resolveCharFileFromNode(charNode, prevCharState) {
@@ -727,7 +789,8 @@
     RP.UI.on("arenaStart", ({ selfName, enemyName }) => startArenaBattle({ selfName, enemyName }));
     RP.UI.on("arenaBackToTitle", () => gotoTitle(false));
 
-    RP.UI.on("choice", ({ id }) => {
+        RP.UI.on("choice", ({ id }) => {
+      // 章選択
       if (runtime.mode === "chapterSelect") {
         const c = CHAPTERS.find((x) => x.choiceId === id);
         if (!c) return;
@@ -735,7 +798,49 @@
         return;
       }
 
-      // future: normal choices (branching)
+      // ★シナリオchoice（PART4の「誰で戦う？」など）
+      const pending = runtime.pendingChoice;
+      if (pending && Array.isArray(pending.options) && pending.options.length) {
+        const opt = pending.options.find((o) => o && o.id === id);
+        if (!opt) return;
+
+        const proceed = () => {
+          const s = deepClone(getState());
+
+          // 選択肢を閉じる
+          s.view.choice.visible = false;
+          s.view.choice.options = [];
+
+          // set を反映（プレイアブル / 敵 / battle名）
+          applyChoiceSetToState(s, opt.set || null);
+
+          // pendingクリアして進行
+          runtime.pendingChoice = null;
+          setState(s);
+          advance();
+        };
+
+        // confirm がある選択肢（夢の実現の注意）
+        const cf = opt.confirm || null;
+        if (cf && typeof cf.message === "string" && cf.message.trim()) {
+          RP.UI.showModal({
+            title: cf.title || "確認",
+            message: cf.message,
+            okText: cf.okText || "OK",
+            cancelText: cf.cancelText || "キャンセル",
+            onOk: () => proceed(),
+            onCancel: () => {
+              // キャンセル時：choiceは開いたまま（pendingも維持）
+            },
+          });
+          return;
+        }
+
+        proceed();
+        return;
+      }
+
+      // それ以外（従来どおり：閉じて次へ）
       const s = deepClone(getState());
       s.view.choice.visible = false;
       s.view.choice.options = [];
