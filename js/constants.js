@@ -30,6 +30,7 @@
     title: "titleLayer",
     adv: "advLayer",
     battle: "battleLayer",
+    arena: "arenaLayer",
     menu: "menuLayer",
     modal: "modalLayer",
     debug: "debugPanel",
@@ -44,6 +45,7 @@
     TITLE: "title",
     ADV: "adv",
     BATTLE: "battle",
+    ARENA: "arena",
     MENU: "menu",
     MODAL: "modal",
   });
@@ -61,9 +63,29 @@
     title: Object.freeze({
       newGame: "btnNewGame",
       continueJson: "btnContinue",
+      arena: "btnArena",
       importFile: "importFileInput",
       settings: "btnSettingsFromTitle",
       credits: "btnCredits",
+    }),
+
+
+    arena: Object.freeze({
+      back: "btnArenaBackToTitle",
+      start: "btnArenaStart",
+
+      playerGrid: "arenaPlayerGrid",
+      enemyGrid: "arenaEnemyGrid",
+
+      playerPreviewImg: "arenaPlayerPreviewImg",
+      enemyPreviewImg: "arenaEnemyPreviewImg",
+
+      playerName: "arenaPlayerName",
+      enemyName: "arenaEnemyName",
+
+      playerSkillName: "arenaPlayerSkillName",
+      playerSkillDesc: "arenaPlayerSkillDesc",
+      enemyHint: "arenaEnemyHint",
     }),
 
     adv: Object.freeze({

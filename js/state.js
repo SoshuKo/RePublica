@@ -102,6 +102,12 @@
         // null か 秒数/ミリ秒など（方式は battle.js で決める）
         timeLeft: null,
 
+        // 戦闘終了後の戻り先（例："arena"）
+        returnTo: null,
+        // キャラ判定/アリーナ用
+        playerName: "",
+        enemyName: "",
+
         // 体力（制限時間は廃止。HPは battle.js が管理）
         hpSelfMax: 100,
         hpEnemyMax: 100,
@@ -115,6 +121,12 @@
           outcome: null,
           detail: "",
         },
+      },
+
+      // アリーナ（簡易対戦）
+      arena: {
+        self: { name: "アパラ", file: null },
+        enemy: { name: "ニア・キナベイ", file: null },
       },
 
       // 設定（BGM/SEは今は使わなくてもOK。保存互換のため形だけ残す）
@@ -284,6 +296,9 @@
       if (Number.isFinite(input.battle.score)) out.battle.score = input.battle.score;
       if (Number.isFinite(input.battle.chain)) out.battle.chain = input.battle.chain;
       if (input.battle.timeLeft === null || Number.isFinite(input.battle.timeLeft)) out.battle.timeLeft = input.battle.timeLeft;
+      if (typeof input.battle.returnTo === "string" || input.battle.returnTo === null) out.battle.returnTo = input.battle.returnTo;
+      if (typeof input.battle.playerName === "string") out.battle.playerName = input.battle.playerName;
+      if (typeof input.battle.enemyName === "string") out.battle.enemyName = input.battle.enemyName;
       if (Number.isFinite(input.battle.hpSelfMax)) out.battle.hpSelfMax = input.battle.hpSelfMax;
       if (Number.isFinite(input.battle.hpEnemyMax)) out.battle.hpEnemyMax = input.battle.hpEnemyMax;
       if (Number.isFinite(input.battle.hpSelf)) out.battle.hpSelf = input.battle.hpSelf;
@@ -294,6 +309,18 @@
         if (typeof r.visible === "boolean") out.battle.result.visible = r.visible;
         if (typeof r.outcome === "string" || r.outcome === null) out.battle.result.outcome = r.outcome;
         if (typeof r.detail === "string") out.battle.result.detail = r.detail;
+      }
+    }
+
+    // arena
+    if (isPlainObject(input.arena)) {
+      if (isPlainObject(input.arena.self)) {
+        if (typeof input.arena.self.name === "string") out.arena.self.name = input.arena.self.name;
+        if (typeof input.arena.self.file === "string" || input.arena.self.file === null) out.arena.self.file = input.arena.self.file;
+      }
+      if (isPlainObject(input.arena.enemy)) {
+        if (typeof input.arena.enemy.name === "string") out.arena.enemy.name = input.arena.enemy.name;
+        if (typeof input.arena.enemy.file === "string" || input.arena.enemy.file === null) out.arena.enemy.file = input.arena.enemy.file;
       }
     }
 

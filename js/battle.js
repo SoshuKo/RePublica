@@ -58,6 +58,12 @@
     SKILL_GAUGE_MAX: 3,
     // 「狂暴の構え」：消した“色の種類”×この値を敵に与える
     SKILL_RAGE_DAMAGE_PER_COLOR: 10,
+
+    // 「無垢の構え」（カレイ）
+    SKILL_MUKU_DAMAGE_PER_BLOCK: 6,
+    // 爆弾ブロック（盤面内部表現）
+    BOMB_ID: 9,
+    BOMB_RADIUS: 1,
   });
 
   // ---------------------------
@@ -71,6 +77,10 @@
     MUSHIN: { key: "mushin", name: "無心の構え", desc: "次に落ちてくるブロックが見える（常時）", showNext: true, hasButton: false },
     KYOUBOU: { key: "kyoubou", name: "狂暴の構え", desc: "ゲージ3/3で発動：最下段を削除し、色の種類に応じて敵にダメージ", showNext: false, hasButton: true },
     CHUUYOU: { key: "chuuyou", name: "中庸の構え・改", desc: "無心 + 狂暴（両方）", showNext: true, hasButton: true },
+
+    // プレイアブル追加
+    SHIN_CHUUYOU: { key: "shin_chuuyou", name: "真・中庸の構え", desc: "無心の構え + 狂暴の構え（両方）", showNext: true, hasButton: true },
+    MUKU: { key: "muku", name: "無垢の構え", desc: "ゲージ3/3で発動：ボムブロックを落として着地と同時に爆発。破壊数に応じて敵にダメージ（条件無視）", showNext: false, hasButton: true },
   });
 
   function normalizeCharName(name) {
@@ -140,11 +150,16 @@ function getPlayerSkillDef() {
   const n = getPlayerNameFromState();
 
   // 完全一致より “含む” を優先（揺れ対策）
+  // Duo（アカウ＆タネイ）を最優先（"アカウ" に引っかかる前に拾う）
+  if (n.includes("アカウ") && n.includes("タネイ")) return SKILL_DEF.SHIN_CHUUYOU;
+
+  if (n.includes("カレイ")) return SKILL_DEF.MUKU;
   if (n.includes("アパラ") || n.includes("タネイ")) return SKILL_DEF.MUSHIN;
   if (n.includes("アカウ")) return SKILL_DEF.KYOUBOU;
   if (n.includes("サイ")) return SKILL_DEF.CHUUYOU;
   return SKILL_DEF.NONE;
 }
+
 
   // Persist playerName into state.battle for later UI/Info lookups
   function persistPlayerNameToState(name) {
@@ -210,6 +225,11 @@ function getPlayerSkillDef() {
     KOTO_1: "koto_1",
     SAI: "enemy_sai",
     KOTO_2: "koto_2",
+    KOTO_3: "koto_3",
+    SATELLA_1: "satella_1",
+    AKANEI: "akanei",
+    SATELLA_2: "satella_2",
+    SATELLA_YUME: "satella_yume",
   });
 
   const ENEMY_PROFILE = Object.freeze({
@@ -221,6 +241,8 @@ function getPlayerSkillDef() {
       healPerTurn: 0,
       timeLimitSec: null,
       chainOnlyDamage: false,
+      colorGate: false,
+      hpMax: null,
     },
     [ENEMY_TYPE.NIA_KINABEI]: {
       name: "ニア・キナベイ",
@@ -230,6 +252,8 @@ function getPlayerSkillDef() {
       healPerTurn: 0,
       timeLimitSec: null,
       chainOnlyDamage: false,
+      colorGate: false,
+      hpMax: null,
     },
     [ENEMY_TYPE.APARA]: {
       name: "アパラ",
@@ -239,6 +263,8 @@ function getPlayerSkillDef() {
       healPerTurn: 0,
       timeLimitSec: null,
       chainOnlyDamage: false,
+      colorGate: false,
+      hpMax: null,
     },
     [ENEMY_TYPE.KOTO_1]: {
       name: "コト（初戦）",
@@ -248,6 +274,8 @@ function getPlayerSkillDef() {
       healPerTurn: 2,
       timeLimitSec: null,
       chainOnlyDamage: false,
+      colorGate: false,
+      hpMax: null,
     },
     [ENEMY_TYPE.SAI]: {
       name: "サイ",
@@ -257,6 +285,8 @@ function getPlayerSkillDef() {
       healPerTurn: 0,
       timeLimitSec: 60,
       chainOnlyDamage: false,
+      colorGate: false,
+      hpMax: null,
     },
     [ENEMY_TYPE.KOTO_2]: {
       name: "コト（二戦目）",
@@ -266,6 +296,63 @@ function getPlayerSkillDef() {
       healPerTurn: 2,
       timeLimitSec: null,
       chainOnlyDamage: true,
+      colorGate: false,
+      hpMax: null,
+    },
+    [ENEMY_TYPE.KOTO_3]: {
+      name: "コト（三戦目）",
+      hint: "コト（二戦目）と同じ。5ターン以内にブロックを消し続けないと被弾。さらに“連鎖”でしかダメージが入りません。毎ターンHPも回復します。",
+      mustClearWithinTurns: 5,
+      penaltyDamage: "light_to_heavy",
+      healPerTurn: 2,
+      timeLimitSec: null,
+      chainOnlyDamage: true,
+      colorGate: false,
+      hpMax: null,
+    },
+    [ENEMY_TYPE.SATELLA_1]: {
+      name: "サテラ（初戦）",
+      hint: "毎ターン“指定色”のブロックを破壊しないと通常攻撃ダメージが入りません（必殺技ダメージは例外）。",
+      mustClearWithinTurns: null,
+      penaltyDamage: null,
+      healPerTurn: 0,
+      timeLimitSec: null,
+      chainOnlyDamage: false,
+      colorGate: true,
+      hpMax: null,
+    },
+    [ENEMY_TYPE.AKANEI]: {
+      name: "アカネイ",
+      hint: "5ターン以内にブロックを消し続けないと被弾。さらに毎ターンHPが回復します。",
+      mustClearWithinTurns: 5,
+      penaltyDamage: "light_to_heavy",
+      healPerTurn: 2,
+      timeLimitSec: null,
+      chainOnlyDamage: false,
+      colorGate: false,
+      hpMax: null,
+    },
+    [ENEMY_TYPE.SATELLA_2]: {
+      name: "サテラ（二戦目）",
+      hint: "5ターン以内にブロックを消し続けないと被弾。さらに毎ターン“指定色”を破壊しないと通常攻撃ダメージが入りません（必殺技ダメージは例外）。毎ターンHPも回復します。",
+      mustClearWithinTurns: 5,
+      penaltyDamage: "light_to_heavy",
+      healPerTurn: 2,
+      timeLimitSec: null,
+      chainOnlyDamage: false,
+      colorGate: true,
+      hpMax: null,
+    },
+    [ENEMY_TYPE.SATELLA_YUME]: {
+      name: "サテラ（夢の実現）",
+      hint: "体力150。5ターン以内にブロックを消し続けないと被弾（重、低確率で激重）。さらに毎ターン“指定色”を破壊しないと通常攻撃ダメージが入りません（必殺技ダメージは例外）。毎ターンHPも回復します。",
+      mustClearWithinTurns: 5,
+      penaltyDamage: "heavy_rare_extreme",
+      healPerTurn: 2,
+      timeLimitSec: null,
+      chainOnlyDamage: false,
+      colorGate: true,
+      hpMax: 150,
     },
   });
 
@@ -279,15 +366,25 @@ function getPlayerSkillDef() {
   function getEnemyTypeFromName(name) {
     const n = normalizeCharName(name);
     if (!n) return ENEMY_TYPE.NONE;
+
     if (n.includes("ニア・キナベイ")) return ENEMY_TYPE.NIA_KINABEI;
     if (n.includes("アパラ")) return ENEMY_TYPE.APARA;
+    if (n.includes("アカネイ")) return ENEMY_TYPE.AKANEI;
+    if (n.includes("サテラ")) {
+      if (n.includes("夢") || n.includes("実現")) return ENEMY_TYPE.SATELLA_YUME;
+      if (n.includes("二戦") || n.includes("2")) return ENEMY_TYPE.SATELLA_2;
+      return ENEMY_TYPE.SATELLA_1;
+    }
     if (n.includes("サイ")) return ENEMY_TYPE.SAI;
+
     if (n.includes("コト")) {
+      if (n.includes("三戦") || n.includes("3")) return ENEMY_TYPE.KOTO_3;
       if (n.includes("二戦") || n.includes("2")) return ENEMY_TYPE.KOTO_2;
       if (n.includes("初戦") || n.includes("1")) return ENEMY_TYPE.KOTO_1;
       // 不明な場合は初戦扱い（安全側）
       return ENEMY_TYPE.KOTO_1;
     }
+
     return ENEMY_TYPE.NONE;
   }
 
@@ -307,6 +404,45 @@ function getPlayerSkillDef() {
     "#a7ff5b", // 4 green
     "#c58bff", // 5 purple (COLORS=5にした時用)
   ]);
+
+  const COLOR_NAME_JA = Object.freeze({
+    1: "赤",
+    2: "青",
+    3: "黄",
+    4: "緑",
+    5: "紫",
+  });
+
+  function pickEnemyGateColor() {
+    // 1..COLORS
+    return 1 + Math.floor(Math.random() * CFG.COLORS);
+  }
+
+  function updateEnemyOrderUi() {
+    ensureSkillDom();
+    const enemy = game.enemyProfile || getEnemyProfile();
+    const panel = document.getElementById(ENEMY_UI_DOM.orderPanel);
+    const chip = document.getElementById(ENEMY_UI_DOM.orderChip);
+    const textEl = document.getElementById(ENEMY_UI_DOM.orderText);
+
+    if (!enemy || !enemy.colorGate) {
+      if (panel) panel.classList.add("is-hidden");
+      return;
+    }
+
+    const c = game.enemyGateColor || pickEnemyGateColor();
+    game.enemyGateColor = c;
+
+    if (panel) panel.classList.remove("is-hidden");
+    if (chip) {
+      chip.style.background = (COLOR_PALETTE[c] || "rgba(255,255,255,0.10)");
+    }
+    if (textEl) {
+      const nm = COLOR_NAME_JA[c] || String(c);
+      textEl.textContent = `指定: ${nm}`;
+    }
+  }
+
 
   // ---------------------------
   // DOM
@@ -376,6 +512,12 @@ function getPlayerSkillDef() {
     modalTitle: "battleInfoTitle",
     body: "battleInfoBody",
     close: "btnBattleInfoClose",
+  });
+
+  const ENEMY_UI_DOM = Object.freeze({
+    orderPanel: "battleEnemyOrderPanel",
+    orderChip: "battleEnemyOrderChip",
+    orderText: "battleEnemyOrderText",
   });
 
   function injectSkillCssOnce() {
@@ -508,7 +650,44 @@ function getPlayerSkillDef() {
         100% { opacity: 0; transform: translateX(-50%) translateY(-18px) scale(1.04); }
       }
 
-      /* Enemy timer (SAI) */
+      
+
+      /* Enemy order (SATELLA) */
+      .battle-enemy-order {
+        position: absolute;
+        z-index: 221;
+        left: 14px;
+        top: 62px;
+        width: 168px;
+        padding: 10px 12px;
+        border-radius: 16px;
+        background: rgba(10, 12, 18, 0.78);
+        border: 1px solid rgba(255,255,255,0.14);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        pointer-events: none;
+      }
+      .battle-enemy-order.is-hidden { display:none; }
+      .battle-enemy-order-title {
+        font: 900 11px/1 system-ui, -apple-system, Segoe UI, Hiragino Sans, Noto Sans JP, sans-serif;
+        color: rgba(255,255,255,0.70);
+        letter-spacing: 0.14em;
+      }
+      .battle-enemy-order-row { display:flex; align-items:center; gap:10px; margin-top: 10px; }
+      .battle-enemy-order-chip {
+        width: 26px; height: 26px;
+        border-radius: 999px;
+        border: 2px solid rgba(255,255,255,0.16);
+        box-shadow: inset 0 0 0 2px rgba(0,0,0,0.20);
+        background: rgba(255,255,255,0.10);
+      }
+      .battle-enemy-order-text {
+        font: 900 13px/1.2 system-ui, -apple-system, Segoe UI, Hiragino Sans, Noto Sans JP, sans-serif;
+        color: rgba(255,255,255,0.92);
+      }
+
+/* Enemy timer (SAI) */
       .battle-enemy-timer {
         position: absolute;
         z-index: 220;
@@ -646,6 +825,21 @@ function getPlayerSkillDef() {
         </div>
       `;
       host.appendChild(p);
+    }
+
+    // Enemy order panel (SATELLA)
+    if (!document.getElementById(ENEMY_UI_DOM.orderPanel)) {
+      const o = document.createElement("div");
+      o.id = ENEMY_UI_DOM.orderPanel;
+      o.className = "battle-enemy-order is-hidden";
+      o.innerHTML = `
+        <div class="battle-enemy-order-title">ORDER</div>
+        <div class="battle-enemy-order-row">
+          <div id="${ENEMY_UI_DOM.orderChip}" class="battle-enemy-order-chip"></div>
+          <div id="${ENEMY_UI_DOM.orderText}" class="battle-enemy-order-text"></div>
+        </div>
+      `;
+      host.appendChild(o);
     }
 
     // Enemy timer + Info modal/button
@@ -839,6 +1033,8 @@ function closeInfoModal() {
     chainLast: 0,     // 直近連鎖（HUD用）
     selfHp: CFG.SELF_HP,
     enemyHp: CFG.ENEMY_HP,
+    enemyHpMax: CFG.ENEMY_HP,
+    enemyGateColor: null,
     totalDamage: 0,
 
     gameOver: false,
@@ -1055,7 +1251,7 @@ function closeInfoModal() {
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < cols; x++) {
         const v = game.board[y][x];
-        if (v === 0 || visited[y][x]) continue;
+        if (v === 0 || visited[y][x] || v === CFG.BOMB_ID) continue;
 
         // BFS
         const q = [{ x, y }];
@@ -1114,8 +1310,26 @@ function closeInfoModal() {
   // ---------------------------
   // Enemy behavior helpers
   // ---------------------------
-  function randPenaltyDamage() {
-    // 軽〜重（ざっくり）
+  function randPenaltyDamage(type) {
+    const t = String(type || "light_to_heavy");
+
+    if (t === "heavy") {
+      const table = [14, 18, 22, 26];
+      return table[Math.floor(Math.random() * table.length)];
+    }
+
+    if (t === "heavy_rare_extreme") {
+      // 重メイン、低確率で激重
+      const r = Math.random();
+      if (r < 0.10) {
+        const extreme = [36, 42, 50];
+        return extreme[Math.floor(Math.random() * extreme.length)];
+      }
+      const heavy = [18, 22, 26, 30];
+      return heavy[Math.floor(Math.random() * heavy.length)];
+    }
+
+    // default: light_to_heavy
     const table = [6, 10, 14, 18];
     return table[Math.floor(Math.random() * table.length)];
   }
@@ -1143,7 +1357,7 @@ function closeInfoModal() {
   function healEnemy(amount) {
     const v = Math.max(0, Math.floor(amount || 0));
     if (v <= 0) return;
-    game.enemyHp = Math.min(CFG.ENEMY_HP, game.enemyHp + v);
+    game.enemyHp = Math.min(game.enemyHpMax || CFG.ENEMY_HP, game.enemyHp + v);
     syncHudToState();
   }
 
@@ -1163,9 +1377,15 @@ function closeInfoModal() {
 
       if (game.turnsSinceClear >= enemy.mustClearWithinTurns) {
         game.turnsSinceClear = 0;
-        const dmg = randPenaltyDamage();
+        const dmg = randPenaltyDamage(enemy.penaltyDamage);
         dealSelfDamage(dmg, "敵の攻撃！");
       }
+    }
+
+    // (3) Color gate changes every turn (SATELLA)
+    if (enemy.colorGate && !game.gameOver && !game.victory) {
+      game.enemyGateColor = pickEnemyGateColor();
+      updateEnemyOrderUi();
     }
   }
 
@@ -1207,7 +1427,7 @@ function closeInfoModal() {
 
   function hideBattleOverlays() {
     // battle以外に漏れないようにまとめて隠す
-    const ids = [SKILL_DOM.hud, SKILL_DOM.nextPanel, INFO_DOM.timer, INFO_DOM.modal, INFO_DOM.infoBtn];
+    const ids = [SKILL_DOM.hud, SKILL_DOM.nextPanel, ENEMY_UI_DOM.orderPanel, INFO_DOM.timer, INFO_DOM.modal, INFO_DOM.infoBtn];
     for (const id of ids) setHiddenById(id, true);
   }
 
@@ -1265,7 +1485,7 @@ function closeInfoModal() {
     // Gauge / button
     if (btn) {
       btn.style.display = def.hasButton ? "" : "none";
-      btn.textContent = (def.key === "kyoubou" || def.key === "chuuyou") ? "狂暴の構え" : "必殺";
+      btn.textContent = (def.key === "kyoubou" || def.key === "chuuyou" || def.key === "shin_chuuyou") ? "狂暴の構え" : (def.key === "muku" ? "無垢の構え" : "必殺");
     }
 
     const max = CFG.SKILL_GAUGE_MAX;
@@ -1294,6 +1514,112 @@ function closeInfoModal() {
     }
   }
 
+  function applyDirectSkillDamage(amount, chainForFx = 0) {
+    const dmg = Math.max(0, Math.floor(amount || 0));
+    if (dmg <= 0) return false;
+
+    game.chainLast = chainForFx || game.chainLast;
+    game.totalDamage += dmg;
+    game.enemyHp = Math.max(0, game.enemyHp - dmg);
+
+    hitFx("enemy", dmg, chainForFx || 0);
+    syncHudToState();
+
+    if (game.enemyHp <= 0) {
+      game.victory = true;
+      showResult(true);
+      return true;
+    }
+    return false;
+  }
+
+  function castKyoubouRowDelete() {
+    // remove bottom row
+    const y = game.rowsTotal - 1;
+    const removed = [];
+    for (let x = 0; x < game.cols; x++) {
+      const v = game.board?.[y]?.[x] ?? 0;
+      if (v !== 0) removed.push(v);
+      if (game.board?.[y]) game.board[y][x] = 0;
+    }
+
+    const uniq = new Set(removed);
+    const kinds = uniq.size;
+    const dmg = kinds * CFG.SKILL_RAGE_DAMAGE_PER_COLOR;
+
+    // 【修正点】ここで先に重力を適用し、盤面を落としておく
+    applyGravityBoard();
+
+    if (applyDirectSkillDamage(dmg, 0)) return;
+
+    // resolve any new matches created by the row delete, but don't refill gauge from it
+    applyGravityBoard();
+    syncHudToState();
+    updateSkillUi();
+
+    resolveChains({ fromSkill: true });
+  }
+
+  function explodeBombAt(cx, cy) {
+    const r = (Number.isFinite(CFG.BOMB_RADIUS) ? CFG.BOMB_RADIUS : 1);
+    let destroyed = 0;
+
+    for (let dy = -r; dy <= r; dy++) {
+      for (let dx = -r; dx <= r; dx++) {
+        const x = cx + dx;
+        const y = cy + dy;
+        if (x < 0 || x >= game.cols) continue;
+        if (y < 0 || y >= game.rowsTotal) continue;
+        const v = game.board?.[y]?.[x] ?? 0;
+        if (v === 0) continue;
+
+        // bomb itself and any blocks are destroyed
+        if (v !== CFG.BOMB_ID) destroyed += 1;
+        if (game.board?.[y]) game.board[y][x] = 0;
+      }
+    }
+
+    // damage (bypass enemy gimmicks)
+    const dmg = destroyed * CFG.SKILL_MUKU_DAMAGE_PER_BLOCK;
+    if (dmg > 0) {
+      applyGravityBoard();
+      if (applyDirectSkillDamage(dmg, 0)) return true;
+    }
+
+    return false;
+  }
+
+  function castMukuBomb() {
+    // pick target column: current piece x if exists, otherwise center
+    const col = game.piece ? Math.max(0, Math.min(game.cols - 1, game.piece.x)) : Math.floor(game.cols / 2);
+
+    // find landing row
+    let y = game.rowsTotal - 1;
+    while (y >= 0 && (game.board?.[y]?.[col] ?? 0) !== 0) y--;
+
+    if (y < 0) {
+      // column full: no-op (avoid crash)
+      skillFxText("ボムを落とせない！");
+      return;
+    }
+
+    // drop bomb and explode immediately on landing
+    game.board[y][col] = CFG.BOMB_ID;
+
+    // FX
+    skillFxText("BOOM!");
+
+    // explode
+    if (explodeBombAt(col, y)) return;
+
+    // settle then resolve chains caused by the explosion (skill context)
+    applyGravityBoard();
+    syncHudToState();
+    updateSkillUi();
+
+    resolveChains({ fromSkill: true });
+  }
+
   function activateSkill() {
     const def = getPlayerSkillDef();
     if (!def.hasButton) return;
@@ -1310,37 +1636,15 @@ function closeInfoModal() {
     skillFxFlash();
     skillFxText(def.name);
 
-    // remove bottom row
-    const y = game.rowsTotal - 1;
-    const removed = [];
-    for (let x = 0; x < game.cols; x++) {
-      const v = game.board?.[y]?.[x] ?? 0;
-      if (v !== 0) removed.push(v);
-      if (game.board?.[y]) game.board[y][x] = 0;
-    }
-
-    const uniq = new Set(removed);
-    const kinds = uniq.size;
-    let dmg = kinds * CFG.SKILL_RAGE_DAMAGE_PER_COLOR;
-if (dmg > 0) {
-      game.totalDamage += dmg;
-      game.enemyHp = Math.max(0, game.enemyHp - dmg);
-      hitFx("enemy", dmg, 0);
-    }
-
-    // resolve any new matches created by the row delete, but don't refill gauge from it
-    applyGravityBoard();
-    syncHudToState();
-    updateSkillUi();
-
-    if (game.enemyHp <= 0) {
-      game.victory = true;
-      showResult(true);
+    if (def.key === "muku") {
+      castMukuBomb();
       return;
     }
 
-    resolveChains({ fromSkill: true });
+    // default: kyoubou-style row delete (kyoubou / chuuyou / shin_chuuyou)
+    castKyoubouRowDelete();
   }
+
 
   function syncHudToState() {
     // score=総ダメージ, chain=直近連鎖, timeLeft=敵HP
@@ -1352,7 +1656,7 @@ if (dmg > 0) {
     s.battle.chain = game.chainLast;
     s.battle.timeLeft = null;
     s.battle.hpSelfMax = CFG.SELF_HP;
-    s.battle.hpEnemyMax = CFG.ENEMY_HP;
+    s.battle.hpEnemyMax = (game.enemyHpMax || CFG.ENEMY_HP);
     s.battle.hpSelf = game.selfHp;
     s.battle.hpEnemy = game.enemyHp;
 
@@ -1403,6 +1707,10 @@ if (dmg > 0) {
     // -> 2段目以降が成立した時点で、1段目分もまとめて通す
     const deferredDamages = [];
 
+    // SATELLA: 指定色を消したターンしか通常攻撃ダメージが通らない（必殺ダメージは例外）
+    const gateColor = (enemy && enemy.colorGate) ? (game.enemyGateColor || null) : null;
+    let gateSatisfied = (!gateColor) || !!fromSkill;
+
     function applyEnemyDamage(amount, chainForFx) {
       const dmg = Math.max(0, Math.floor(amount || 0));
       if (dmg <= 0) return;
@@ -1434,6 +1742,16 @@ if (dmg > 0) {
         turnCtx.chainCount = chain;
       }
 
+      // color gate check (SATELLA)
+      if (!gateSatisfied && gateColor) {
+        for (const g of groups) {
+          if (g && g.color === gateColor) {
+            gateSatisfied = true;
+            break;
+          }
+        }
+      }
+
       // 連鎖ごとにゲージ加算（スキル発動による消しでは加算しない）
       if (!fromSkill) {
         game.skillGauge = Math.min(CFG.SKILL_GAUGE_MAX, (game.skillGauge || 0) + 1);
@@ -1453,36 +1771,41 @@ if (dmg > 0) {
       const scoreAdd = computeScore(popped, chainEffective);
 
       // ダメージ処理
-      // - 通常: そのまま通す
-      // - コト（二戦目）: “連鎖”でしかダメージが入らない
-      //   仕様: 1回の消去で2グループ以上消えた場合も「連鎖」とみなす
-      if (enemy && enemy.chainOnlyDamage) {
-        const chainUnlocked = (chain >= 2) || (chain === 1 && groups.length >= 2);
+      // - chainOnlyDamage（コト二戦目/三戦目）: “連鎖”でしかダメージが入らない
+      // - colorGate（サテラ）: 指定色を消したターンしか通常攻撃ダメージが通らない（必殺ダメージは例外）
+      const chainUnlocked = !(enemy && enemy.chainOnlyDamage)
+        ? true
+        : ((chain >= 2) || (chain === 1 && groups.length >= 2));
 
-        if (!chainUnlocked) {
-          // まだ連鎖になっていない：ダメージを保留
-          deferredDamages.push({ dmg: damage, chainForFx: chainEffective });
-        } else {
-          // 解放: 保留分（あれば）もまとめて通す
-          while (deferredDamages.length) {
-            const d = deferredDamages.shift();
-            if (applyEnemyDamage(d.dmg, d.chainForFx)) return;
-          }
-          if (applyEnemyDamage(damage, chainEffective)) return;
-        }
+      const gateUnlocked = (!gateColor) ? true : gateSatisfied;
+      const unlocked = chainUnlocked && gateUnlocked;
+
+      if (!unlocked) {
+        // 条件未達：ダメージを保留（成立したらまとめて通す）
+        deferredDamages.push({ dmg: damage, chainForFx: chainEffective });
       } else {
+        // 解放: 保留分（あれば）もまとめて通す
+        while (deferredDamages.length) {
+          const d = deferredDamages.shift();
+          if (applyEnemyDamage(d.dmg, d.chainForFx)) return;
+        }
         if (applyEnemyDamage(damage, chainEffective)) return;
       }
 
       void scoreAdd; // 将来スコア表示を増やすならここ
     }
 
-    // 1段消しで終わった場合（コト二戦目）はダメージ無し（保留分を破棄）
+    // 条件未達で終わった場合：ダメージ無し（保留分を破棄）
     if (deferredDamages.length) {
       deferredDamages.length = 0;
       // HUDのチェーン表示だけ更新
       game.chainLast = Math.max(game.chainLast || 0, chain);
       syncHudToState();
+
+      // SATELLA: 指定色を消していないターンは通常攻撃が無効
+      if (isTurn && !fromSkill && gateColor && !gateSatisfied) {
+        skillFxText("指定色を消さないとダメージが通らない！");
+      }
     }
 
     game.inResolve = false;
@@ -1580,6 +1903,45 @@ if (dmg > 0) {
   }
 
   function drawPuyo(px, py, cell, colorId) {
+    // bomb (カレイ技能)
+    if (colorId === CFG.BOMB_ID) {
+      const r = Math.floor(cell * 0.44);
+      const cx = px + Math.floor(cell / 2);
+      const cy = py + Math.floor(cell / 2);
+
+      // body
+      ctx.beginPath();
+      ctx.fillStyle = "rgba(20,20,20,0.92)";
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.fill();
+
+      // rim
+      ctx.beginPath();
+      ctx.strokeStyle = "rgba(255,255,255,0.22)";
+      ctx.lineWidth = Math.max(2, Math.floor(cell * 0.06));
+      ctx.arc(cx, cy, r, 0, Math.PI * 2);
+      ctx.stroke();
+
+      // fuse
+      ctx.beginPath();
+      ctx.strokeStyle = "rgba(255,180,60,0.9)";
+      ctx.lineWidth = Math.max(2, Math.floor(cell * 0.05));
+      ctx.moveTo(cx + r * 0.15, cy - r * 0.75);
+      ctx.lineTo(cx + r * 0.55, cy - r * 1.05);
+      ctx.stroke();
+
+      // cross mark
+      ctx.beginPath();
+      ctx.strokeStyle = "rgba(255,255,255,0.75)";
+      ctx.lineWidth = Math.max(2, Math.floor(cell * 0.08));
+      ctx.moveTo(cx - r * 0.45, cy - r * 0.45);
+      ctx.lineTo(cx + r * 0.45, cy + r * 0.45);
+      ctx.moveTo(cx + r * 0.45, cy - r * 0.45);
+      ctx.lineTo(cx - r * 0.45, cy + r * 0.45);
+      ctx.stroke();
+
+      return;
+    }
     const r = Math.floor(cell * 0.44);
     const cx = px + Math.floor(cell / 2);
     const cy = py + Math.floor(cell / 2);
@@ -1628,7 +1990,10 @@ if (dmg > 0) {
 
     game.chainLast = 0;
     game.selfHp = CFG.SELF_HP;
-    game.enemyHp = CFG.ENEMY_HP;
+    game.enemyHpMax = (game.enemyProfile?.hpMax || CFG.ENEMY_HP);
+    game.enemyHp = game.enemyHpMax;
+
+    game.enemyGateColor = (game.enemyProfile?.colorGate) ? pickEnemyGateColor() : null;
     game.totalDamage = 0;
 
     game.skillGauge = 0;
@@ -1640,6 +2005,7 @@ if (dmg > 0) {
     spawnIfNeeded();
     syncHudToState();
     updateSkillUi();
+    updateEnemyOrderUi();
     scheduleSkillUiRefresh();
   }
 

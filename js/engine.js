@@ -28,7 +28,6 @@
 
   // ---------------------------------------------------------
   // Scenario JSON paths (GitHub Pages / ローカルサーバで動作)
-  // ※ file:// 直開きだと fetch が失敗する環境があるため、その場合はフォールバックします。
   // ---------------------------------------------------------
   const SCENARIO_PATHS = Object.freeze({
     demo_akau_vs_koto: "./data/scenario/demo_akau_vs_koto.json",
@@ -237,10 +236,6 @@
       s.view.background.main = first.bg;
       s.view.background.front = null;
       s.view.background.frontVisible = false;
-
-      // 章切替時は前章の立ち絵を持ち越さない
-      if (s.view.characters && s.view.characters.self) s.view.characters.self.visible = false;
-      if (s.view.characters && s.view.characters.enemy) s.view.characters.enemy.visible = false;
     }
 
     runtime.mode = "adv";
@@ -312,7 +307,7 @@
   // Engine internal runtime flags (not saved)
   // ---------------------------------------------------------
   const runtime = {
-    mode: "idle", // idle | chapterSelect | loadingScenario | adv | battle
+    mode: "idle", // idle | chapterSelect | loadingScenario | adv | battle | arena
     lastBattleBranch: null, // { onWin?: string, onLose?: string }
     transitioning: false, // 追加
   };
@@ -417,7 +412,8 @@
       const prevBg = state.view.background.main;
       state.view.background.main = node.bg; // null OK
 
-      // 場面切替（背景変更）時、self/enemy が未指定なら前シーンのキャラを残さない
+      // 【復旧】場面切替（背景変更）時、self/enemy が未指定なら前シーンのキャラを残さない
+      // これがないと、場面転換しても前のシーンのキャラが棒立ちし続けるバグになります
       if (node.bg !== prevBg) {
         if (!node.self && state.view.characters && state.view.characters.self) {
           state.view.characters.self.visible = false;
@@ -489,6 +485,47 @@
     runtime.mode = "idle";
     setState(s);
   }
+
+  // ---------------------------------------------------------
+  // Arena (簡易対戦)
+  // ---------------------------------------------------------
+  function openArena() {
+    const s = deepClone(getState());
+    s.screen = SCREENS.ARENA;
+    runtime.mode = "arena";
+
+    // default selections
+    if (!s.arena) s.arena = { self: { name: "アパラ", file: null }, enemy: { name: "ニア・キナベイ", file: null } };
+    if (!s.arena.self) s.arena.self = { name: "アパラ", file: null };
+    if (!s.arena.enemy) s.arena.enemy = { name: "ニア・キナベイ", file: null };
+
+    setState(s);
+  }
+
+  async function startArenaBattle(sel = {}) {
+    const selfName = String(sel.selfName ?? sel.self ?? sel.player ?? "").trim();
+    const enemyName = String(sel.enemyName ?? sel.enemy ?? sel.foe ?? "").trim();
+    if (!selfName || !enemyName) return;
+
+    // reflect selection to state first (battle HUD uses view.characters)
+    const s0 = deepClone(getState());
+    s0.arena = s0.arena || { self: { name: selfName, file: null }, enemy: { name: enemyName, file: null } };
+    s0.arena.self = { name: selfName, file: null };
+    s0.arena.enemy = { name: enemyName, file: null };
+
+    s0.view.characters.self = { visible: true, name: selfName, file: null };
+    s0.view.characters.enemy = { visible: true, name: enemyName, file: null };
+
+    // route back to arena after battle
+    s0.battle.returnTo = "arena";
+    s0.battle.playerName = selfName;
+    s0.battle.enemyName = enemyName;
+
+    setState(s0);
+
+    await withFade(220, () => startBattle({ enemyName }));
+  }
+
 
   function startChapter(chapterId) {
     // "読み込み中" を出して入力を止める
@@ -636,6 +673,22 @@
     const branch = runtime.lastBattleBranch;
     runtime.lastBattleBranch = null;
 
+    const returnTo = s0?.battle?.returnTo || null;
+    if (returnTo === 'arena') {
+      const s = deepClone(s0);
+      // reset result
+      s.battle.result.visible = false;
+      s.battle.result.outcome = null;
+      s.battle.result.detail = '';
+      // clear routing
+      s.battle.returnTo = null;
+
+      s.screen = SCREENS.ARENA;
+      runtime.mode = 'arena';
+      setState(s);
+      return;
+    }
+
     const s = deepClone(s0);
     s.screen = SCREENS.ADV;
     runtime.mode = "adv";
@@ -669,6 +722,11 @@
   function wireUiEvents() {
     RP.UI.on("newGame", () => startNewGame());
 
+    // Arena
+    RP.UI.on("arenaOpen", () => openArena());
+    RP.UI.on("arenaStart", ({ selfName, enemyName }) => startArenaBattle({ selfName, enemyName }));
+    RP.UI.on("arenaBackToTitle", () => gotoTitle(false));
+
     RP.UI.on("choice", ({ id }) => {
       if (runtime.mode === "chapterSelect") {
         const c = CHAPTERS.find((x) => x.choiceId === id);
@@ -691,6 +749,7 @@
       const s = getState();
       if (s.screen === SCREENS.TITLE) runtime.mode = "idle";
       else if (s.screen === SCREENS.BATTLE) runtime.mode = "battle";
+      else if (s.screen === SCREENS.ARENA) runtime.mode = "arena";
       else if (s.screen === SCREENS.ADV) runtime.mode = s.chapterId ? "adv" : "chapterSelect";
 
       // ロードした章のシナリオは裏でプリロード（失敗してもフォールバックする）
@@ -751,6 +810,7 @@
     const s = getState();
     if (s.screen === SCREENS.TITLE) runtime.mode = "idle";
     else if (s.screen === SCREENS.BATTLE) runtime.mode = "battle";
+    else if (s.screen === SCREENS.ARENA) runtime.mode = "arena";
     else if (s.screen === SCREENS.ADV) runtime.mode = s.chapterId ? "adv" : "chapterSelect";
   }
 
@@ -762,6 +822,8 @@
     showBattleResult,
     finishBattleAndReturn,
     gotoTitle,
+    openArena,
+    startArenaBattle,
   });
 
   document.addEventListener("DOMContentLoaded", () => {
