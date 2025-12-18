@@ -832,7 +832,10 @@ if (!showSpeech) {
   setHidden(vnNameplate, isNarration || !name);
   setText(vnName, isNarration ? "" : name);
 
-  setText(vnText, speech.text || "");
+  // 【修正】改行コード(\n)を <br> タグに変換して表示する
+  if (vnText) {
+    vnText.innerHTML = (speech.text || "").replace(/\n/g, "<br>");
+  }
 }
 
       // speaking highlight (dim the non-speaking side)
