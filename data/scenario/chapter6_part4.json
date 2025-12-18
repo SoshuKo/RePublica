@@ -862,24 +862,6 @@
     },
     {
       "type": "line",
-      "self": {
-        "name": "アカウ＆タネイ",
-        "file": "タネイ.png",
-        "visible": true
-      },
-      "enemy": {
-        "name": "サテラ",
-        "file": "サテラ.png",
-        "visible": true
-      },
-      "speech": {
-        "side": "enemy",
-        "name": "サテラ",
-        "text": "この国の人々は本当に『不幸』ね"
-      }
-    },
-    {
-      "type": "line",
       "id": "p6p4_win_01",
       "self": {
         "name": "アカウ＆タネイ",
@@ -895,6 +877,24 @@
         "side": "self",
         "name": "ナレーション",
         "text": "サテラの嘆きに、誰も耳を貸さない。\n少なくとも、ここにいる誰もが「幸せ」だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "この国の人々は本当に『不幸』ね"
       }
     },
     {
@@ -1341,6 +1341,7 @@
     {
       "type": "line",
       "id": "p6p4_star",
+      "bg": null,
       "self": {
         "name": "タネイ",
         "file": "タネイ.png",
@@ -1577,17 +1578,17 @@
     {
       "type": "line",
       "self": {
-        "name": "アカネイ",
-        "file": "アカネイ.png",
-        "visible": true
-      },
-      "enemy": {
         "name": "ネキネイ",
         "file": "ネキネイ.png",
         "visible": true
       },
+      "enemy": {
+        "name": "アカネイ",
+        "file": "アカネイ.png",
+        "visible": true
+      },
       "speech": {
-        "side": "self",
+        "side": "enemy",
         "name": "アカネイ",
         "text": "兄弟ならこう言うだろう\n『未来が待っている』と"
       }
@@ -1595,13 +1596,13 @@
     {
       "type": "line",
       "self": {
-        "name": "アカネイ",
-        "file": "アカネイ.png",
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
         "visible": true
       },
       "enemy": {
-        "name": "ネキネイ",
-        "file": "ネキネイ.png",
+        "name": "アカネイ",
+        "file": "アカネイ.png",
         "visible": true
       },
       "speech": {
@@ -1758,17 +1759,17 @@
     {
       "type": "line",
       "self": {
-        "name": "タネイ",
-        "file": "タネイ.png",
-        "visible": true
-      },
-      "enemy": {
         "name": "カレイ",
         "file": "カレイ.png",
         "visible": true
       },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
       "speech": {
-        "side": "self",
+        "side": "enemy",
         "name": "タネイ",
         "text": "このぬいぐるみたち、申し訳ないが我が家に置いておくわけにはいかないからな"
       }
@@ -1776,17 +1777,17 @@
     {
       "type": "line",
       "self": {
-        "name": "タネイ",
-        "file": "タネイ.png",
-        "visible": true
-      },
-      "enemy": {
         "name": "カレイ",
         "file": "カレイ.png",
         "visible": true
       },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
       "speech": {
-        "side": "self",
+        "side": "enemy",
         "name": "タネイ",
         "text": "それと、そのチーズを食べるなら換気をしてくれ\n匂うんだ。ほら、アカウが嫌がっているじゃないか"
       }
@@ -1817,8 +1818,8 @@
         "visible": true
       },
       "enemy": {
-        "name": "カレイ",
-        "file": "カレイ.png",
+        "name": "タネイ",
+        "file": "タネイ.png",
         "visible": true
       },
       "speech": {
@@ -1835,8 +1836,8 @@
         "visible": true
       },
       "enemy": {
-        "name": "カレイ",
-        "file": "カレイ.png",
+        "name": "タネイ",
+        "file": "タネイ.png",
         "visible": true
       },
       "speech": {
@@ -1848,17 +1849,17 @@
     {
       "type": "line",
       "self": {
-        "name": "タネイ",
-        "file": "タネイ.png",
-        "visible": true
-      },
-      "enemy": {
         "name": "アカウ",
         "file": "アカウ_悲.png",
         "visible": true
       },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
       "speech": {
-        "side": "self",
+        "side": "enemy",
         "name": "タネイ",
         "text": "アカウ、反省するのといじけるのは違うぞ"
       }
@@ -1866,13 +1867,13 @@
     {
       "type": "line",
       "self": {
-        "name": "タネイ",
-        "file": "タネイ.png",
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
         "visible": true
       },
       "enemy": {
-        "name": "アカウ",
-        "file": "アカウ_悲.png",
+        "name": "タネイ",
+        "file": "タネイ.png",
         "visible": true
       },
       "speech": {
@@ -1956,13 +1957,13 @@
     {
       "type": "line",
       "self": {
-        "name": "タネイ",
-        "file": "タネイ.png",
+        "name": "カレイ",
+        "file": "カレイ.png",
         "visible": true
       },
       "enemy": {
-        "name": "カレイ",
-        "file": "カレイ.png",
+        "name": "タネイ",
+        "file": "タネイ.png",
         "visible": true
       },
       "speech": {
@@ -1974,17 +1975,17 @@
     {
       "type": "line",
       "self": {
-        "name": "タネイ",
-        "file": "タネイ.png",
-        "visible": true
-      },
-      "enemy": {
         "name": "カレイ",
         "file": "カレイ.png",
         "visible": true
       },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
       "speech": {
-        "side": "self",
+        "side": "enemy",
         "name": "タネイ",
         "text": "……おい"
       }
@@ -2046,17 +2047,17 @@
     {
       "type": "line",
       "self": {
-        "name": "タネイ",
-        "file": "タネイ.png",
-        "visible": true
-      },
-      "enemy": {
         "name": "アカウ",
         "file": "アカウ.png",
         "visible": true
       },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
       "speech": {
-        "side": "self",
+        "side": "enemy",
         "name": "タネイ",
         "text": "それでいいのさ、アカウ"
       }
@@ -2082,13 +2083,13 @@
     {
       "type": "line",
       "self": {
-        "name": "タネイ",
-        "file": "タネイ.png",
+        "name": "アカウ",
+        "file": "アカウ.png",
         "visible": true
       },
       "enemy": {
-        "name": "カレイ",
-        "file": "カレイ.png",
+        "name": "タネイ",
+        "file": "タネイ.png",
         "visible": true
       },
       "speech": {
