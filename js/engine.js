@@ -702,6 +702,9 @@
     // 任意：敵名などを state に保存したい場合（battle.js が参照できる）
     if (node && typeof node.enemyName === "string") {
       s.battle.enemyName = node.enemyName;
+    } else {
+      // 【修正】指定がない場合は、前の戦闘の情報を引き継がないようリセットする
+      s.battle.enemyName = "";
     }
 
     setState(s);
