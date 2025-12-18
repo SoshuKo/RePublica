@@ -1,0 +1,927 @@
+[
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "1990年8月、セタイン小教区・エメラン大講堂。\nこの日、元・法議会議長を務めたラカン・ライの葬儀が執り行われた。"
+    },
+    "id": "p6p3_start",
+    "bg": "エメラン大講堂01.jpg",
+    "self": {
+      "name": "タネイ",
+      "visible": true
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "悲"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "蝋燭の火は揺れない。\n揺れないように、人が息を殺している。\n泣き声さえ、祈りの中に沈めるように。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "来賓として招かれたタネイは、弔辞を読み上げる。\n声は大きくない。だが講堂の隅まで届く。\n“第一教導職の声”とは、そういうものだ。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「法議会議長として、長年にわたり『選択』と『話し合い』の狭間で生き続けた」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「ラカン・ライ閣下に、第一教導職として『狐色のナイフ』を贈呈します」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「これは言うまでもなく我が国の象徴であり」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「これを振るうことが許されるのは、名実ともにこの国を導いたもののみです」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "“贈呈”は儀式だ。\nだが儀式は、ときに政治よりも鋭く人の心を刺す。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイから狐色のナイフを受け取ったセラン直轄司教アカネイは、\n安らかに眠るライの棺桶にナイフを納め、祈りの言葉を捧げる。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「唯一神イラトの御前で、兄弟がわたしたちを正しく導かれますように」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "悲"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「'Ï'E'A Géjéné Kuējebeyï」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "参列者が続けて祈りを捧げる。\n嗚咽と祈りが講堂を満たした。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "外は白い光。\n中は黒い布。\n生と死の境目が、礼拝の香に溶けていく。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカネイの家族の墓の隣に、ラカン家の墓が並ぶ。\n墓碑には息子サイの名前もあった。"
+    },
+    "bg": "エメラン大講堂02.jpg",
+    "self": {
+      "name": "タネイ",
+      "visible": true
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "悲"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "石に刻まれた名前は、声を持たない。\nだが名前は、触れるだけで泣けるほど重い。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「兄弟はサイが死んだことをずっと悔やんでいた」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "悲"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカネイが語り、タネイがそれを聞く。\n彼らは知らない。白梟がサイを葬ったことを。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "知らないから、言葉はまっすぐだ。\nまっすぐだから、痛い。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「アカウは元気そうだな」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "悲"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "彼女の動向について知らないカラベイ国民などいない。\nタネイ政権のスポークスマンとして、過激なレトリックで国民を扇動していたからだ。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカネイは皮肉を込めたつもりだろう。\nだがタネイは、それに気付かないふりをした。\nふりをすることもまた、第一教導職の仕事だ。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "二人のもとにネキネイが駆け寄ってくる。\n足音が早い。手には布に包まれたもの。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "ネキネイ",
+      "text": "「アカネイ、ナイフが仕上がりました」"
+    },
+    "enemy": {
+      "name": "ネキネイ",
+      "visible": true
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "彼女は磨き上げられた真紅のナイフをアカネイに手渡す。\n今日、アカネイとタネイは神前試合をライに捧げる予定だ。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "試合は殺し合いではない。\n祈りの形だ。\nだが祈りは、時に“刃”の言葉でしか交わせない。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「『もうこれ以上血塗られませんように』そう刻まれている」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "悲"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「しかし、もしもあなたが神の御前においてわたしを欺くのであれば」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「この刃はあなたの血で染まることになる」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「分かっています」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「手加減はしません」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイがアカネイに約束する。\n特設の舞台の上で、二人がナイフを抜く。"
+    },
+    "id": "p6p3_circle",
+    "bg": "エメラン大講堂03.jpg",
+    "self": {
+      "name": "タネイ",
+      "visible": true
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "参列者たちは二人の祈りの剣戟を見守る。\n嗚咽は止み、沈黙が増す。\n沈黙は観客の礼儀であり、同時に緊張そのものだ。"
+    }
+  },
+  {
+    "type": "battle",
+    "enemyName": "アカネイ",
+    "onWin": "p6p3_win_01",
+    "onLose": "p6p3_lose_01"
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "最初の一合で分かる。\nアカネイの刃は重い。怒りを背負っている。\nタネイの刃は静かだ。受け止めるために澄んでいる。"
+    },
+    "id": "p6p3_win_01",
+    "bg": "エメラン大講堂03.jpg",
+    "self": {
+      "name": "タネイ",
+      "visible": true
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイは無垢のナイフを握っている。\n教導職は狐色のナイフを持つことが許されているが、彼はそれを持たない。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "理由は二つ。\n一つは、先駆者たちに敬意を払っているから。\nもう一つは、ナイフは『選択』の手段ではないから。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカネイは往年の『狂暴の構え』を見せる。\n怒りを込み上がらせ、刃が直線ではなく“うねり”になる。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイ政権に不満を持つ人たちの声を。\n兄弟の無念を。\nアカネイはその全部を、振り下ろしに込める。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイはそれを真摯に受け止める。\n人々の怒りに、ライの無念に、正面から向き合う。\n退かない。折れない。受けて、返す。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「一つ、尋ねてもいいかな」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "刃とともに言葉を交えるアカネイ。\n息の合間に、問いが滑り込む。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「前第一教導職猊下は、本当に天寿を全うされただけなのかな」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "参列者たちの空気が固まる。\nそれを訊く権利があるのは、今、この国にアカネイだけだろう。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「唯一神イラトの御名に誓って、わたしは何も知りません」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「ただ、天寿を全うされたと聞かされました」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "枕詞の重さを、誰もが理解していた。\n神名を盾にした言葉は、軽々しくは吐けない。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイは嘘をついていない。\nその“嘘のなさ”が、刃より明確に伝わる。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカネイの手が止まる。\n怒りの波が、岸に打ち上げられて引くみたいに落ち着く。"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "悲"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "そして彼は、ナイフを収める。\n安心とも、落胆ともとれぬ表情をして。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「……時間だ」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "悲"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "二人は神前に礼をして、舞台をあとにする。\nこれ以上、二人が言葉を交わすことはなかった。"
+    }
+  },
+  {
+    "type": "goto",
+    "target": "p6p3_star"
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "最初の一合で、噛み合いがずれる。\nアカネイの刃は怒りの形のまま、止まらない。\nタネイの受けは、わずかに遅れる。"
+    },
+    "id": "p6p3_lose_01",
+    "bg": "エメラン大講堂03.jpg",
+    "self": {
+      "name": "タネイ",
+      "visible": true
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイは無垢のナイフを握っている。\n敬意のため。理念のため。\nだが、その“理念”が今は、剣戟の速度を奪う。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカネイの『狂暴の構え』が、観客の息を切らす。\n怒りは美しいほど精密に、刃の軌道を変える。\n受けても、次が来る。来る。来る。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「答えろ」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「兄弟は、何に殺された？」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "問いが刃と同じ速さで飛んでくる。\nタネイが一瞬、言葉を探す。\nその一瞬が——隙になる。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「唯一神イラトの御名に誓って……」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "言いかけた瞬間、アカネイの刃が潜り込む。\n防ぐ角度ではなく、すり抜ける角度。\n真紅の光が、白い空気を裂く。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイの腕に、熱が走る。\n次いで肩。次いで脇腹。\n“殺さないが、信じない”という刃の刻み方。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「……っ！」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "観客が息を呑む。\n血が落ちるのではない。\n祈りの上に、現実が落ちる。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「その誓いを」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「信じろと？」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカネイの目は冷たい。\nタネイの言葉は嘘ではない。\nだが、嘘ではないだけでは“信用”にならない。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイは下がらない。\nだが、受けきれない。\n刃の重さが、信頼の欠落の重さに変わる。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカネイは最後の一合で、刃を止める。\n殺しはしない。\nその代わり、傷だけを残す。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカネイ",
+      "text": "「……時間だ」"
+    },
+    "enemy": {
+      "name": "アカネイ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "舞台の端に血が落ちる。\nタネイは膝をつきかけ、持ち直す。\n第一教導職として、倒れるわけにはいかない。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "二人は神前に礼をして、舞台をあとにする。\nだが空気はもう、元には戻らない。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイが得たのは勝利ではなく、\nアカネイの“疑いが確信へ変わる一歩手前”だった。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "【LOSE END】「真紅の疑い」"
+    }
+  },
+  {
+    "type": "goto",
+    "target": "p6p3_circle"
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "同日晩。ガティナ大講堂、第一教導職の寝室。\n外は静かで、遠くの衛兵の足音だけが、ときどき廊下を流れていく。"
+    },
+    "id": "p6p3_star",
+    "bg": "ガティナ大講堂02.jpg",
+    "self": {
+      "name": "タネイ",
+      "visible": true
+    },
+    "enemy": {
+      "name": "アカウ",
+      "visible": true
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "横になるタネイとアカウ。\nタネイだけが知っている、アカウが女であることを。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "寝台の天蓋が、夜の影を受け止めている。\n天井を見上げたまま、タネイは今日のことを語りはじめる。\n言葉は小さく、だが胸の奥から出てくる。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「みなは、わたしの理想を理解してくれるだろうか」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "問われているのは政治ではない。\n信仰でもない。\n“自分という人間”の孤独だ。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカウ",
+      "text": "「第一教導職猊下を愛するものであれば、必ず理解できます」"
+    },
+    "enemy": {
+      "name": "アカウ",
+      "visible": true
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカウが即答する。\n反射の返事。守る者の返事。\n——でも、今のタネイが欲しいのは、そういう強い保証ではない。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "彼が求めているのは、慰めでも称賛でもなく、\n理解されないかもしれない、という恐れを“共有”してくれる声。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカウは息をひとつ整え、言葉を改める。\nその改め方が、彼女の愛の形だった。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカウ",
+      "text": "「『あなた』は優しすぎます」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカウ",
+      "text": "「だから、わたしはあなたを愛しました」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカウ",
+      "text": "「誰からも愛されようとするだなんて」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカウ",
+      "text": "「それこそ暴慢です」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "きつい言い方なのに、刃ではない。\n刃に見せかけた、抱きしめ方だ。\nタネイの優しさが、タネイ自身を傷つけないように。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「それでも、みなから愛されたいと言ったら？」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイは真に国民に理解を得られる第一教導職を目指していた。\nアカウのプロパガンダが作った、偽りの理解ではなく。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "“作られた喝采”ではなく、\n“選ばれた理解”がほしい。\nその願いは美しい。だからこそ、危うい。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカウ",
+      "text": "「そう言われたら、嫉妬してしまいます」"
+    },
+    "enemy": {
+      "name": "アカウ",
+      "visible": true,
+      "expr": "怒"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカウが頬を膨らませる。\n拗ねたふり。けれど、目は真剣だ。\n彼女は本当に笑顔が上手だ。上手すぎるほどに。"
+    },
+    "enemy": {
+      "name": "アカウ",
+      "visible": true
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "タネイ",
+      "text": "「相変わらずかわいいやつだ、アカウは」"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "タネイがアカウを抱き寄せる。\n服越しに伝わる体温が、言葉より確かな現実になる。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "アカウの胸の奥で、何かがほどける。\n“国”でも“理想”でもなく、\nこの瞬間の彼を守りたい、という衝動が勝ってしまう。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "self",
+      "name": "ナレーション",
+      "text": "この幸せがずっと続けばいい。\nそのためならなんだってできる。\n彼女は、そう思えてしまった。"
+    }
+  },
+  {
+    "type": "line",
+    "speech": {
+      "side": "enemy",
+      "name": "アカウ",
+      "text": "（……みんなに愛されなくていい）\n（わたしが、あなたを愛してるから）"
+    },
+    "enemy": {
+      "name": "アカウ",
+      "visible": true,
+      "expr": "悲"
+    }
+  },
+  {
+    "type": "chapter",
+    "chapterId": "chapter6_part4",
+    "start": "start"
+  }
+]

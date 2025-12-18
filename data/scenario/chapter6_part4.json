@@ -1,0 +1,2140 @@
+{
+  "nodes": [
+    {
+      "type": "line",
+      "id": "p6p4_start",
+      "bg": "トライポート.jpg",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1992年10月。\nイラー直轄教区、タネイ・トライポート。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "九氏族専用ロビーに立つアカウ。\nタネイの名を冠したカラベイの顔。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "それは、まさに彼女のタネイに対する愛の極致だった。\n彼の理想を、彼の国を、彼の未来を——\n“自分の手”で守り抜くと決めた人間の立ち姿。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "今日、彼女はイラーからハヴァレイキへ向かい、\nダフレイ自治教区で「白梟」として特別軍事作戦を決行するつもりだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "その内容は、「五天の殲滅」を口実にしたデルタイ侵攻であった。\n大義という名の刃。\n誰かの正しさが、誰かの生を切り捨てる——その境目に、彼女は立っている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そんなアカウの前に、サテラが立ち塞がる。\n金髪。落ち着いた呼吸。\nそして、過去の“手遅れ”を連れてくる顔。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "第一教導職猊下に告げ口でもするつもりですか"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "いいえ\nラデン・タネイは『不幸』をもたらすもの、消してしまってもよい"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "言葉が冷たい。\n冷たいまま、正義の形をしている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは怒りの形相で、血塗られた純白のナイフを取り出す。\nサテラもナイフを取り出し、両者は会敵する。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウの攻撃は素直だった。\nパラジェイ、アヤ、アカネイとシャウン家に伝わる、力任せの「狂暴の構え」。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "相手は受け身にならざるを得ない。\nそうなれば、こちらのペース——そのはずだった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "しかし、アカウの単調な動きは次第に読まれていく。\n攻撃と攻撃の隙に、急所を突く一撃を差し込むサテラ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラのナイフが、徐々に両者の攻防のリズムを整えていく。\n“整える”のは、勝つためじゃない。\n殺すための拍子へ、相手を誘導するためだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "ひと一人愛せないお前に\n幸せを語る資格はない！"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウを奮い立たせているのは、タネイに対する限りない愛。\nカレイの愛を無碍にするこの女とは違う。\n——自分は、愛のために刃を握っている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "これは大義だ\n世界の人々を幸せにする使命を、わたしは負っている！"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_怒.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "対するサテラの「幸せ」は抽象的で、個人を見ていない。\n大きな「幸せ」の実現を前に、\n小さな「幸せ」を踏みにじれる力を彼女は持っていた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "勝負が長引くにつれて、体力を消耗するアカウが不利になっていく。\n片足に一撃。片手に一撃。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "痛みが積み重なるほど、刃は重くなる。\n愛は強い。だが、肉体は有限だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ついにアカウは膝をつく。\nロビーの床が冷たい。\n冷たさが、心まで侵食しそうになる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "命を賭して第一教導職猊下を守るのが\nわたしの使命だ！"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "そうでしょうか？\nそもそもはじめからあなたはラデン・タネイを守ってなどいないのだから"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラは14年前の真相を知っていた。\nキラネイ殺害当時、ミセニティウ大講堂の手荷物検査を免れた九氏族はタネイの他にもいた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "シャウン家と対立するティラウン家に毒物を与えたのは、他でもないジューナー。\n検査のあと、ティラウン家の人間は毒物を部下に渡し、そのまま第一委員会へ向かわせた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "その一部始終を、ジューナーは確認していた。\n——つまり、タネイは“犯人候補にされるよう仕組まれていた”。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは自分の純白のナイフが血に染まっていることに初めて気がついた。\nあの日、自分はタネイを信じることができなかったのだ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "崩れ去るアカウの襟を掴み、とどめを刺そうとするサテラ。\n刃が喉元へ届く距離。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ネキネイ",
+        "text": "そこまでです！"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "警察庁の特殊部隊がロビーに突入してくる。\nライト、号令、足音。\n空気が一瞬で“現場”に塗り替えられる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "部隊を指揮するネキネイ。\nそして同行するタネイとカレイ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "サテラ、また会えたね\n残念だけど、アカウとぼくたちは『話し合い』で決着をつけることに決めたんだ"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイはタネイに真実を告げていた。\nだからこそ、タネイはここに立っている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ネキネイ",
+        "text": "あなたがサイを殺したことを、わたしは絶対に許しません\nあなたが奪った正義を、あなたが取り返してください"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ネキネイがアカウのもとに駆け寄り、手を差し伸べる。\nその手は、過去の傷に触れる手だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "あの夜の答えが出た\nそれでも、『みなから愛されたければ』、誠実であるべきだ"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "アカウ、誠実の神カウの名の通りに"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは息を呑む。\n“誠実”は、彼女が最も怖れていた言葉だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "わたしはお前の苦しみに気がつけなかった\nだから、これからは第一教導職として、お前の過ちを、すべての国民の過ちを一身に背負う"
+      }
+    },
+    {
+      "type": "line",
+      "id": "p6p4_circle",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイがアカウの隣に並び立つ。\nその手には、ネキネイから託された真紅のナイフ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "ケジメをつけよう"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイとアカウ。真紅と純白。\n二つの刃が、同じ方向を向く。"
+      }
+    },
+    {
+      "type": "line",
+      "id": "p6p4_choice_prompt",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "System",
+        "text": "（誰で戦う？）"
+      }
+    },
+    {
+      "type": "choice",
+      "id": "p6p4_choice_battle",
+      "bg": "トライポート.jpg",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "System",
+        "text": "戦うプレイアブルを選択してください。"
+      },
+      "options": [
+        {
+          "id": "p6p4_sel_akau",
+          "text": "アカウで戦う",
+          "set": {
+            "player": {
+              "name": "アカウ",
+              "file": "アカウ.png",
+              "visible": true
+            },
+            "enemy": {
+              "name": "サテラ（二戦目）",
+              "file": "サテラ.png",
+              "visible": true
+            }
+          }
+        },
+        {
+          "id": "p6p4_sel_tanei",
+          "text": "タネイで戦う",
+          "set": {
+            "player": {
+              "name": "タネイ",
+              "file": "タネイ.png",
+              "visible": true
+            },
+            "enemy": {
+              "name": "サテラ（二戦目）",
+              "file": "サテラ.png",
+              "visible": true
+            }
+          }
+        },
+        {
+          "id": "p6p4_sel_duo",
+          "text": "アカウ＆タネイで戦う",
+          "confirm": {
+            "title": "注意",
+            "message": "彼らと苦楽を共にする覚悟はありますか",
+            "okText": "覚悟がある",
+            "cancelText": "やめる"
+          },
+          "set": {
+            "player": {
+              "name": "アカウ＆タネイ",
+              "file": "アカウ.png",
+              "visible": true
+            },
+            "enemy": {
+              "name": "サテラ（夢の実現）",
+              "file": "サテラ.png",
+              "visible": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "battle",
+      "id": "p6p4_battle_vs_satera",
+      "onWin": "p6p4_win_01",
+      "onLose": "p6p4_lose_01"
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "この国の人々は本当に『不幸』ね"
+      }
+    },
+    {
+      "type": "line",
+      "id": "p6p4_win_01",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラの嘆きに、誰も耳を貸さない。\n少なくとも、ここにいる誰もが「幸せ」だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "我を忘れたサテラの猛攻が二人を襲う。\nだが二人は冷静にそれをいなし、次に「自分がすべきこと」をした。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウはタネイへの愛を昂らせ、\n感情をナイフに乗せる「狂暴の構え」を見せる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイはアカウの感情の間を這うように、\n「無心の構え」でサテラに迫る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "パラジェイとキナベイ。\nアカネイとライ。\nそしてアカウとタネイ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "陰と陽の掛け合わせが、三世代に渡って継承された瞬間だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイのナイフがサテラのナイフを地面に落とす。\n金属音がロビーに響く。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "同時に、アカウのナイフがサテラの喉元を狙う。\n決着は、ここについた。"
+      }
+    },
+    {
+      "type": "goto",
+      "target": "p6p4_star"
+    },
+    {
+      "type": "line",
+      "id": "p6p4_lose_01",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラの猛攻が止まらない。\nタネイの無心は間合いを詰めきれず、\nアカウの狂暴は焦りで重くなる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "“連携”の隙間に、魔女は刃を差し込む。\n狙いは、勝敗ではない。\n——アカウの心だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "あなたが守っているのは\n彼？　それとも、あなた自身？"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "言葉が刺さる。\nアカウの動きが一拍だけ止まる。\nその一拍を、サテラは逃さない。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "刃がアカウの喉へ走る。\n防げない距離。\n息が凍る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "アカウ！"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイが踏み込む。\n迷いがない。\n——守るべきが、決まっているから。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ＆タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "純白の前に、真紅が割り込む。\n金属が触れる音ではない。\n肉に刃が入る音。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "……え？"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイの身体が、ゆっくり崩れる。\n赤が広がる。\nアカウの視界が揺れる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "……生きろ\nそれで……いい……"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラは一歩引く。\n仕事が終わった者の呼吸で、冷たく笑う。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "大義は\n痛みを選ばないの"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイは倒れる。\n第一教導職の名も、理想も、\nこの瞬間だけは、ただの体温になる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "やめて……！\nやめてよ……！"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "叫びは届かない。\n届かないまま、ロビーの空気が変わる。\n“守られた命”の重さだけが残る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "System",
+        "text": "【BAD END】「真紅の盾」"
+      }
+    },
+    {
+      "type": "goto",
+      "target": "p6p4_circle"
+    },
+    {
+      "type": "line",
+      "id": "p6p4_star",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "",
+        "file": null,
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "一週間後、サテラはハーロピノンに強制送還された。\n彼女の行いは母国で厳重に処罰されるであろう。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "",
+        "file": null,
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "——それで、すべてが終わったことにして。\n誰もが、終わった“ふり”をした。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "",
+        "file": null,
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "九氏族は、キラネイ暗殺からサイ殺害までの一連の騒動を、\n教導国と九氏族の権威を守るために揉み消した。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "",
+        "file": null,
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "もっとも、キラネイ殺害に関わったティラウン家の人間は処罰され、\nアカウはシャウン家を追放された。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "",
+        "file": null,
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "裁かれるべき者は裁かれた。\n——だが裁かれなかった“真相”が、いちばん重いまま残った。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "",
+        "file": null,
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは「体調不良」を理由に広報官を辞職した。\n実情は、タネイに責任を負わせまいとする彼女自身の判断であろう。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "",
+        "file": null,
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "言葉で国を動かした彼女が、\n最後に選んだ言葉が「体調不良」だった。\nそれは逃げではなく、“引き受けるための撤退”だった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "",
+        "file": null,
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイもまた、講話の中で「冬眠の報せ」を語った。\n第一教導職がここ10年のうちに職を辞する決意に近いもの。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "",
+        "file": null,
+        "visible": false
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "真実を明らかにできないタネイなりの罪滅ぼしだった。\n正しいことを言えないなら、せめて“席”を譲る。\n——その優しさは、救いにも、傷にもなる。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "エメラン大講堂02.jpg",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカネイ",
+        "file": "アカネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "セタイン小教区。\nラカン家の墓前。石は冷え、風が乾いている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカネイ",
+        "file": "アカネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカネイとネキネイはそこを訪れていた。\n並ぶ墓碑。息子サイの名。\nそして、語られない死。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカネイ",
+        "file": "アカネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ネキネイ",
+        "text": "アカネイ、本当にこれでよかったのですか"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカネイ",
+        "file": "アカネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ネキネイは不満を顔に浮かべる。\n怒りは正義の形をしていて、抑えるほど熱を増す。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカネイ",
+        "file": "アカネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカネイ",
+        "text": "兄弟ならこう言うだろう\n『未来が待っている』と"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカネイ",
+        "file": "アカネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカネイの表情は晴れやかであった。\n晴れやかさは、諦めとは違う。\n“先へ行く”と決めた者の顔だ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "ネキネイ",
+        "file": "ネキネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカネイ",
+        "file": "アカネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ネキネイは黙る。\n墓の前で、言葉はいつも負ける。\n——勝てるのは、誓いだけだ。"
+      }
+    },
+    {
+      "type": "line",
+      "bg": "屋敷.jpg",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "同刻。\nアーケイ・フリナー小教区、ラデン家邸宅。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "謹慎中のアカウをよそに、カレイは「ホームパーティー」を開催していた。\n参加者は、タネイとアカウ、そしておびただしい量のぬいぐるみたち。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "重い空気を軽くする方法を、カレイは一つしか知らない。\n——“好きな話を全力ですること”。\nたぶん、励ましのつもり。たぶん、語りたいだけ。\nおそらく後者であろう。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "でさ！『放射性廃棄物が〜』とかよく言うけど！\n廃棄物は厳重に管理されてるし！"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "ガラス固化してステンレス容器に入れて地層処分する技術も確立されつつあって！\nしかも！高速炉使えば、あの廃棄物も再利用できる可能性があるからね！？"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "核燃料サイクルっていって、再処理してMOX燃料にして…"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "テーブルの上にはチーズ、パン、湯気の立つスープ。\nそして、椅子にも床にも、ぬいぐるみ。\nぬいぐるみたちは無言で聞いている。聞いていない。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "このぬいぐるみたち、申し訳ないが我が家に置いておくわけにはいかないからな"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "それと、そのチーズを食べるなら換気をしてくれ\n匂うんだ。ほら、アカウが嫌がっているじゃないか"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "そんなことないよな？\nアカウもチーズ、食べるだろう？"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "……いや、わたしは大丈夫"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アカウは暗い表情をしていた。\nあれから一週間、ずっとこうだ。\n笑顔の天才が、笑顔を置き忘れている。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "アカウ、反省するのといじけるのは違うぞ"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイがアカウの肩をたたく。\n優しい叱責。\nでも今の彼女は、タネイの顔を直視する資格がないと思っていた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "……ごめんなさい"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ_悲.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "謝る言葉は簡単なのに、\n謝った後の“許されること”が怖い。\nアカウは、そこに立てない。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "そうだぞ、あっ"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "勢い余って、カレイがぬいぐるみの山を崩してしまう。\nぬいぐるみの洪水。\n布の波が、床を走る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイが巻き込まれる。\n腕が埋まり、肩が埋まり、\n最後に頭上へ——クマのぬいぐるみが乗った。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "……おい"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "怒るより先に、息が漏れる。\n堪えられず、吹き出してしまうアカウ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "アカウ",
+        "text": "……っ、ふふ\n……ふははっ"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "笑いが戻る。\nたった一瞬の、たった一回の。\nそれでも、それは救命具みたいに浮かぶ。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "タネイ",
+        "text": "それでいいのさ、アカウ"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "タネイに励まされ、やっと顔を上げるアカウ。\n彼女の目にはまだ影がある。\nでも、影の奥に灯が戻った。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ぬいぐるみの山の向こうで、カレイが照れた顔をする。\nタネイはクマを頭から下ろし、ため息をつき、\nそれでも口元は少しだけ緩んでいる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女の笑みは本当に上手であった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": {
+        "name": "アカウ",
+        "file": "アカウ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "タネイ",
+        "file": "タネイ.png",
+        "visible": true
+      },
+      "speech": {
+        "side": "self",
+        "name": "System",
+        "text": "EPISODE6 END"
+      }
+    },
+    {
+      "type": "end"
+    }
+  ]
+}

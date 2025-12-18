@@ -1,0 +1,732 @@
+{
+  "nodes": [
+    {
+      "type": "line",
+      "bg": "貨物船01.jpg",
+      "self": { "visible": false, "name": "", "file": null },
+      "enemy": { "visible": false, "name": "", "file": null },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1986年、スクニューネの港湾都市ルルペで、\nスクニューネ（ヴァラリアから独立し、民主化）とカラベイ主導の地域経済協定『ルルペ協定』に調印し、\n通貨統一・国境検査廃止・関税撤廃を柱とする統合を走らせた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "これらはタネイの権力基盤を強化し、\nカラベイを地域共同体の盟主へ押し上げる梃子となる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ルルペ協定は反共・反五天をスローガンに掲げ、\n特に加盟地域からの五天の影響力の排除を重要視した。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "——“経済”の名で結ばれるものは、\n必ず“影”も運ぶ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "同年12月。\nスクニューネのシュメケルペから、カラベイのイラー直轄教区へ向かう貨物船。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "その護衛を任された九地本隊。\n『機密資料』を輸送中の船舶を、五天が襲撃する可能性を察知したからだ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "深夜の海上をライトがくまなく照らす。\n波は黒く、空も黒い。\n光だけが、海を裂く刃みたいに走っていく。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "visible": false },
+      "speech": {
+        "side": "self",
+        "name": "アパラ",
+        "text": "「水中も警戒しろ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "visible": false },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "『影梟』アパラが現場の指揮をとる。\n本隊は警察庁公安局に組み込まれて長らく経っていた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "visible": false },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラは国に支給された最新鋭の装備を身に纏うも、\n相変わらず懐には『伝統』を収めていた。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "visible": false },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "新しい装備は、命を延ばす。\nだが古い伝統は、命の使い方を決める。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "「影梟、コンテナのうちの一つから物音がします」"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "金髪の女性隊員が声をかける。\n九地の通常の転属形態とは別の、『上からの指示』で転属してきた女。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "貼り付けたような表情。\n呼吸の癖すら薄い。\n諜報員には適材といったところか。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "アパラ",
+        "text": "「全員、包囲」\n「開封は俺の合図でやれ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コンテナを包囲する九地の隊員たち。\n金属の箱は沈黙している。\n沈黙は、爆発の前触れにもなる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コンテナを開封しようとした、そのとき。\n大きな爆発とともに、コンテナが自ずと開く。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "扉が“開いた”のではない。\n“開かされた”。\n内側から、力で。意志で。狂気で。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「殺しにきましたわ、愛しの旦那さま！」"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コンテナの中から数人の五天の構成員。\nそして、包帯に身を包んだ女。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コンテナの内側には、一面にタネイの写真が貼り付けられている。\n海風に煽られて、紙がわずかに揺れる。\nまるで“船そのもの”が執着を運んでいるみたいに。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "アパラ",
+        "text": "「『青天』のお出ましか」"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラが部下に発砲の指示を出す。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "アパラ",
+        "text": "「撃て」\n「距離を取れ、囲い込め」"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "銃声が闇を切り裂く。\n硝煙が波の匂いに混じる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "だが、女は止まらない。\n硝煙を掻い潜りながら、ナイフの間合いに迫る。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "一人、また一人と九地の隊員たちが倒れる。\n倒れ方が“速い”。\n叫びが、出る前に終わっていく。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「あら、殺した感触が旦那さまじゃなくってよ」"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトは目が見えていなかった。\nしかし、五感を一つ失ったことで、感覚はさらに過敏になっていた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "見えないからこそ、迷わない。\n迷わないからこそ、刃が最短で届く。"
+      }
+    },
+
+    {
+      "type": "line",
+      "id": "circle_01",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "——"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "アパラ",
+        "text": "「『天』を騙る不届きものよ」\n「イスミズラークの法の下、裁きの鉄槌を下す」"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラがナイフを抜き、コトと対峙する。\n——ここから先は、光も闇も関係ない。\n刃と呼吸だけが、世界のルールになる。"
+      }
+    },
+    {
+      "type": "battle",
+      "enemyName": "コト（三戦目）",
+      "onWin": "win_01",
+      "onLose": "lose_01"
+    },
+
+    {
+      "type": "line",
+      "id": "win_01",
+      "bg": "貨物船02.jpg",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラの『無心の構え』は、気の流れを読む型。\nだが、コトの『自動反撃』とは相性が悪かった。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "読めた瞬間に、もう返ってくる。\n“読んだ”という意識が、カウンターの合図になる。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「『あの女』と違って」\n「かわいげのない刃ですこと」"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトは攻撃を最小限にとどめ、余力をカウンターに回す。\nアパラもまた、感情の制御を巧みにこなす。"
+      }
+    },
+    {
+      "type": "line",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "相性が悪い者同士がぶつかると、\n戦いは“上手い”まま、どこまでも不毛になる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "二人は刃を交えながら船室内に移動する。\n甲板の風が消え、代わりに鉄と油の匂いが濃くなる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「不毛ですわね」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "アパラ",
+        "text": "「まだ分からないだろう」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラは拳銃を取り出す。\n刃の間合いのまま、銃を“使うため”ではない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "狙いは天井。\n一発、乾いた音。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "スプリンクラーが作動し、天から水が降る。\n水滴が光り、床が滑り、呼吸が湿る。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「……っ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "アパラ",
+        "text": "「対策済みだ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "濡れれば、感覚は鈍る。\n自動反撃は、微細な“合図”の遅れに弱い。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラは彼女の正面を目掛け、一直線にナイフを走らせる。\n——決めるなら、今。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "水とともに血が滴る。\nアパラの胸元から。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトは“迎撃された”のではない。\n自らの意思でナイフを振るっていた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「わたくしも対策済みでしてよ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "『自動』と『手動』を切り替えられる。\n濡れて鈍るのは“自動”だけ。\n“手動”は、愛と殺意のままに鋭くなる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラの膝が落ちる。\n水音がやけに大きい。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "倒れるアパラからナイフを抜きとると、\n船室をあとにしようとするコト。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そのとき。\n金髪の隊員が現れる。"
+      }
+    },
+    {
+      "type": "line",
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "self": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ナイフの間合いの外、ぎりぎりのところで、拳銃をコトに向ける。\n貼り付けた表情のまま、声だけが正確に刺さる。"
+      }
+    },
+    {
+      "type": "line",
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "self": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "「お話しがあります、コト・テイル・アイテール」"
+      }
+    },
+    {
+      "type": "line",
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "self": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "コト",
+        "text": "「わたくしにはなくってよ」\n「話すやつは嫌いですの」"
+      }
+    },
+    {
+      "type": "line",
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "self": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "拳銃を抜くコトの手を、正確に撃ち抜く金髪の女。\n引き金の音が、会話の句読点になる。"
+      }
+    },
+    {
+      "type": "line",
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "self": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女は『機密資料』を取り出すと、コトに投げつける。"
+      }
+    },
+    {
+      "type": "line",
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "self": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "「取引しましょう」\n「あなたがたにお願いがあります」"
+      }
+    },
+    {
+      "type": "line",
+      "enemy": { "name": "サテラ", "file": "サテラ.png", "visible": true },
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトのもとに歩み寄る金髪の女。\nアパラの視界から二人が消える。\n水の向こうで、影だけが遠ざかっていく。"
+      }
+    },
+    {
+      "type": "line",
+      "enemy": { "visible": false },
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "意識の底から、アパラの声がせり上がる。\n血と水で濡れた床に、誓いだけが残る。"
+      }
+    },
+    {
+      "type": "line",
+      "enemy": { "visible": false },
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "アパラ",
+        "text": "「真の教導国よ、永遠なれ！」"
+      }
+    },
+    {
+      "type": "chapter",
+      "chapterId": "chapter6_part2",
+      "start": "start"
+    },
+
+    {
+      "type": "line",
+      "id": "lose_01",
+      "bg": "貨物船01.jpg",
+      "self": { "name": "アパラ", "file": "アパラ.png", "visible": true },
+      "enemy": { "name": "コト", "file": "コト.png", "visible": true },
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "最初の噛み合わせから、ずれていた。\n無心で“読む”たびに、反撃が“確定”してしまう。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラが間合いを外そうとする。\nだがコトは、外させない。\n見えない目で、逃げ道だけを塞ぐ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「あら」\n「急ぐのね」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトの刃は最小限。\n最小限なのに、急所へ届く角度だけが残る。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラが拳銃へ手を伸ばす。\n天井ではない。\n“作動させるための一発”にすら、届かない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトの手首が跳ねる。\n刃先が、アパラの動線を断ち切る。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "アパラ",
+        "text": "「……っ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "次の瞬間、胸が熱くなる。\n水は降らない。\n代わりに、血が落ちる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「旦那さまの敵は」\n「静かに片づけますわ」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "アパラは膝をつく。\n視界が滲む。\nそれでも、懐の『伝統』だけは手放さない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コトは近づく。\nためらいがない。\n——話し合う必要がないから。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "コト",
+        "text": "「さようなら」"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "刃が入る。\n音がしない。\n声も出ない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "海のライトはまだ照らしている。\nだが船室の中で、影梟の灯は消える。\n\n【LOSE END】「影梟、沈黙す」\n\n（再挑戦）"
+      }
+    },
+    {
+      "type": "goto",
+      "target": "circle_01"
+    }
+  ]
+}

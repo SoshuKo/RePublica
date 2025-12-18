@@ -1,0 +1,1428 @@
+{
+  "nodes": [
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1986年10月、ナレジア共和国・首都サンソンル。\nナレジア連邦大学、工学部の大講義室。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイは原子力工学を学んでいた。\n教室の最前列、誰よりも板書に近い席。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "授業が始まる。"
+      },
+      "id": "start",
+      "bg": "教室.jpg",
+      "self": {
+        "name": "カレイ",
+        "file": "カレイ.png",
+        "visible": true
+      },
+      "enemy": {
+        "name": "教授",
+        "file": "教授.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "教授",
+        "text": "さて、今日は軽水炉における中性子の減速過程について説明します\n減速材として主に使われるのは…"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイは授業を熱心に聞く。\n両脇の席には、彼のお気に入りのぬいぐるみが座っていた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "少年期と打って変わり、20歳のカレイは大人しい性格になっていた。\nその静けさは、熱心さの裏返しでもある。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そこに、一人の金髪の女がやってきて、\nぬいぐるみをどけ、座る。"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "file": "サテラ.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "ごめんね、ここ座っていいかな"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "「お友達」をどかされたカレイは少し不機嫌。\nだが、優しい彼は席を譲る。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……どうぞ\nでも、その子たちも、ぼくの席なんだ"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "あはは、かわいいね\nちゃんと戻しておくよ"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "教授",
+        "text": "遅刻とは不真面目だな、ロンくん\n授業を中断したんだ、なぜ中性子が速いといけないのか説明してもらおう"
+      },
+      "enemy": {
+        "name": "教授",
+        "file": "教授.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "教授は金髪の女、サテラ・ロンを叱りつける。\n彼女はハーロピノン共和国出身のソラン人、移民二世。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "東洋人特有の凛とした顔つきで、学内でも人気者。\n——ただし、講義にはあまり興味がない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "え、えーと……\n速いと……なんか、だめ……？"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "悲"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "答えあぐねるサテラ。\nその隣でカレイが、ノートの端をちぎって差し出す。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……これ\n読むだけでいい"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "“カンペ”だった。\n書かれている文字は小さいが、要点だけは鋭い。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "えーっと、ウラン235は“熱中性子”との反応効率が高い\nつまり、遅くなった方が核分裂しやすいからです"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "教授",
+        "text": "正解だ\n今回は許してやるが、遅刻は欠席とみなすからな"
+      },
+      "enemy": {
+        "name": "教授",
+        "file": "教授.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "教授に軽く会釈するサテラ。\n彼女の顔は少しひきつっていた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "ありがとう、カレイくん！\nそれにしてもあのオヤジ、むかつくね"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "きみが悪いんだろう"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラの陰口を、冷静に捌くカレイ。\n“王族のような家”の出自を持つ彼に、対等に接するのはサテラだけだった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "黒板のチョークが鳴る。\nカレイは視線を戻し、式を追う。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "その横でサテラは、退屈そうにペンを回す。\n——それでも、彼女は眠らない。なぜか、カレイの横では。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "授業終了の号令が鳴る。\n人波が出口へ流れ、廊下がざわめく。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ひとり学食へ向かうカレイ。\nそのあとを追うサテラ。"
+      },
+      "bg": "学食.jpg",
+      "self": {
+        "name": "カレイ",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "ね、カレイくん\nお礼に奢るよ。学食！"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……別にいい\nでも、行く"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "“仕方なく”という言葉を飲み込み、\nカレイは彼女を「ぬいぐるみたちの昼食会」に加えることを許した。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "学食のテーブル。\nぬいぐるみが二体、きっちり座らされる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "つまんないね、授業！\nかと言って、就職もしたくない！"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "極端だね\nきみは、なにがしたいんだ"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "んー……楽しいこと\nあと、腹いっぱい食べること"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼女はたまたま工学科に外国人枠があったから入学しただけで、\n勉強に興味がないという。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "ぼくはきみと違って興味があって勉強しているんだ\nいくらカラベイは天然資源が出るからって、火力発電に依存し続けるのは危険だ"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "共感を求めるサテラをよそに、\n原子力の必要性を語るカレイ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "へー\n……うん、すごいね"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラは退屈そうに麺を啜る。\n湯気の向こうで、目だけが楽しそうに笑う。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "まぁ、きみが楽しそうならそれでいいんだ"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "下手くそな笑み。\nそれが、なぜだかまっすぐに見えて、カレイは少しどきっとする。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……ありがとう\n変な言い方だね"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼らが話している間に、麺はすでに伸びきっていた。\nそれでもサテラは気にせず、最後まで啜り切った。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1986年12月。\n父アレイの急逝を受け、第二教導職に就任するカレイ。"
+      },
+      "bg": "研究室01.jpg",
+      "self": {
+        "name": "カレイ",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "黒い喪の布と、白い学内の蛍光灯。\n二つの世界を、彼は同じ足で行き来することになる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カラベイとナレジアを行き来する生活。\n公務と学問の両立。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "え、第二教導職？\nなにそれ、えらいやつ？"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……えらいというより\n重い"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "のちにナレジアがルルペ協定に加盟したのは、\nカレイがナレジアとカラベイの関係をとりもったからとも言われている。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイはサテラと同じゼミに所属し、卒業論文の執筆をはじめる。\n題目は「次世代高速増殖炉における燃料サイクル最適化と中性子経済性の解析」。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "タイトルだけで眠くなる\nねえ、これ日本語にできない？"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "できない\n内容も、短くできない"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "落第しそうなサテラの勉強を見てやりながら、\nカレイは着実に成果を残していった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "夜の研究室。\nフラスコの匂い、古い紙の匂い、コーヒーの匂い。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "ねえ、これさ\n“中性子経済性”って、経済なの？"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "言葉のたとえだよ\n損をしない反応の“使い方”"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "ふーん……つまり\nうまく回せば、得ってこと？"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……まあ\nきみらしい理解だね"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そのころ、カレイの部下たちはサテラの入学に不自然な点があることに気がつく。\n書類の空白。照会の遅延。妙に整いすぎた経歴。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "しかし彼らがついに真相を知ったのは、\nカレイたちが卒業するとき——すべてが手遅れであった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "1988年6月。\n学位を受け取り、寮の片付けを始めるカレイとサテラ。"
+      },
+      "bg": "学生寮.jpg",
+      "self": {
+        "name": "カレイ",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ベッドの下、机の引き出し、壁の掲示。\n二年分の時間が、段ボールに吸い込まれていく。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "カレイくん、これ\nゼミで発表したときに、参加賞でもらった周期表コップじゃない？"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "結局使わなかったね"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "思い出を一つ一つ取り出し、梱包する二人。\n手際よく梱包するサテラ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "名残惜しさに手が止まるカレイ。\n“片付け”は、別れの儀式に似ている。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "ぼくたちが優勝すれば、現金が手に入ったんだけどね\nきみが発表前日に原稿を無くしたんだろう"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "根に持つなよ\nきみは金持ちなんだろう？"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "それになにごとも経験が大事なんだ"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "それっぽいことを言ってごまかすサテラ。\n彼女は自分の荷物を片付けると、カレイのぶんも手伝おうとする。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイは手が進まなかった。\nこれを片付け終えたら、彼女は去ってしまうから。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "あのさ\n一緒にカラベイに来ないか"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "少し不自由だけど、治安がよくていい国だよ\nなにより、きみと別れたくないんだ"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "勇気を出して想いを伝える。\nまさか自分がこんなことを言うとは、夢にもみなかった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラは少し焦った顔をして、言葉をつまらせる。\n視線が泳ぐ。指が段ボールの縁をなぞる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "ごめんなさい\nわたし、自分の国で仕事を見つけちゃって"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "悲"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "予想したくない返事。\nカレイの胸の奥が、静かに落ちていく。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "涙するカレイに、サテラがティッシュを渡して、すかさず宥める。\n手つきだけは、やけに慣れている。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "それにさ\nまた会えるよ"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "悲"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そういうと、自分の荷物から周期表コップを取り出し、カレイに手渡す。\n“使わなかった”コップが、いま急に重くなる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイもなにかないかと荷物を漁る。\nそして、自分が大切にしているヒガンバナのバッジをサテラに手渡す。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ヒガンバナはカラベイの国花。\n花言葉は「また会う日を楽しみに」。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "……へえ\nいいね、それ"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "きみが……\n持っていて"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "二人はプレゼントを交換し終えると、荷詰めを再開する。\nあっという間に二人の時間は過ぎ去る。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "部屋をあとにしようとするサテラが、カレイに声をかける。\n扉の前で、いつも通りの顔を作って。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "じゃあ、またね"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "相変わらず、下手くそな笑み。\nカレイもそれに応じ、二人は握手を交わす。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……また\n会えるね"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "うん\n会える会える"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "一人残されたカレイ。\nサテラからもらったコップを手にとって眺めていた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "透明なガラスの向こうに、周期表の文字。\n元素は嘘をつかない。だが人は——。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "そこに、部下たちが血相を変えて走ってきて、\nカレイは真実を知る。"
+      },
+      "enemy": {
+        "name": "部下",
+        "file": "部下.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "部下",
+        "text": "猊下！\n今すぐ、お耳に入れねばならない件が……！"
+      },
+      "enemy": {
+        "name": "部下",
+        "file": "部下.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "部下",
+        "text": "サテラ・ロンの入学記録に、重大な偽装が——\n……彼女は、最初から……！"
+      },
+      "enemy": {
+        "name": "部下",
+        "file": "部下.png",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "言葉の続きが、耳に入らない。\nカレイの指から力が抜ける。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "コップは手から滑り落ち、割れた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ナレジア連邦大学・アイン研究室。\n夜の廊下は無人で、換気扇の音だけが続く。"
+      },
+      "bg": "研究室02.jpg",
+      "self": {
+        "name": "カレイ",
+        "visible": true
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "立ち入り禁止の部屋。\n鍵は開いていたのではない。——開けられていた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "薄暗い室内で、金髪の女がアイン教授の資料を盗みとっていたそのとき。\n紙の擦れる音が、やけに大きい。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "なにをしているんだ、サテラ"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイが声をかける。\n面持ちは険しく、闇に潜むサテラを直視していた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "いや、忘れものがあってさ"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "そこは立ち入り禁止だぞ"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "一拍。\nサテラは、貼り付けたような笑顔を解いた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "それは4年間、カレイが見たことのない表情だった。\n目が笑っていない、というより——“誰か”の目だった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "最後までお友達でいたかったんだけどね\nこれが任務なの。それと、あなたに接近すること"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "怒"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラはハーロピノンの秘密結社「ジューナー」の構成員「魔女」であった。\nジューナーは「世界を幸せにすること」を目的に暗躍している。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カラベイの教導君主制を「不幸」の因子とみなし、\n特にその「不幸」を下支えしている九地と、その白梟の排除こそが、サテラの最終任務であった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "九地はハーロピノンから「機密資料」——すなわちウラン濃縮に関する情報を盗んでいた。\n五天を使った九地の動きの撹乱、「機密資料」とアイン教授の裏付け、第二教導職への接近。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "パズルのピースは揃っていた。\n“偶然の出会い”は、最初から偶然ではなかった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "きみはぼくを裏切ったんだ\nぼくがきみに協力すると思うのか"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "するさ"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "怒"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラはナイフを抜く。\n金属の薄い音が、研究室の冷気を裂く。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "最低限の護身術しか身につけていないカレイでも分かった。\n彼女はわざと大きく立ち振る舞っている。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "これは恐怖を植え付けるためのデモンストレーションだ。\n——「抵抗は無意味」と教えるための。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイは息を吸う。\n怖い。だが、怖いからこそ目を逸らさない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイはサテラの攻撃をいなし、そのまま彼女を床に叩きつける。\n机が鳴り、試薬瓶が震える。"
+      },
+      "id": "circle_01",
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "怒"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "なるほど\nこれくらいじゃあ怖くないと"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "怒"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラの表情は不気味にこわばっていた。\n次の瞬間、空気が変わる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "一転、彼女はカレイを本気で殺しにかかる。\nそのナイフ捌きは魔女の杖のように軽く、次々と傷を負うカレイ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "傷をつけることに特化している点はデューレイと似ているが、\n彼女のそれは速度が段違いに速い。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "切られるたび、熱が遅れて来る。\n白衣に赤が滲む。床に点が落ちる。\n——研究室の“清潔”が、壊れていく。"
+      }
+    },
+    {
+      "type": "battle",
+      "enemyName": "サテラ（初戦）",
+      "onWin": "win_01",
+      "onLose": "lose_01"
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイは次第に壁際に追いやられる。\n背中が冷たい壁に触れた瞬間、逃げ場が消える。"
+      },
+      "id": "win_01"
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "息が乱れる。\nだが頭の中だけは妙に澄んでいた。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "じゃあ、またね"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "怒"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "別れの挨拶の形をした、殺意。\nナイフが振りかざされる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイは周囲を見渡す。\n机、棚、試薬、器具——“武器ではないもの”が並ぶ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "その中で、手元にあったフラスコを掴む。\n軽い。割れる。だからこそ、いける。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……やめろ！"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイはフラスコを投げる。\n狙いは顔ではない。手でもない。——“軌道”だ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "ガラスが割れる音。\n液体が散り、床が滑る。\nサテラの足が一瞬だけ遅れる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラは勢いあまってナイフを手落とし、\nすかさずカレイがそれを拾いあげる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "刃を握った瞬間、カレイの手が震える。\n武器の重さではない。\n「これで人を殺せる」という事実の重さだ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "もうやめにしよう\nぼくに九地を止める義理はない"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "止めるさ\n真実を知れば"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "怒"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラは語りだす。\n白梟の正体。キラネイ死亡の真相。\nそして友人アカウの罪を。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "言葉は刃より鋭く、遅れて刺さる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……なに、を……"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイは絶句し、ナイフを手落とす。\n金属音が、研究室に転がる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "彼は今日、二人の友を見失った。\n一人は目の前で“別の人間”になり、\nもう一人は言葉の中で“遠い罪”になった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "【勝利パート終、PART3へ】"
+      }
+    },
+    {
+      "type": "chapter",
+      "chapterId": "chapter6_part3",
+      "start": "start"
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイは次第に壁際に追いやられる。\n同じ構図。だが今度は、視界が霞むのが早い。"
+      },
+      "id": "lose_01",
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "怒"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "血が落ちる量が増える。\n息が浅くなる。\n考える時間が削られていく。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "……優しいね、カレイくん\n優しすぎる"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "悲"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "その声に反応した瞬間、遅れた。\nサテラの刃は“見せる”ために動かない。\n“終わらせる”ために動く。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイが机へ手を伸ばす。\nフラスコが見える。\n——だが掴めない。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "サテラが間合いに入る。\n刃ではなく、柄の側。\n骨の硬い位置を選ぶ。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "カレイ",
+        "text": "……っ！"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "鈍い衝撃が側頭部に走る。\n視界が白く弾け、音が遠ざかる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "フラスコは棚の上で揺れただけ。\n投げられることなく、元の場所に戻る。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "enemy",
+        "name": "サテラ",
+        "text": "ごめんね\nでも、任務だから"
+      },
+      "enemy": {
+        "name": "サテラ",
+        "visible": true,
+        "expr": "悲"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "カレイの膝が落ちる。\n床の冷たさが頬に触れる。\n世界が暗くなる。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "最後に聞こえたのは、\n紙束を鞄に詰める音と、\nナイフを拭う布の音だった。"
+      }
+    },
+    {
+      "type": "line",
+      "speech": {
+        "side": "self",
+        "name": "ナレーション",
+        "text": "【LOSE END】「立ち入り禁止の闇」\n\n【敗北パート終、○へ】"
+      }
+    },
+    {
+      "type": "goto",
+      "target": "circle_01"
+    }
+  ]
+}
