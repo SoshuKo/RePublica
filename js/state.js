@@ -134,6 +134,9 @@
         bgmVolume: DEFAULTS.settings.bgmVolume,
         seVolume: DEFAULTS.settings.seVolume,
         textSpeed: DEFAULTS.settings.textSpeed,
+
+        // モバイル用：戦闘時の仮想ボタンを表示するか
+        virtualButtons: !!DEFAULTS.settings.virtualButtons,
       },
 
       // メタ情報
@@ -229,6 +232,10 @@
     else {
       for (const k of ["bgmVolume", "seVolume", "textSpeed"]) {
         if (!Number.isFinite(state.settings[k])) errors.push(`settings.${k} must be number`);
+      }
+
+      if (typeof state.settings.virtualButtons !== "boolean") {
+        errors.push("settings.virtualButtons must be boolean");
       }
     }
 
@@ -328,6 +335,10 @@
     if (isPlainObject(input.settings)) {
       for (const k of ["bgmVolume", "seVolume", "textSpeed"]) {
         if (Number.isFinite(input.settings[k])) out.settings[k] = input.settings[k];
+      }
+
+      if (typeof input.settings.virtualButtons === "boolean") {
+        out.settings.virtualButtons = input.settings.virtualButtons;
       }
     }
 

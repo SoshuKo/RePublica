@@ -252,6 +252,10 @@
       bgmVolume: Number.isFinite(settings?.bgmVolume) ? settings.bgmVolume : DEFAULTS.settings.bgmVolume,
       seVolume: Number.isFinite(settings?.seVolume) ? settings.seVolume : DEFAULTS.settings.seVolume,
       textSpeed: Number.isFinite(settings?.textSpeed) ? settings.textSpeed : DEFAULTS.settings.textSpeed,
+
+      // mobile
+      virtualButtons: typeof settings?.virtualButtons === "boolean" ? settings.virtualButtons : !!DEFAULTS.settings.virtualButtons,
+
       savedAt: nowIso(),
       appVersion: RP.VERSION.APP_VERSION,
     };
@@ -273,6 +277,9 @@
       bgmVolume: Number.isFinite(obj.bgmVolume) ? obj.bgmVolume : DEFAULTS.settings.bgmVolume,
       seVolume: Number.isFinite(obj.seVolume) ? obj.seVolume : DEFAULTS.settings.seVolume,
       textSpeed: Number.isFinite(obj.textSpeed) ? obj.textSpeed : DEFAULTS.settings.textSpeed,
+
+      // mobile
+      virtualButtons: typeof obj.virtualButtons === "boolean" ? obj.virtualButtons : !!DEFAULTS.settings.virtualButtons,
     };
   }
 

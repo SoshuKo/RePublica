@@ -520,6 +520,149 @@ function getPlayerSkillDef() {
     orderText: "battleEnemyOrderText",
   });
 
+  // ---------------------------
+  // Mobile virtual controls (optional)
+  // ---------------------------
+  const VCTRL_DOM = Object.freeze({
+    pad: "battleVirtualPad",
+    left: "btnVLeft",
+    right: "btnVRight",
+    rotate: "btnVRotate",
+    soft: "btnVSoft",
+    hard: "btnVHard",
+  });
+
+  function isProbablyMobile() {
+    try {
+      if (window.matchMedia && window.matchMedia("(pointer: coarse)").matches) return true;
+    } catch (_) {}
+    const w = Math.max(1, window.innerWidth || 0);
+    const h = Math.max(1, window.innerHeight || 0);
+    return Math.min(w, h) <= 900;
+  }
+
+  function injectVirtualControlsCssOnce() {
+    if (document.getElementById("battleVirtualPadCss")) return;
+    const st = document.createElement("style");
+    st.id = "battleVirtualPadCss";
+    st.textContent = `
+      .battle-vpad{position:fixed;inset:0;z-index:9800;pointer-events:none;}
+      .battle-vpad.is-hidden{display:none;}
+      .battle-vpad .vcluster{position:absolute;bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:flex-end;}
+      .battle-vpad .vcluster.left{left:calc(14px + env(safe-area-inset-left,0px));}
+      .battle-vpad .vcluster.right{right:calc(14px + env(safe-area-inset-right,0px));}
+      .battle-vpad .vcol{display:flex;flex-direction:column;gap:10px;}
+      .battle-vpad .vrow{display:flex;gap:10px;}
+      .battle-vpad .vbtn{pointer-events:auto;width:58px;height:58px;border-radius:18px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.36);color:rgba(255,255,255,.94);font:900 18px/1 system-ui,-apple-system,Segoe UI,Hiragino Sans,Noto Sans JP,sans-serif;display:flex;align-items:center;justify-content:center;user-select:none;-webkit-user-select:none;touch-action:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 12px 28px rgba(0,0,0,.30);}
+      .battle-vpad .vbtn:active{transform:scale(.96)}
+      @media (max-width: 740px){
+        .battle-vpad .vbtn{width:54px;height:54px;border-radius:16px;font-size:17px;}
+      }
+      /* landscape: keep clusters slightly lower to avoid overlapping skill HUD */
+      :root[data-orientation="landscape"] .battle-vpad .vcluster{bottom:calc(10px + env(safe-area-inset-bottom,0px));}
+    `;
+    document.head.appendChild(st);
+  }
+
+  function ensureVirtualControlsDom() {
+    injectVirtualControlsCssOnce();
+    let pad = document.getElementById(VCTRL_DOM.pad);
+    if (!pad) {
+      pad = document.createElement("div");
+      pad.id = VCTRL_DOM.pad;
+      pad.className = "battle-vpad is-hidden";
+      pad.innerHTML = `
+        <div class="vcluster left">
+          <div class="vcol">
+            <button id="${VCTRL_DOM.soft}" class="vbtn" type="button" aria-label="ソフトドロップ">↓</button>
+            <div class="vrow">
+              <button id="${VCTRL_DOM.left}" class="vbtn" type="button" aria-label="左">◀</button>
+              <button id="${VCTRL_DOM.right}" class="vbtn" type="button" aria-label="右">▶</button>
+            </div>
+          </div>
+        </div>
+        <div class="vcluster right">
+          <div class="vcol">
+            <button id="${VCTRL_DOM.rotate}" class="vbtn" type="button" aria-label="回転">⟳</button>
+            <button id="${VCTRL_DOM.hard}" class="vbtn" type="button" aria-label="ハードドロップ">⤓</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(pad);
+
+      const stop = (ev) => {
+        try { ev.preventDefault(); } catch (_) {}
+        try { ev.stopPropagation(); } catch (_) {}
+      };
+
+      const bLeft = document.getElementById(VCTRL_DOM.left);
+      const bRight = document.getElementById(VCTRL_DOM.right);
+      const bRot = document.getElementById(VCTRL_DOM.rotate);
+      const bHard = document.getElementById(VCTRL_DOM.hard);
+      const bSoft = document.getElementById(VCTRL_DOM.soft);
+
+      const bindTap = (btn, fn) => {
+        if (!btn) return;
+        btn.addEventListener("pointerdown", (ev) => { stop(ev); fn(); });
+      };
+
+      bindTap(bLeft, () => {
+        if (!canHandleBattleInput() || !game.piece) return;
+        const now = performance.now();
+        const minGap = 38;
+        if (now - lastMoveTs < minGap) return;
+        lastMoveTs = now;
+        tryMove(-1, 0);
+      });
+
+      bindTap(bRight, () => {
+        if (!canHandleBattleInput() || !game.piece) return;
+        const now = performance.now();
+        const minGap = 38;
+        if (now - lastMoveTs < minGap) return;
+        lastMoveTs = now;
+        tryMove(+1, 0);
+      });
+
+      bindTap(bRot, () => {
+        if (!canHandleBattleInput() || !game.piece) return;
+        const now = performance.now();
+        const minGap = 90;
+        if (now - lastRotateTs < minGap) return;
+        lastRotateTs = now;
+        tryRotate(+1);
+      });
+
+      bindTap(bHard, () => {
+        if (!canHandleBattleInput() || !game.piece) return;
+        const now = performance.now();
+        const minGap = 120;
+        if (now - lastHardDropTs < minGap) return;
+        lastHardDropTs = now;
+        hardDrop();
+      });
+
+      // soft drop = hold
+      if (bSoft) {
+        const setSoft = (v) => { softDropHeld = !!v; };
+        bSoft.addEventListener("pointerdown", (ev) => { stop(ev); if (!canHandleBattleInput()) return; setSoft(true); });
+        window.addEventListener("pointerup", () => setSoft(false));
+        bSoft.addEventListener("pointercancel", () => setSoft(false));
+        bSoft.addEventListener("pointerleave", () => setSoft(false));
+      }
+    }
+    return pad;
+  }
+
+  function updateVirtualControlsVisibility() {
+    const pad = ensureVirtualControlsDom();
+    if (!pad) return;
+    const s = getState();
+    const enabled = !!s?.settings?.virtualButtons;
+    const show = enabled && isProbablyMobile() && inBattleScreen() && running && !battleResultVisible() && !isOverlayBlockingInput();
+    pad.classList.toggle("is-hidden", !show);
+  }
+
   function injectSkillCssOnce() {
     if (document.getElementById("battleSkillCss")) return;
     const st = document.createElement("style");
@@ -2081,6 +2224,8 @@ function closeInfoModal() {
   function loop(ts) {
     try {
       ensureRunningIfBattle();
+      // virtual controls visibility can change by settings/screen
+      updateVirtualControlsVisibility();
       if (!inBattleScreen()) { hideBattleOverlays(); closeInfoModal(); }
       // If playerName wasn't captured at battle entry, retry from DOM a few times.
       if (running && inBattleScreen() && !game.playerName) {
@@ -2271,7 +2416,17 @@ function closeInfoModal() {
 
     // skill panels are DOM-based; create them even if HTML doesn't include them
     ensureSkillDom();
+    ensureVirtualControlsDom();
     updateSkillUi();
+    updateVirtualControlsVisibility();
+
+    // react quickly when settings change
+    try {
+      if (RP.UI && typeof RP.UI.on === "function") {
+        RP.UI.on("settingsChanged", () => updateVirtualControlsVisibility());
+        RP.UI.on("stateLoaded", () => updateVirtualControlsVisibility());
+      }
+    } catch (_) {}
 
     window.addEventListener("keydown", onKeyDown, { passive: false });
     window.addEventListener("keyup", onKeyUp);

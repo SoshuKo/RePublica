@@ -144,6 +144,9 @@
       optBgmVol: "optBgmVolume",
       optSeVol: "optSeVolume",
       optTextSpeed: "optTextSpeed",
+
+      // Mobile (virtual buttons)
+      optVirtualButtons: "optVirtualButtons",
     }),
 
     modal: Object.freeze({
@@ -261,6 +264,9 @@
       bgmVolume: 0.7,
       seVolume: 0.8,
       textSpeed: 0.5,
+
+      // モバイル用：戦闘時の仮想ボタンを表示するか
+      virtualButtons: false,
     }),
 
     save: Object.freeze({

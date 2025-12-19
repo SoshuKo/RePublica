@@ -32,6 +32,93 @@
   // ---------------------------------------------------------
   const $ = (id) => document.getElementById(id);
 
+  // ---------------------------------------------------------
+  // Mobile helpers / UI injection
+  // ---------------------------------------------------------
+  function isProbablyMobile() {
+    // coarse pointer = phones/tablets
+    try {
+      if (window.matchMedia && window.matchMedia("(pointer: coarse)").matches) return true;
+    } catch (_) {}
+    const w = Math.max(1, window.innerWidth || 0);
+    const h = Math.max(1, window.innerHeight || 0);
+    return Math.min(w, h) <= 900; // fallback heuristic
+  }
+
+  let _mobileUiStyleInjected = false;
+  function injectMobileUiStylesOnce() {
+    if (_mobileUiStyleInjected) return;
+    _mobileUiStyleInjected = true;
+
+    const css = `
+/* in-game floating settings button */
+#btnIngameSettings{position:fixed;z-index:9999;top:calc(10px + env(safe-area-inset-top));right:calc(10px + env(safe-area-inset-right));width:46px;height:46px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.38);color:#fff;font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer;user-select:none;touch-action:manipulation;}
+#btnIngameSettings:active{transform:scale(.96)}
+#btnIngameSettings.is-hidden{display:none !important}
+
+/* menu option row (safe if base HTML has no dedicated markup) */
+.rp-opt-row{display:flex;align-items:center;gap:10px;margin-top:10px;}
+.rp-opt-row label{display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;}
+.rp-opt-row input[type="checkbox"]{width:18px;height:18px;}
+`;
+
+    const style = document.createElement("style");
+    style.id = "rpMobileUiStyle";
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
+  function ensureIngameSettingsButton() {
+    injectMobileUiStylesOnce();
+    let btn = document.getElementById("btnIngameSettings");
+    if (!btn) {
+      btn = document.createElement("button");
+      btn.id = "btnIngameSettings";
+      btn.type = "button";
+      btn.title = "設定";
+      btn.setAttribute("aria-label", "設定");
+      btn.textContent = "⚙";
+      btn.classList.add("is-hidden");
+      document.body.appendChild(btn);
+      btn.addEventListener("click", () => openMenu());
+    }
+    return btn;
+  }
+
+  // Settings menu: add an option to toggle mobile virtual buttons if missing in HTML
+  function ensureVirtualButtonsOptionDom() {
+    injectMobileUiStylesOnce();
+    const id = DOM_IDS.menu.optVirtualButtons;
+    if (!id) return null;
+    let cb = $(id);
+    if (cb) return cb;
+
+    const menuLayer = $(LAYERS.menu);
+    if (!menuLayer) return null;
+
+    // Insert near text speed slider if present; otherwise append to the menu layer.
+    const anchor = $(DOM_IDS.menu.optTextSpeed);
+    const row = document.createElement("div");
+    row.className = "rp-opt-row";
+    row.innerHTML = `
+      <label for="${id}">
+        <input id="${id}" type="checkbox" />
+        <span>モバイル用の仮想ボタンを表示</span>
+      </label>
+    `;
+
+    if (anchor && anchor.parentElement) {
+      // Try to place after the slider row
+      const parent = anchor.closest(".rp-opt-row") || anchor.parentElement;
+      parent.insertAdjacentElement("afterend", row);
+    } else {
+      menuLayer.appendChild(row);
+    }
+
+    cb = $(id);
+    return cb;
+  }
+
   function setHidden(el, hidden) {
     if (!el) return;
     el.classList.toggle("is-hidden", !!hidden);
@@ -325,14 +412,20 @@
 
     setHidden(menuLayer, false);
 
+    // hide floating in-game settings while the menu is open
+    const ig = ensureIngameSettingsButton();
+    if (ig) ig.classList.add("is-hidden");
+
     // reflect current settings into sliders
     const s = _state.settings || {};
     const bgm = $(DOM_IDS.menu.optBgmVol);
     const se = $(DOM_IDS.menu.optSeVol);
     const ts = $(DOM_IDS.menu.optTextSpeed);
+    const vb = ensureVirtualButtonsOptionDom();
     if (bgm) bgm.value = String(Math.round((s.bgmVolume ?? DEFAULTS.settings.bgmVolume) * 100));
     if (se) se.value = String(Math.round((s.seVolume ?? DEFAULTS.settings.seVolume) * 100));
     if (ts) ts.value = String(Math.round((s.textSpeed ?? DEFAULTS.settings.textSpeed) * 100));
+    if (vb) vb.checked = !!s.virtualButtons;
   }
 
   function closeMenu() {
@@ -343,6 +436,14 @@
     _overlay.baseScreenBeforeMenu = null;
 
     setHidden(menuLayer, true);
+
+    // restore floating in-game settings visibility
+    const ig = ensureIngameSettingsButton();
+    if (ig) {
+      const nextScreen = _state?.screen;
+      const show = nextScreen && nextScreen !== SCREENS.TITLE;
+      ig.classList.toggle("is-hidden", !show);
+    }
   }
 
   // ---------------------------------------------------------
@@ -737,6 +838,15 @@
     const isBattle = state.screen === SCREENS.BATTLE;
     const isArena = state.screen === SCREENS.ARENA;
 
+    // floating in-game settings button (mobile-friendly)
+    {
+      const ig = ensureIngameSettingsButton();
+      if (ig) {
+        const show = !isTitle && !_overlay.menuOpen && !_overlay.modalOpen;
+        ig.classList.toggle("is-hidden", !show);
+      }
+    }
+
     setHidden(titleLayer, !isTitle);
     setHidden(advLayer, !isAdv);
     setHidden(battleLayer, !isBattle);
@@ -832,7 +942,7 @@ if (!showSpeech) {
   setHidden(vnNameplate, isNarration || !name);
   setText(vnName, isNarration ? "" : name);
 
-  // 【修正】改行コード(\n)を <br> タグに変換して表示する
+  // 【復旧】改行コード(\n)を <br> タグに変換して表示する
   if (vnText) {
     vnText.innerHTML = (speech.text || "").replace(/\n/g, "<br>");
   }
@@ -1041,12 +1151,14 @@ if (!showSpeech) {
     const bgm = $(DOM_IDS.menu.optBgmVol);
     const se = $(DOM_IDS.menu.optSeVol);
     const ts = $(DOM_IDS.menu.optTextSpeed);
+    const vb = ensureVirtualButtonsOptionDom();
 
     const onSettingsChange = () => {
       const s = RP.State.deepClone(_state);
       if (bgm) s.settings.bgmVolume = Number(bgm.value) / 100;
       if (se) s.settings.seVolume = Number(se.value) / 100;
       if (ts) s.settings.textSpeed = Number(ts.value) / 100;
+      if (vb) s.settings.virtualButtons = !!vb.checked;
       normalizeAndSetState(s);
 
       // persist settings (optional)
@@ -1059,6 +1171,7 @@ if (!showSpeech) {
     if (bgm) bgm.addEventListener("input", onSettingsChange);
     if (se) se.addEventListener("input", onSettingsChange);
     if (ts) ts.addEventListener("input", onSettingsChange);
+    if (vb) vb.addEventListener("change", onSettingsChange);
 
     // Battle continue
     const btnBattleContinue = $(DOM_IDS.battle.resultContinue);

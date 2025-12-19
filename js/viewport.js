@@ -13,8 +13,22 @@
     return { w: window.innerWidth, h: window.innerHeight };
   }
 
+  function updateViewportVars(w, h) {
+    // useful for mobile 100vh quirks
+    root.style.setProperty("--vvw", `${Math.round(w)}px`);
+    root.style.setProperty("--vvh", `${Math.round(h)}px`);
+    root.style.setProperty("--vh", `${Math.round(h * 0.01)}px`);
+    root.dataset.orientation = (w >= h) ? "landscape" : "portrait";
+    try {
+      root.dataset.mobile = (window.matchMedia && window.matchMedia("(pointer: coarse)").matches) ? "1" : "0";
+    } catch (_) {
+      root.dataset.mobile = "0";
+    }
+  }
+
   function applyScale() {
     const { w, h } = getViewportSize();
+    updateViewportVars(w, h);
     const scale = Math.min(w / baseW, h / baseH, 1);
     root.style.setProperty("--scale", String(scale));
   }
