@@ -530,18 +530,18 @@
   let _arenaBuilt = false;
   let _arenaStyleInjected = false;
 
-  function injectArenaStylesOnce() {
+    function injectArenaStylesOnce() {
     if (_arenaStyleInjected) return;
     _arenaStyleInjected = true;
 
     const css = `
 /* arena */
-#${LAYERS.arena}{position:absolute;inset:0;z-index:50;display:flex;align-items:stretch;justify-content:center;overflow:hidden;pointer-events:auto;}
+#${LAYERS.arena}{position:fixed;inset:0;z-index:5000;display:flex;align-items:stretch;justify-content:center;overflow:hidden;pointer-events:auto;}
 #${LAYERS.arena}.is-hidden{display:none !important;}
 #${LAYERS.arena} .arena-bg{position:absolute;inset:-40px;background:radial-gradient(1200px 600px at 20% 30%, rgba(120,180,255,.25), transparent 60%),radial-gradient(900px 500px at 80% 60%, rgba(255,120,190,.18), transparent 60%),linear-gradient(180deg, rgba(10,12,18,1), rgba(18,20,30,1));}
 #${LAYERS.arena} .arena-bg:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg, rgba(255,255,255,.04), rgba(255,255,255,.04) 1px, transparent 1px, transparent 4px);mix-blend-mode:overlay;opacity:.35;pointer-events:none;}
-#${LAYERS.arena} .arena-wrap{position:relative;flex:1;display:flex;flex-direction:column;padding:24px 28px;gap:18px;}
-#${LAYERS.arena} .arena-ui{position:relative;z-index:2;display:flex;flex-direction:column;gap:14px;height:100%;}
+#${LAYERS.arena} .arena-wrap{position:relative;flex:1;display:flex;flex-direction:column;padding:24px 28px;gap:18px;max-width:1280px;}
+#${LAYERS.arena} .arena-ui{position:relative;z-index:2;display:flex;flex-direction:column;gap:14px;height:100%;min-height:0;}
 #${LAYERS.arena} .arena-top{display:flex;align-items:center;justify-content:space-between;gap:12px;}
 #${LAYERS.arena} .arena-title{font-size:26px;letter-spacing:.12em;font-weight:900;opacity:.95;}
 #${LAYERS.arena} .arena-actions{display:flex;gap:10px;}
@@ -549,7 +549,7 @@
 #${LAYERS.arena} .arena-btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.28);}
 #${LAYERS.arena} .arena-main{display:grid;grid-template-columns:1fr 240px 1fr;gap:18px;flex:1;min-height:0;}
 #${LAYERS.arena} .arena-side{display:flex;flex-direction:column;gap:12px;min-width:0;min-height:0;}
-#${LAYERS.arena} .arena-panel{border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.20);border-radius:20px;box-shadow:0 12px 40px rgba(0,0,0,.35);overflow:hidden;}
+#${LAYERS.arena} .arena-panel{border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.20);border-radius:20px;box-shadow:0 12px 40px rgba(0,0,0,.35);overflow:hidden;min-height:0;}
 #${LAYERS.arena} .arena-preview{display:grid;grid-template-columns:140px 1fr;gap:12px;padding:12px;align-items:center;}
 #${LAYERS.arena} .arena-portrait{width:140px;height:180px;border-radius:16px;object-fit:contain;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);}
 #${LAYERS.arena} .arena-portrait.is-mirrored{transform:scaleX(-1);}
@@ -557,7 +557,7 @@
 #${LAYERS.arena} .arena-name{font-size:18px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #${LAYERS.arena} .arena-sub{font-size:12px;opacity:.85;line-height:1.35;}
 #${LAYERS.arena} .arena-skill-name{font-weight:900;}
-#${LAYERS.arena} .arena-grid{display:grid;grid-template-columns:repeat(${ARENA_CFG.gridCols}, 1fr);gap:10px;padding:12px;overflow:auto;min-height:0;}
+#${LAYERS.arena} .arena-grid{display:grid;grid-template-columns:repeat(${ARENA_CFG.gridCols}, 1fr);gap:10px;padding:12px;overflow:auto;min-height:0;-webkit-overflow-scrolling:touch;touch-action:pan-y;}
 #${LAYERS.arena} .arena-slot{position:relative;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:16px;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:6px;transition:transform .12s ease, border-color .12s ease, background .12s ease;}
 #${LAYERS.arena} .arena-slot:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.06);}
 #${LAYERS.arena} .arena-slot.is-selected{border-color:rgba(120,200,255,.9);box-shadow:0 0 0 2px rgba(120,200,255,.25), 0 16px 36px rgba(0,0,0,.35);}
@@ -570,6 +570,55 @@
 #${LAYERS.arena} .arena-fight:disabled{opacity:.4;cursor:not-allowed;filter:saturate(.3);}
 #${LAYERS.arena} .arena-fight:not(:disabled):hover{transform:translateY(-1px);filter:brightness(1.05);}
 #${LAYERS.arena} .arena-note{font-size:12px;opacity:.75;text-align:center;line-height:1.4;}
+
+/* ---------- mobile専用（viewport.js が :root[data-mobile="1"] を付与） ---------- */
+:root[data-mobile="1"] #${LAYERS.arena} .arena-wrap{
+  padding:
+    calc(12px + env(safe-area-inset-top))
+    calc(12px + env(safe-area-inset-right))
+    calc(12px + env(safe-area-inset-bottom))
+    calc(12px + env(safe-area-inset-left));
+  gap:12px;
+  max-width:none;
+}
+
+/* 上部：文字・ボタンを大きめに */
+:root[data-mobile="1"] #${LAYERS.arena} .arena-title{font-size:22px;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-btn{padding:12px 14px;border-radius:16px;font-size:15px;}
+
+/* 本体：左右2カラム + 下段にFIGHT */
+:root[data-mobile="1"] #${LAYERS.arena} .arena-main{
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr auto;
+  grid-template-areas:"enemy player" "center center";
+  gap:12px;
+}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-main > .arena-side:first-child{grid-area:enemy;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-main > .arena-side:last-child{grid-area:player;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-main > .arena-center{
+  grid-area:center;
+  flex-direction:row;
+  justify-content:center;
+  gap:10px;
+  padding-top:2px;
+}
+
+/* 中央：VSは小さく、FIGHTは押しやすく。説明文は非表示（狭いので） */
+:root[data-mobile="1"] #${LAYERS.arena} .arena-vs{font-size:26px;letter-spacing:.10em;opacity:.88;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-fight{font-size:18px;padding:14px 18px;border-radius:20px;max-width:520px;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-note{display:none;}
+
+/* プレビュー：縦を圧縮して情報は読みやすく */
+:root[data-mobile="1"] #${LAYERS.arena} .arena-preview{grid-template-columns:88px 1fr;gap:10px;padding:10px;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-portrait{width:88px;height:110px;border-radius:14px;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-name{font-size:16px;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-sub{font-size:12px;line-height:1.3;}
+
+/* グリッド：横幅が取れるので4列にしてタップ領域を確保 */
+:root[data-mobile="1"] #${LAYERS.arena} .arena-grid{grid-template-columns:repeat(4, 1fr);gap:10px;padding:10px;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-slot{padding:10px;border-radius:16px;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-slot img{height:72px;}
+:root[data-mobile="1"] #${LAYERS.arena} .arena-slot .label{font-size:12px;}
 `;
 
     const style = document.createElement('style');
@@ -602,7 +651,8 @@
     if (_arenaBuilt) return;
     injectArenaStylesOnce();
 
-    const root = document.getElementById(DOM_IDS.root.gameRoot) || document.getElementById(DOM_IDS.root.app) || document.body;
+        // ARENAはスケールの影響を受けないよう body 直下に出す（モバイル可読性のため）
+    const root = document.body;
     if (!root) return;
 
     let layer = document.getElementById(LAYERS.arena);
