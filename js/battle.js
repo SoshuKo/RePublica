@@ -230,6 +230,17 @@ function getPlayerSkillDef() {
     AKANEI: "akanei",
     SATELLA_2: "satella_2",
     SATELLA_YUME: "satella_yume",
+    // ▼ ここから追加 ▼
+    RIA: "enemy_ria",
+    REI_MEMBER: "enemy_rei_member",
+    REI: "enemy_rei",
+    TINABEI: "enemy_tinabei",
+    YANAN_1: "enemy_yanan_1",
+    YANAN_2: "enemy_yanan_2",
+    GANARI: "enemy_ganari",
+    AYA_NORMAL: "enemy_aya_normal",
+    AYA_TRUE: "enemy_aya_true",
+    // ▲ ここまで ▲
   });
 
   const ENEMY_PROFILE = Object.freeze({
@@ -354,6 +365,74 @@ function getPlayerSkillDef() {
       colorGate: true,
       hpMax: 150,
     },
+    // === EP3 & EP4 Enemies ===
+    [ENEMY_TYPE.RIA]: {
+      name: "リア",
+      hint: "5ターン以内にブロックを消さないとダメージ被弾（軽～重ランダム）。",
+      mustClearWithinTurns: 5,
+      penaltyDamage: "light_to_heavy",
+      healPerTurn: 0
+    },
+    [ENEMY_TYPE.REI_MEMBER]: {
+      name: "レイ派構成員",
+      hint: "毎ターンHPが2回復します。",
+      healPerTurn: 2
+    },
+    [ENEMY_TYPE.REI]: {
+      name: "レイ",
+      hint: "5ターンごとに「禁止色」を指定されます。禁止色を消すと反撃。さらに5ターン消し無しで被弾。回復(2)。",
+      tabooColor: true, 
+      mustClearWithinTurns: 5,
+      penaltyDamage: "light_to_heavy", // 追加：ダメージ設定
+      healPerTurn: 2 // 追加：自動回復
+    },
+    [ENEMY_TYPE.TINABEI]: {
+      name: "ティナベイ",
+      hint: "90秒以内に倒さないと敗北。",
+      timeLimitSec: 90
+    },
+    [ENEMY_TYPE.YANAN_1]: {
+      name: "ヤナン・カウ（初戦）",
+      hint: "上から6段目以上（赤エリア）に3ターン以上ブロックを置くと被弾。回復(2)。",
+      heightLimitRow: 6, // 上から6段目までがセーフ＝7段目(index 6)以上が危険？調整しやすいよう数値化
+      // ※実装ロジック側で「見える範囲の上からN段目まで」を計算します
+      heightPenaltyTurns: 3,
+      penaltyDamage: "medium_heavy",
+      healPerTurn: 2
+    },
+    [ENEMY_TYPE.YANAN_2]: {
+      name: "ヤナン・カウ（二戦目）",
+      hint: "上から9段目以上（赤エリア）に3ターン以上ブロックを置くと被弾。回復(3)。",
+      heightLimitRow: 9, // 下から3段目より上が危険
+      heightPenaltyTurns: 3,
+      penaltyDamage: "medium_heavy",
+      healPerTurn: 3
+    },
+    [ENEMY_TYPE.GANARI]: {
+      name: "ガナリ",
+      hint: "紫(5色目)追加。落下後3ターン経過した紫ブロックが場にあると継続ダメージ。回復(2)。",
+      extraColor: true, // 5色モード
+      agingBlockColor: 5, // 紫
+      agingDamageThreshold: 3,
+      healPerTurn: 2
+    },
+    [ENEMY_TYPE.AYA_NORMAL]: {
+      name: "アヤ",
+      hint: "5ターンに1回、予告された縦列が消滅し、ブロック数×2のダメージを受けます。回復(3)。",
+      columnDestroy: true,
+      columnDestroyInterval: 5,
+      columnDestroyMult: 2,
+      healPerTurn: 3
+    },
+    [ENEMY_TYPE.AYA_TRUE]: {
+      name: "アヤ（誠実たれ）",
+      hint: "5ターンに1回、予告された縦列が消滅し、ブロック数×4のダメージを受けます。回復(3)。HP150。",
+      columnDestroy: true,
+      columnDestroyInterval: 5,
+      columnDestroyMult: 4,
+      healPerTurn: 3,
+      hpMax: 150
+    },
   });
 
   function getEnemyNameFromState() {
@@ -367,7 +446,19 @@ function getPlayerSkillDef() {
     const n = normalizeCharName(name);
     if (!n) return ENEMY_TYPE.NONE;
 
-    if (n.includes("ニア・キナベイ")) return ENEMY_TYPE.NIA_KINABEI;
+    if (n.includes("誠実")) return ENEMY_TYPE.AYA_TRUE;
+    if (n.includes("アヤ")) return ENEMY_TYPE.AYA_NORMAL;
+    if (n.includes("ガナリ")) return ENEMY_TYPE.GANARI;
+    if (n.includes("ヤナン")) {
+      if (n.includes("二戦") || n.includes("2")) return ENEMY_TYPE.YANAN_2;
+      return ENEMY_TYPE.YANAN_1;
+    }
+    if (n.includes("ティナベイ")) return ENEMY_TYPE.TINABEI;
+    if (n.includes("レイ派")) return ENEMY_TYPE.REI_MEMBER;
+    if (n.includes("レイ")) return ENEMY_TYPE.REI; // "レイ派"より後に判定
+    if (n.includes("リア")) return ENEMY_TYPE.RIA;
+
+    if (n.includes("ニア")) return ENEMY_TYPE.NIA_KINABEI;
     if (n.includes("アパラ")) return ENEMY_TYPE.APARA;
     if (n.includes("アカネイ")) return ENEMY_TYPE.AKANEI;
     if (n.includes("サテラ")) {
@@ -376,15 +467,11 @@ function getPlayerSkillDef() {
       return ENEMY_TYPE.SATELLA_1;
     }
     if (n.includes("サイ")) return ENEMY_TYPE.SAI;
-
     if (n.includes("コト")) {
       if (n.includes("三戦") || n.includes("3")) return ENEMY_TYPE.KOTO_3;
       if (n.includes("二戦") || n.includes("2")) return ENEMY_TYPE.KOTO_2;
-      if (n.includes("初戦") || n.includes("1")) return ENEMY_TYPE.KOTO_1;
-      // 不明な場合は初戦扱い（安全側）
       return ENEMY_TYPE.KOTO_1;
     }
-
     return ENEMY_TYPE.NONE;
   }
 
@@ -424,8 +511,9 @@ function getPlayerSkillDef() {
     const panel = document.getElementById(ENEMY_UI_DOM.orderPanel);
     const chip = document.getElementById(ENEMY_UI_DOM.orderChip);
     const textEl = document.getElementById(ENEMY_UI_DOM.orderText);
+    const titleEl = document.querySelector(".battle-enemy-order-title"); // タイトル取得
 
-    if (!enemy || !enemy.colorGate) {
+    if (!enemy || (!enemy.colorGate && !enemy.tabooColor)) {
       if (panel) panel.classList.add("is-hidden");
       return;
     }
@@ -439,7 +527,16 @@ function getPlayerSkillDef() {
     }
     if (textEl) {
       const nm = COLOR_NAME_JA[c] || String(c);
-      textEl.textContent = `指定: ${nm}`;
+      // レイ(tabooColor)なら赤文字で「禁止」
+      if (enemy.tabooColor) {
+        textEl.textContent = `禁止: ${nm}`;
+        textEl.style.color = "#ff6666";
+        if(titleEl) titleEl.textContent = "TABOO";
+      } else {
+        textEl.textContent = `指定: ${nm}`;
+        textEl.style.color = "#ffffff";
+        if(titleEl) titleEl.textContent = "ORDER";
+      }
     }
   }
 
@@ -1156,22 +1253,29 @@ function closeInfoModal() {
 
   // 内部ゲーム状態（battle screen中のみ）
   const game = {
+    // （既存のプロパティ...）
     cols: CFG.COLS,
     rowsTotal: CFG.HIDDEN_ROWS + CFG.VISIBLE_ROWS,
+    colors: CFG.COLORS, // ★ここを動的に変えられるようにします
 
-    board: null,      // [rowsTotal][cols] int (0 empty / 1..COLORS)
-    piece: null,      // {x,y,ori,a,b}
-    next: null,       // {a,b}
+    board: null,
+    boardAge: null,   // ★追加：[y][x] ガナリ用経過ターン
+    piece: null,
+    next: null,
 
     // Skills
-    skillGauge: 0,    // 0..CFG.SKILL_GAUGE_MAX
+    skillGauge: 0,
 
-    // Enemy behavior (EP5)
+    // Enemy behavior
     enemyProfile: null,
     turn: 0,
     turnsSinceClear: 0,
     battleStartMs: 0,
     timeLimitSec: null,
+    
+    // ★追加：ギミック用ステート
+    yananWarnCount: 0,    // ヤナンの警告カウント
+    ayaTargetCol: -1,     // アヤの破壊予告列
 
     chainLast: 0,     // 直近連鎖（HUD用）
     selfHp: CFG.SELF_HP,
@@ -1219,9 +1323,10 @@ function closeInfoModal() {
 
   function randColor() {
     // 1..COLORS
-    return 1 + Math.floor(Math.random() * CFG.COLORS);
+    // 修正: CFG.COLORS (固定値4) ではなく game.colors (動的値) を使う
+    // これでガナリ戦のときだけ 5 が出るようになります
+    return 1 + Math.floor(Math.random() * game.colors);
   }
-
   function newEmptyBoard() {
     const rows = game.rowsTotal;
     const cols = game.cols;
@@ -1508,27 +1613,117 @@ function closeInfoModal() {
     const enemy = game.enemyProfile || getEnemyProfile();
     if (!enemy) return;
 
-    // (1) turn-based healing
-    if (enemy.healPerTurn && enemy.healPerTurn > 0) {
-      healEnemy(enemy.healPerTurn);
-    }
+    // 1. Natural Heal
+    if (enemy.healPerTurn) healEnemy(enemy.healPerTurn);
 
-    // (2) "must clear within N turns" penalty
+    // 2. Clear Constraint
     if (enemy.mustClearWithinTurns) {
-      if (turnCtx?.hadClear) game.turnsSinceClear = 0;
-      else game.turnsSinceClear = (game.turnsSinceClear || 0) + 1;
+      if (turnCtx.hadClear) game.turnsSinceClear = 0;
+      else game.turnsSinceClear++;
 
       if (game.turnsSinceClear >= enemy.mustClearWithinTurns) {
+        // レイ(tabooColor)も含め、条件を満たしたらダメージを与えるように変更
         game.turnsSinceClear = 0;
-        const dmg = randPenaltyDamage(enemy.penaltyDamage);
-        dealSelfDamage(dmg, "敵の攻撃！");
+        dealSelfDamage(randPenaltyDamage(enemy.penaltyDamage), "敵の攻撃！");
       }
     }
 
-    // (3) Color gate changes every turn (SATELLA)
-    if (enemy.colorGate && !game.gameOver && !game.victory) {
+    // 3. Rei: Taboo Color Cycle (every 5 turns)
+    if (enemy.tabooColor) {
+      if (game.turn % 5 === 0) {
+        game.enemyGateColor = randColor(); // 禁止色変更
+        updateEnemyOrderUi();
+        skillFxText("禁忌色が変更された！");
+      }
+    }
+
+    // 4. Satella: Order Color Cycle (every turn)
+    if (enemy.colorGate && !enemy.tabooColor && !game.gameOver) {
       game.enemyGateColor = pickEnemyGateColor();
       updateEnemyOrderUi();
+    }
+
+    // 5. Yanan Kau: Height Constraint
+    if (enemy.heightLimitRow !== undefined) {
+      // 危険エリアの定義：VISIBLEエリアの下から数えるか、上から数えるか
+      // enemy.heightLimitRowは「上からN段目以上」を示す値とする（1-based）
+      // VISIBLE_ROWS=12。HIDDEN=2。
+      // 例: "上から6段目以上" -> 画面上半分。 index 2 〜 (2+6-1)=7 が危険
+      
+      const startY = CFG.HIDDEN_ROWS; 
+      // ヤナン1(6段)=6行分、ヤナン2(9段)=9行分チェック
+      const checkRows = enemy.heightLimitRow; 
+      const endY = startY + checkRows;
+      
+      let danger = false;
+      for (let y = startY; y < endY; y++) {
+        for (let x = 0; x < game.cols; x++) {
+          if (game.board[y][x] !== 0) danger = true;
+        }
+      }
+
+      if (danger) {
+        game.yananWarnCount++;
+        if (game.yananWarnCount >= enemy.heightPenaltyTurns) {
+          dealSelfDamage(randPenaltyDamage(enemy.penaltyDamage), "高所制圧射撃！");
+          // 3ターン以上継続で被弾。カウントはリセットせず継続チェックなら毎ターン食らうが、
+          // 「3ターン以上置いておくと」なので、一度食らったら少し猶予を与えるか、あるいは厳しく毎ターンか。
+          // ここでは厳しく毎ターン食らう仕様とします（脱出しない限り終わる）
+        }
+      } else {
+        game.yananWarnCount = 0;
+      }
+    }
+
+    // 6. Ganari: Purple Block Aging
+    if (enemy.extraColor && enemy.agingBlockColor) {
+      let dmgCount = 0;
+      for (let y = 0; y < game.rowsTotal; y++) {
+        for (let x = 0; x < game.cols; x++) {
+          if (game.board[y][x] === enemy.agingBlockColor) {
+            game.boardAge[y][x] = (game.boardAge[y][x] || 0) + 1;
+            if (game.boardAge[y][x] >= enemy.agingDamageThreshold) {
+              dmgCount++;
+            }
+          } else {
+            game.boardAge[y][x] = 0;
+          }
+        }
+      }
+      if (dmgCount > 0) {
+        dealSelfDamage(dmgCount, "時限爆弾起動！");
+      }
+    }
+
+    // 7. Aya: Column Laser
+    if (enemy.columnDestroy) {
+      const cycle = enemy.columnDestroyInterval;
+      const progress = game.turn % cycle; // 1, 2, 3, 4, 0(発動)
+      
+      // サイクル開始時(1)にターゲット決定
+      if (game.ayaTargetCol === -1 || progress === 1) {
+        game.ayaTargetCol = Math.floor(Math.random() * game.cols);
+      }
+
+      if (progress === 0 && game.turn > 0) {
+        // Execute Destroy
+        const col = game.ayaTargetCol;
+        let count = 0;
+        for (let y = 0; y < game.rowsTotal; y++) {
+          if (game.board[y][col] !== 0) {
+            count++;
+            game.board[y][col] = 0;
+            if(game.boardAge) game.boardAge[y][col] = 0;
+          }
+        }
+        applyGravityBoard(); // Drop others
+        if (count > 0) {
+          const dmg = count * enemy.columnDestroyMult;
+          dealSelfDamage(dmg, "断罪の光！");
+          skillFxFlash();
+        }
+        game.ayaTargetCol = -1; // Reset
+      }
     }
   }
 
@@ -1853,6 +2048,8 @@ function closeInfoModal() {
     // SATELLA: 指定色を消したターンしか通常攻撃ダメージが通らない（必殺ダメージは例外）
     const gateColor = (enemy && enemy.colorGate) ? (game.enemyGateColor || null) : null;
     let gateSatisfied = (!gateColor) || !!fromSkill;
+    let tabooViolated = false; // 追加
+    const tabooColor = (enemy && enemy.tabooColor) ? (game.enemyGateColor || null) : null;
 
     function applyEnemyDamage(amount, chainForFx) {
       const dmg = Math.max(0, Math.floor(amount || 0));
@@ -1885,15 +2082,19 @@ function closeInfoModal() {
         turnCtx.chainCount = chain;
       }
 
-      // color gate check (SATELLA)
-      if (!gateSatisfied && gateColor) {
-        for (const g of groups) {
-          if (g && g.color === gateColor) {
-            gateSatisfied = true;
-            break;
-          }
+      // ▼▼▼ 修正：色判定ロジック（サテラ＆レイ） ▼▼▼
+      // 消えたすべてのグループについて、指定色/禁忌色が含まれているかチェック
+      for (const g of groups) {
+        // サテラ：指定色を消したか？
+        if (gateColor && g.color === gateColor) {
+          gateSatisfied = true;
+        }
+        // レイ：禁忌色を消してしまったか？
+        if (tabooColor && g.color === tabooColor) {
+          tabooViolated = true;
         }
       }
+      // ▲▲▲ 修正ここまで ▲▲▲
 
       // 連鎖ごとにゲージ加算（スキル発動による消しでは加算しない）
       if (!fromSkill) {
@@ -1913,45 +2114,50 @@ function closeInfoModal() {
       const damage = computeDamage(chainEffective, groups.length);
       const scoreAdd = computeScore(popped, chainEffective);
 
-      // ダメージ処理
-      // - chainOnlyDamage（コト二戦目/三戦目）: “連鎖”でしかダメージが入らない
-      // - colorGate（サテラ）: 指定色を消したターンしか通常攻撃ダメージが通らない（必殺ダメージは例外）
+      // ▼▼▼ ここから書き換え ▼▼▼
+      // chainOnlyDamage判定
       const chainUnlocked = !(enemy && enemy.chainOnlyDamage)
         ? true
         : ((chain >= 2) || (chain === 1 && groups.length >= 2));
 
-      const gateUnlocked = (!gateColor) ? true : gateSatisfied;
-      const unlocked = chainUnlocked && gateUnlocked;
+      let finalDamage = damage;
 
-      if (!unlocked) {
-        // 条件未達：ダメージを保留（成立したらまとめて通す）
-        deferredDamages.push({ dmg: damage, chainForFx: chainEffective });
-      } else {
-        // 解放: 保留分（あれば）もまとめて通す
-        while (deferredDamages.length) {
-          const d = deferredDamages.shift();
-          if (applyEnemyDamage(d.dmg, d.chainForFx)) return;
-        }
-        if (applyEnemyDamage(damage, chainEffective)) return;
+      // Damage Logic
+      if (tabooViolated) {
+         // 禁止色を消した：ダメージ無効
+         finalDamage = 0;
+      } else if (gateColor && !gateSatisfied) {
+         // 指定色未達成：ダメージ無効
+         finalDamage = 0;
+      } else if (enemy && enemy.chainOnlyDamage && !chainUnlocked) {
+         // 連鎖縛り未達：ダメージ無効（保留せず無効扱いに変更）
+         finalDamage = 0;
       }
+
+      // 適用（0なら無視される）
+      // 条件が満たされた場合、保留していたダメージがあればそれも適用するロジックが必要なら
+      // 以前の deferredDamages を維持すべきですが、ここではシンプルに「条件未達は無効」とします
+      if (applyEnemyDamage(finalDamage, chainEffective)) return;
+      // ▲▲▲ ここまで ▲▲▲
 
       void scoreAdd; // 将来スコア表示を増やすならここ
     }
 
-    // 条件未達で終わった場合：ダメージ無し（保留分を破棄）
-    if (deferredDamages.length) {
-      deferredDamages.length = 0;
-      // HUDのチェーン表示だけ更新
-      game.chainLast = Math.max(game.chainLast || 0, chain);
-      syncHudToState();
+    // ▼▼▼ ここから書き換え ▼▼▼
+    // ループ終了後の判定
 
-      // SATELLA: 指定色を消していないターンは通常攻撃が無効
-      if (isTurn && !fromSkill && gateColor && !gateSatisfied) {
-        skillFxText("指定色を消さないとダメージが通らない！");
-      }
+    // SATELLA: 指定色不足の警告
+    if (isTurn && !fromSkill && gateColor && !gateSatisfied && chain > 0) {
+      skillFxText("指定色を消さないとダメージが通らない！");
     }
 
+    // REI: 禁忌に触れた場合の反撃
+    if (isTurn && tabooViolated) {
+      dealSelfDamage(15, "禁忌に触れた！"); // 反撃ダメージ
+    }
+    
     game.inResolve = false;
+    // ▲▲▲ ここまで ▲▲▲
     spawnIfNeeded();
     updateSkillUi(); // next更新もここで同期
 
@@ -1992,6 +2198,35 @@ function closeInfoModal() {
     const ox = Math.floor((W - boardW) / 2);
     const oy = Math.floor((H - boardH) / 2);
 
+    // ▼▼▼ ここに追加 ▼▼▼
+    
+    // Yanan Danger Zone (Red Overlay)
+    if (game.enemyProfile?.heightLimitRow) {
+      const hRows = game.enemyProfile.heightLimitRow; 
+      const zoneH = hRows * cell;
+      // 警告中は点滅
+      const alpha = (game.turn % 2 === 0 && game.yananWarnCount > 0) ? 0.25 : 0.15;
+      
+      ctx.fillStyle = `rgba(255, 0, 0, ${alpha})`;
+      ctx.fillRect(ox, oy, boardW, zoneH);
+      
+      ctx.beginPath();
+      ctx.strokeStyle = "rgba(255, 50, 50, 0.8)";
+      ctx.lineWidth = 2;
+      ctx.moveTo(ox, oy + zoneH);
+      ctx.lineTo(ox + boardW, oy + zoneH);
+      ctx.stroke();
+    }
+
+    // Aya Target Column (Red Overlay)
+    if (game.enemyProfile?.columnDestroy && game.ayaTargetCol !== -1) {
+      const tx = ox + game.ayaTargetCol * cell;
+      const alpha = (game.turn % 2 === 0) ? 0.3 : 0.1;
+      ctx.fillStyle = `rgba(255,0,0,${alpha})`;
+      ctx.fillRect(tx, oy, cell, boardH);
+    }
+    // ▲▲▲ ここまで ▲▲▲
+
     // frame
     ctx.strokeStyle = "rgba(255,255,255,0.18)";
     ctx.lineWidth = 4;
@@ -2020,7 +2255,7 @@ function closeInfoModal() {
         if (v === 0) continue;
         const vy = y - CFG.HIDDEN_ROWS;
 
-        drawPuyo(ox + x * cell, oy + vy * cell, cell, v);
+        drawPuyo(ox + x * cell, oy + vy * cell, cell, v, x, y);
       }
     }
 
@@ -2045,7 +2280,7 @@ function closeInfoModal() {
     }
   }
 
-  function drawPuyo(px, py, cell, colorId) {
+  function drawPuyo(px, py, cell, colorId, gx, gy) {
     // bomb (カレイ技能)
     if (colorId === CFG.BOMB_ID) {
       const r = Math.floor(cell * 0.44);
@@ -2109,6 +2344,29 @@ function closeInfoModal() {
     ctx.fillStyle = "rgba(255,255,255,0.28)";
     ctx.arc(cx - r * 0.3, cy - r * 0.3, r * 0.35, 0, Math.PI * 2);
     ctx.fill();
+
+    // Ganari: Aging Number
+    if (game.enemyProfile?.agingBlockColor === colorId) {
+      // 呼び出し元のdrawループで gx, gy を渡す必要があります
+      // これで正しく判定できるようになります
+      if (typeof gx === 'number' && typeof gy === 'number' && game.boardAge) {
+         const age = game.boardAge[gy][gx] || 0;
+         const limit = game.enemyProfile.agingDamageThreshold;
+         if (age > 0) {
+           const cx = px + cell/2;
+           const cy = py + cell/2;
+           // 文字が見やすいように色と縁取りを調整
+           ctx.fillStyle = (age >= limit) ? "#ff0000" : "#ffffff";
+           ctx.font = "900 20px sans-serif"; // 太字に変更
+           ctx.textAlign = "center";
+           ctx.textBaseline = "middle";
+           ctx.strokeStyle = "#000000"; 
+           ctx.lineWidth = 4; // 縁取りを少し太く
+           ctx.strokeText(String(age), cx, cy);
+           ctx.fillText(String(age), cx, cy);
+         }
+      }
+    }
   }
 
   // ---------------------------
@@ -2122,12 +2380,22 @@ function closeInfoModal() {
     game.playerName = "";
     game.playerName = getPlayerNameFromState();
     persistPlayerNameToState(game.playerName);
+
+    // ★追加・変更：敵によって色数を変える（ガナリは5色）
+    game.colors = (game.enemyProfile.extraColor) ? 5 : CFG.COLORS;
+
     game.turn = 0;
     game.turnsSinceClear = 0;
+
+    // ★追加：ギミックリセット
+    game.yananWarnCount = 0;
+    game.ayaTargetCol = -1;
+
     game.battleStartMs = performance.now();
     game.timeLimitSec = game.enemyProfile?.timeLimitSec || null;
 
     game.board = newEmptyBoard();
+    game.boardAge = newEmptyBoard(); // ★追加：初期化
     game.piece = null;
     game.next = { a: randColor(), b: randColor() };
 
