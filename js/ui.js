@@ -550,6 +550,9 @@
 #${LAYERS.arena} .arena-main{display:grid;grid-template-columns:1fr 240px 1fr;gap:18px;flex:1;min-height:0;}
 #${LAYERS.arena} .arena-side{display:flex;flex-direction:column;gap:12px;min-width:0;min-height:0;}
 #${LAYERS.arena} .arena-panel{border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.20);border-radius:20px;box-shadow:0 12px 40px rgba(0,0,0,.35);overflow:hidden;min-height:0;}
+#${LAYERS.arena} .arena-side > .arena-panel:last-child{flex:1;display:flex;min-height:0;}
+#${LAYERS.arena} .arena-side > .arena-panel:last-child .arena-grid{flex:1;min-height:0;align-content:start;}
+#${LAYERS.arena} .arena-grid{display:grid;grid-template-columns:repeat(${ARENA_CFG.gridCols}, 1fr);gap:10px;padding:12px;overflow-y:auto;overflow-x:auto;min-height:0;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;overscroll-behavior:contain;scrollbar-gutter:stable;}
 #${LAYERS.arena} .arena-preview{display:grid;grid-template-columns:140px 1fr;gap:12px;padding:12px;align-items:center;}
 #${LAYERS.arena} .arena-portrait{width:140px;height:180px;border-radius:16px;object-fit:contain;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);}
 #${LAYERS.arena} .arena-portrait.is-mirrored{transform:scaleX(-1);}
@@ -557,7 +560,6 @@
 #${LAYERS.arena} .arena-name{font-size:18px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #${LAYERS.arena} .arena-sub{font-size:12px;opacity:.85;line-height:1.35;}
 #${LAYERS.arena} .arena-skill-name{font-weight:900;}
-#${LAYERS.arena} .arena-grid{display:grid;grid-template-columns:repeat(${ARENA_CFG.gridCols}, 1fr);gap:10px;padding:12px;overflow:auto;min-height:0;-webkit-overflow-scrolling:touch;touch-action:pan-y;}
 #${LAYERS.arena} .arena-slot{position:relative;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);border-radius:16px;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:6px;transition:transform .12s ease, border-color .12s ease, background .12s ease;}
 #${LAYERS.arena} .arena-slot:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.06);}
 #${LAYERS.arena} .arena-slot.is-selected{border-color:rgba(120,200,255,.9);box-shadow:0 0 0 2px rgba(120,200,255,.25), 0 16px 36px rgba(0,0,0,.35);}
@@ -721,9 +723,14 @@
       grid.className = 'arena-grid';
       panelEl.appendChild(grid);
 
-      const total = ARENA_CFG.gridCols * ARENA_CFG.gridRows;
+      const cols = Math.max(1, Math.floor(ARENA_CFG.gridCols || 1));
+      const minRows = Math.max(1, Math.floor(ARENA_CFG.gridRows || 1));
+      const listLen = Array.isArray(list) ? list.length : 0;
+      const neededRows = Math.max(minRows, Math.ceil(listLen / cols));
+      const total = neededRows * cols;
+
       for (let i = 0; i < total; i++) {
-        const entry = list[i];
+        const entry = Array.isArray(list) ? list[i] : null;
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'arena-slot';
